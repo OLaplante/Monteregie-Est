@@ -73,6 +73,7 @@
 <link rel="stylesheet" href="./leaflet.css">
 <style>
 :root {
+  --header-height: 98px;
   --navy: #0f2240; --navy2: #1a3558; --blue: #0080d7; --blue-lt: #dbeafe;
   --logo-navy: #0f2240; --logo-blue: #0080d7; --logo-mint: #7ee6df; --logo-teal: #17a9a8; --logo-green: #17a9a8;
   --cream: #f8f6f1; --white: #fff; --border: #ddd5c4; --muted: #64748b;
@@ -92,12 +93,19 @@ html, body { height: 100%; overflow: hidden; font-family: 'Lato', sans-serif; }
 
 /* HEADER */
 header {
-  position: fixed; top: 0; left: 0; right: 0; height: 76px;
+  position: fixed; top: 0; left: 0; right: 0; height: var(--header-height);
   background: var(--logo-navy); border-bottom: none;
-  display: flex; align-items: center; padding: 0 0 0 26px; gap: 16px; z-index: 1000;
+  display: flex; align-items: center; padding: 22px 0 0 26px; gap: 16px; z-index: 1000;
 }
 header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
   background: linear-gradient(90deg, var(--logo-blue), var(--logo-teal), var(--logo-mint)); }
+.draft-strip { position:absolute; top:0; left:0; right:0; height:22px; z-index:2;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  background:#f59e0b; color:#4a2500; border-bottom:1px solid rgba(74,37,0,.25);
+  font-family:'Raleway',sans-serif; text-transform:uppercase; white-space:nowrap;
+  box-shadow:0 2px 8px rgba(0,0,0,.2); pointer-events:none; }
+.draft-strip strong { font-size:11px; font-weight:900; letter-spacing:.14em; }
+.draft-strip span { font-size:10px; font-weight:800; letter-spacing:.09em; }
 .brand { display:flex; align-items:center; gap:14px; cursor:pointer; }
 .brand:hover { opacity:.85; }
 .brand:focus-visible { outline:2px solid var(--orange); outline-offset:3px; border-radius:6px; }
@@ -247,9 +255,9 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .ios-tip b { color: #ffd76b; }
 
 /* LAYOUT */
-.layout { display: flex; height: 100vh; height: 100dvh; padding-top: 76px; }
+.layout { display: flex; height: 100vh; height: 100dvh; padding-top: var(--header-height); }
 
-.annonce-banner { display: none; position: fixed; top: 86px; left: 50%; transform: translateX(-50%);
+.annonce-banner { display: none; position: fixed; top: calc(var(--header-height) + 10px); left: 50%; transform: translateX(-50%);
   z-index: 920; width: min(330px, calc(100% - 104px));
   background: var(--carte); border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
   box-shadow: 0 10px 30px rgba(15,34,64,.22); }
@@ -276,8 +284,10 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .sb-head { position: relative; padding: 14px 16px 10px; border-bottom: 1px solid var(--border); background: var(--cream); flex-shrink: 0; }
 .sb-close { display: none; position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border: none; background: transparent; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer; border-radius: 8px; z-index: 1; }
 .sb-close:hover { background: var(--cream); color: var(--texte); }
-.sb-head h2 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 15px;
-  text-transform: uppercase; letter-spacing: .04em; color: var(--texte2); }
+.sb-head h2 { display:inline-block; font-family:'Raleway',sans-serif; font-weight:800; font-size:19px;
+  line-height:1.2; text-transform:uppercase; letter-spacing:.035em; color:var(--navy);
+  border-bottom:3px solid #e6007e; padding-bottom:4px; }
+:root[data-theme="sombre"] .sb-head h2 { color:#dbeafe; }
 /* Sous 400px, le bouton fermer (32px, absolu à droite) peut passer sous le
    titre en nowrap : on lui réserve sa place et on autorise le titre à passer
    à la ligne plutôt que de disparaître derrière (audit du 18 août). */
@@ -307,14 +317,14 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .sb-search-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: none; background: transparent; cursor: pointer; color: var(--muted); font-size: 12px; line-height: 1; padding: 5px 7px; border-radius: 6px; display: none; }
 .sb-search-clear:hover { background: var(--cream); color: var(--texte); }
 .sb-search.has-text .sb-search-clear { display: block; }
-.sb-view-row { margin-top:10px; display:flex; align-items:stretch; gap:8px; }
+.sb-view-row { margin-top:10px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:stretch; gap:8px; }
 .fav-toggle { display: inline-flex; align-items: center; justify-content:center; gap: 5px;
   background: var(--champ); border: 1.5px solid var(--border); color: var(--texte2); cursor: pointer;
   font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .02em;
-  padding: 9px 10px; min-height: 38px; border-radius: 20px; transition: all .15s; flex:1 1 0; min-width:0; }
+  width:100%; padding: 9px 10px; min-height: 38px; border-radius: 20px; transition: all .15s; min-width:0; }
 .fav-toggle:hover { border-color: #f5b301; }
 .fav-toggle.active { background: var(--jaune-doux); border-color: #f5b301; color: #9a6a00; }
-.all-clinics-wrap { position:relative; flex:1 1 0; min-width:0; }
+.all-clinics-wrap { position:relative; width:100%; min-width:0; }
 .all-clinics-toggle { width:100%; min-height:38px; display:flex; align-items:center; justify-content:center; gap:7px;
   padding:8px 10px; border-radius:20px; border:1.5px solid var(--border); background:var(--champ);
   color:var(--texte2); cursor:pointer; font-family:'Raleway',sans-serif; font-weight:700;
@@ -436,7 +446,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   background: var(--navy); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .03em; }
 
 /* DETAIL PANEL (READ-ONLY VIEWER) */
-.detail { position: fixed; top: 76px; right: 0; bottom: 0; width: 480px;
+.detail { position: fixed; top: var(--header-height); right: 0; bottom: 0; width: 480px;
   background: var(--white); border-left: 1px solid var(--border);
   box-shadow: -6px 0 30px rgba(0,0,0,.1); z-index: 960;
   display: flex; flex-direction: column; overflow: hidden;
@@ -471,9 +481,10 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 .niveau-explain.show { display:block; }
 .niveau-explain a { color:var(--blue); font-weight:600; text-decoration:underline; }
 .vw-divider { height:1px; background:var(--border); margin:14px 18px 0; }
-.recruit-status { margin:12px 18px 0; padding:9px 11px; border-radius:9px; display:flex;
-  align-items:flex-start; gap:8px; background:#fff3e8; border:1px solid #efb27c; color:#8a470c;
-  font-size:13px; line-height:1.4; }
+.recruit-status { margin:0; padding:12px 14px; border-radius:9px; display:flex;
+  align-items:center; gap:9px; background:#fff3e8; border:1px solid #efb27c; color:#8a470c;
+  font-size:14px; line-height:1.4; }
+.recruit-status strong { font-family:'Raleway',sans-serif; font-size:14.5px; font-weight:800; }
 .recruit-status .status-i { width:18px; height:18px; flex:0 0 auto; display:inline-flex; align-items:center;
   justify-content:center; border-radius:50%; background:#c56613; color:#fff; font:italic 11px/1 Georgia,serif; }
 :root[data-theme="sombre"] .recruit-status { background:#3d2918; border-color:#8f5526; color:#f7c99e; }
@@ -573,7 +584,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   7%, 100% { transform: translateY(0); }
 }
 .sidebar-overlay {
-  display: none; position: fixed; inset: 76px 0 0 0;
+  display: none; position: fixed; inset: var(--header-height) 0 0 0;
   background: rgba(15,34,64,.4); z-index: 945;
   opacity: 0; pointer-events: none; transition: opacity .3s;
 }
@@ -582,7 +593,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 @media (max-width: 860px) {
   .detail { width: 100%; }
   .sidebar {
-    display: flex; position: fixed; top: 76px; left: 0; bottom: 0;
+    display: flex; position: fixed; top: var(--header-height); left: 0; bottom: 0;
     width: 86%; max-width: 360px; z-index: 950;
     transform: translateX(-100%);
     transition: transform .3s cubic-bezier(.4,0,.2,1);
@@ -988,6 +999,9 @@ body.cmp-open { overflow:hidden; }
 </div>
 
 <header>
+  <div class="draft-strip" role="note" aria-label="Brouillon, version non officielle">
+    <strong>Brouillon</strong><span>Version non officielle</span>
+  </div>
   <div class="brand" id="brand-home" role="button" tabindex="0" title="Revenir à la carte">
   <span class="logo-img" role="img" aria-label="Logo Trouve ta clinique"></span>
   <div class="logo-text">
@@ -1305,8 +1319,7 @@ let legendEl = null;
       `<div class="rls-legend-row"><span class="rls-dot" style="background:${couleur}"></span>${texte}</div>`;
     d.innerHTML = MODE_EST
       ? '<div class="rls-legend-title">Réseau local (RLS)</div>' +
-        Object.keys(RLS_COLORS_EST).map(r => ligne(RLS_COLORS_EST[r], r)).join('') +
-        '<div class="rls-legend-row" id="nonrecruit-legend" hidden><span class="rls-dot" style="background:#c8cbd2;border:1px solid #64748b"></span>Couleur pâle : ne recrute pas</div>'
+        Object.keys(RLS_COLORS_EST).map(r => ligne(RLS_COLORS_EST[r], r)).join('')
       : '<div class="rls-legend-title">Région</div>' +
         ligne('#e6007e', 'Montérégie-Est') +
         ligne('#43a047', 'Montérégie-Centre') +
@@ -1349,17 +1362,17 @@ const TYPE_LABELS = {
 };
 function typeLabel(t) { return TYPE_LABELS[t] || t || ''; }
 
-function makeIcon(active, rank, couleur, nonRecruiting) {
+function makeIcon(active, rank, couleur) {
   const c = couleur;
   const size = active ? 26 : 20;
   const border = active ? '#0f2240' : '#fff';
   const bw = active ? 3 : 2.5;
   return L.divIcon({ className:'',
-    html:`<div style="position:relative;width:${size}px;height:${size}px;background:${c};border:${bw}px solid ${border};border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 8px rgba(0,0,0,.35)"><span class="pin-num"${nonRecruiting ? ' style="color:#0f2240"' : ''}>${rank}</span></div>`,
+    html:`<div style="position:relative;width:${size}px;height:${size}px;background:${c};border:${bw}px solid ${border};border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 8px rgba(0,0,0,.35)"><span class="pin-num">${rank}</span></div>`,
     iconSize:[size,size], iconAnchor:[size/2,size], popupAnchor:[0,-size-2] });
 }
 function makeClinicIcon(g, active, rank) {
-  return makeIcon(active, rank, couleurEpingle(g), !recruteActuellement(g));
+  return makeIcon(active, rank, couleurEpingle(g));
 }
 
 // Ne touche qu'aux marqueurs actuellement affichés (matchesFilters) : en vue
@@ -1746,8 +1759,6 @@ function syncAllClinicsToggle() {
   if (b) b.setAttribute('aria-checked', showAllClinics ? 'true' : 'false');
   const titre = document.getElementById('sb-title');
   if (titre) titre.textContent = showAllClinics ? 'Toutes les cliniques' : 'Cliniques en recrutement';
-  const ligneLegende = document.getElementById('nonrecruit-legend');
-  if (ligneLegende) ligneLegende.hidden = !showAllClinics;
 }
 
 function toggleAllClinics() {
@@ -2202,13 +2213,18 @@ function openDetail(id) {
     : 'À venir';
   const pratRow = `<div class="vw-row"><span class="vw-label">Pratique</span><span class="vw-value">${pratChips}</span></div>`;
   const recruitRows = assembler([
-    d_('Postes disponibles', !recruteActuellement(g)
-      ? 'Aucun recrutement en cours'
-      : (g.medecinsRecherches ? g.medecinsRecherches + (Number(g.medecinsRecherches) > 1 ? ' médecins de famille' : ' médecin de famille') : '')),
+    d_('Postes disponibles', g.medecinsRecherches
+      ? g.medecinsRecherches + (Number(g.medecinsRecherches) > 1 ? ' médecins de famille' : ' médecin de famille')
+      : ''),
     {label:'Pratique', html: pratRow},
     d_('Bureau', g.bureau),
     d_('Frais de bureau', g.frais)
   ]);
+  const recrutementContenu = recruteActuellement(g)
+    ? `${recruitRows}
+      ${poRaw ? `<div class="vw-row"><span class="vw-label">Portes ouvertes</span><span class="vw-value">${poDisp}</span></div>` : ''}
+      <div class="vw-row"><span class="vw-label">Contact</span><span class="vw-value">${contactLink(g.personneRessource)}</span></div>`
+    : `<div class="recruit-status"><span class="status-i" aria-hidden="true">i</span><span><strong>Cette clinique ne recrute pas actuellement.</strong></span></div>`;
   // Section « Gardes et disponibilités » : remplace l'ancien code de pratique SRV
   // (sans-rendez-vous), qui n'était pas assez précis. Elle n'apparaît que si au
   // moins une valeur a été saisie — sinon chaque fiche encore vierge afficherait
@@ -2227,12 +2243,8 @@ function openDetail(id) {
     + encodeURIComponent('Correction \u2013 ' + g.nom + ' (Trouve ta clinique — Carte des cliniques en recrutement)')
     + '&body=' + encodeURIComponent('Bonjour,\n\nJe souhaite signaler une correction concernant la clinique : ' + g.nom + '.\n\nCorrection propos\u00e9e :\n');
 
-  const recruitStatus = recruteActuellement(g) ? '' : `
-    <div class="recruit-status"><span class="status-i" aria-hidden="true">i</span><span><strong>Ne recrute pas actuellement.</strong> Cette fiche demeure accessible dans le répertoire complet de la Montérégie-Est à titre informatif.</span></div>`;
-
   document.getElementById('dp-body').innerHTML = `
     <div class="dp-actions"><button type="button" class="dp-fav-btn${favoris.has(g.id) ? ' fav' : ''}" id="dp-fav-btn">${favoris.has(g.id) ? '★ Retirer des favoris' : '☆ Ajouter aux favoris'}</button><button type="button" class="dp-ic dp-ic-share" id="dp-share-btn" title="Partager cette fiche" aria-label="Partager cette fiche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg></button><button type="button" class="dp-ic dp-ic-pdf" id="export-pdf-btn" title="Exporter la fiche en PDF" aria-label="Exporter la fiche en PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg></button></div>
-    ${recruitStatus}
     ${g.presentation && String(g.presentation).trim() ? `<div class="vw-sec">
       <div class="vw-pres-title">Mot de présentation</div>
       <p class="vw-pres">${esc(g.presentation)}</p>
@@ -2253,9 +2265,7 @@ function openDetail(id) {
     <div class="vw-divider"></div>
     <div class="vw-sec">
       <div class="vw-sec-title">Recrutement</div>
-      ${recruitRows}
-      ${poRaw ? `<div class="vw-row"><span class="vw-label">Portes ouvertes</span><span class="vw-value">${poDisp}</span></div>` : ''}
-      <div class="vw-row"><span class="vw-label">Contact</span><span class="vw-value">${recruteActuellement(g) ? contactLink(g.personneRessource) : 'Non disponible dans la source'}</span></div>
+      ${recrutementContenu}
     </div>
     <div class="vw-divider"></div>
     ${gardeHasData ? `<div class="vw-sec">

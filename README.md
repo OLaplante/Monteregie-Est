@@ -1,7 +1,6 @@
 # Trouve ta clinique | Montérégie-Est
 
 Ce dépôt est un brouillon autonome consacré uniquement à la Montérégie-Est.
-https://olaplante.github.io/Monteregie-Est/
 
 ## Source officielle
 
@@ -27,6 +26,7 @@ Les changements faits ici ne sont jamais transférés automatiquement vers le d�
 - Aucune configuration de domaine ou de déploiement vers `trouvetaclinique.ca`
 - Aucune automatisation GitHub qui écrit dans un autre dépôt
 - Pages marquées `noindex` et fichier `robots.txt` bloquant l'indexation
+- Bandeau « BROUILLON · VERSION NON OFFICIELLE » sur la carte et toutes les pages secondaires
 - Suivi Cloudflare du site officiel retiré
 - `data.json` limité aux trois RLS de la Montérégie-Est
 
