@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Trouve ta clinique — Montérégie-Est",
   "short_name": "PTEM 2027",
-  "description": "Trouve ta clinique — carte interactive des cliniques en recrutement de la Montérégie-Est (RLS Pierre-Boucher, Pierre-De Saurel et Richelieu-Yamaska), selon le plan PTEM 2027. Coordonnées, horaires et personnes-ressources.",
+  "description": "Trouve ta clinique — carte interactive de la Montérégie-Est. Les cliniques en recrutement sont visibles par défaut; le répertoire complet peut aussi être affiché. Coordonnées, horaires et personnes-ressources.",
   "lang": "fr-CA",
   "dir": "ltr",
   "start_url": "./",

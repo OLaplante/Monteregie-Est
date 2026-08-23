@@ -12,10 +12,13 @@ Les changements faits ici ne sont jamais transférés automatiquement vers le d�
 
 ## Contenu de cette copie
 
-- 26 cliniques des RLS Pierre-Boucher, Richelieu-Yamaska et Pierre-De Saurel
+- 69 cliniques des RLS Pierre-Boucher, Richelieu-Yamaska et Pierre-De Saurel
+  - 26 cliniques en recrutement, visibles par défaut
+  - 43 autres cliniques, accessibles avec le bouton « Toutes les cliniques »
 - 3 hôpitaux de la Montérégie-Est
 - Carte, filtres, favoris, notes locales, comparatif PDF et PWA
-- Pages PTEM, AMP, RLS et fiches de cliniques propres à l'univers Montérégie-Est
+- Épingles pâles par RLS pour distinguer les cliniques qui ne recrutent pas actuellement
+- Pages PTEM, AMP, RLS et 69 fiches de cliniques propres à l'univers Montérégie-Est
 
 ## Garde-fous du brouillon
 

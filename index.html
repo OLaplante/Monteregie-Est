@@ -16,7 +16,7 @@
      (patch SEO validé par Olivier), au prix d'un léger retour en arrière assumé sur la
      décision de renommage — voir claude/audit-18aout-4axes.md pour la discussion. -->
 <title>Cliniques en recrutement — Montérégie-Est | Trouve ta clinique</title>
-<meta name="description" content="Carte interactive des cliniques en recrutement en Montérégie-Est : coordonnées, pratiques, horaires et personnes-ressources, pour préparer votre PTEM en médecine familiale.">
+<meta name="description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet : coordonnées, pratiques, horaires et personnes-ressources.">
 <meta name="google-site-verification" content="-8EkDVTZKsywxr7fJMd3kZIMVaUedo7eU9ThFutr8dY" />
 <link rel="canonical" href="https://trouvetaclinique.ca/monteregie-est/">
 <meta name="robots" content="noindex,nofollow">
@@ -25,14 +25,14 @@
 <meta property="og:locale" content="fr_CA">
 <meta property="og:url" content="https://trouvetaclinique.ca/monteregie-est/">
 <meta property="og:title" content="Cliniques en recrutement — Montérégie-Est | Trouve ta clinique">
-<meta property="og:description" content="Carte interactive des cliniques en recrutement en Montérégie-Est pour préparer son choix de milieu de pratique en médecine familiale.">
+<meta property="og:description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet des cliniques du territoire.">
 <meta property="og:image" content="https://trouvetaclinique.ca/assets/banniere_monteregie-est.png">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="400">
 <meta property="og:image:alt" content="Carte interactive Montérégie-Est — Trouve ta clinique.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cliniques en recrutement — Montérégie-Est | Trouve ta clinique">
-<meta name="twitter:description" content="Carte interactive des cliniques en recrutement en Montérégie-Est pour préparer son choix de milieu de pratique en médecine familiale.">
+<meta name="twitter:description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet des cliniques du territoire.">
 <meta name="twitter:image" content="https://trouvetaclinique.ca/assets/banniere_monteregie-est.png">
 <!-- Données structurées : aident Google à comprendre de quoi parle le site et à quel
      territoire il s'applique. Volontairement minimal — on ne déclare aucun éditeur
@@ -47,7 +47,7 @@
   "alternateName": "Cliniques en recrutement — Montérégie-Est",
   "url": "https://trouvetaclinique.ca/monteregie-est/",
   "inLanguage": "fr-CA",
-  "description": "Carte interactive des cliniques en recrutement médical de la Montérégie-Est : coordonnées, pratiques, horaires et personnes-ressources.",
+  "description": "Carte interactive des cliniques en recrutement médical de la Montérégie-Est, avec accès optionnel au répertoire complet du territoire.",
   "about": {
     "@type": "Place",
     "name": "Montérégie-Est",
@@ -291,7 +291,7 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
      repliables, en-tête qui se réduit au défilement) resterait à envisager
      séparément si ça ne suffit pas. */
   .sb-search { margin-top: 8px; }
-  .fav-toggle { margin-top: 6px; }
+  .sb-view-row { margin-top: 6px; gap:6px; }
   .reg-filter { margin-top: 8px; }
   .rls-filter { margin-top: 6px; }
   .docs-wrap { margin-top: 6px; }
@@ -307,12 +307,40 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .sb-search-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: none; background: transparent; cursor: pointer; color: var(--muted); font-size: 12px; line-height: 1; padding: 5px 7px; border-radius: 6px; display: none; }
 .sb-search-clear:hover { background: var(--cream); color: var(--texte); }
 .sb-search.has-text .sb-search-clear { display: block; }
-.fav-toggle { margin-top: 10px; display: inline-flex; align-items: center; gap: 5px;
+.sb-view-row { margin-top:10px; display:flex; align-items:stretch; gap:8px; }
+.fav-toggle { display: inline-flex; align-items: center; justify-content:center; gap: 5px;
   background: var(--champ); border: 1.5px solid var(--border); color: var(--texte2); cursor: pointer;
   font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .02em;
-  padding: 9px 12px; min-height: 24px; border-radius: 20px; transition: all .15s; }
+  padding: 9px 10px; min-height: 38px; border-radius: 20px; transition: all .15s; flex:1 1 0; min-width:0; }
 .fav-toggle:hover { border-color: #f5b301; }
 .fav-toggle.active { background: var(--jaune-doux); border-color: #f5b301; color: #9a6a00; }
+.all-clinics-wrap { position:relative; flex:1 1 0; min-width:0; }
+.all-clinics-toggle { width:100%; min-height:38px; display:flex; align-items:center; justify-content:center; gap:7px;
+  padding:8px 10px; border-radius:20px; border:1.5px solid var(--border); background:var(--champ);
+  color:var(--texte2); cursor:pointer; font-family:'Raleway',sans-serif; font-weight:700;
+  font-size:11.5px; line-height:1.1; transition:background .15s,border-color .15s,color .15s; }
+.all-clinics-toggle:hover { border-color:var(--blue); }
+.all-clinics-toggle[aria-checked="true"] { background:var(--blue-lt); border-color:var(--blue); color:var(--navy); }
+.mini-toggle { width:29px; height:17px; padding:2px; border-radius:999px; background:#c9c1ad;
+  display:inline-flex; align-items:center; flex:0 0 auto; box-sizing:border-box; transition:background .15s; }
+.mini-toggle::after { content:''; width:13px; height:13px; border-radius:50%; background:#fff;
+  box-shadow:0 1px 3px rgba(15,34,64,.28); transform:translateX(0); transition:transform .16s; }
+.all-clinics-toggle[aria-checked="true"] .mini-toggle { background:var(--blue); }
+.all-clinics-toggle[aria-checked="true"] .mini-toggle::after { transform:translateX(12px); }
+.all-clinics-info { position:absolute; top:-6px; right:-4px; width:18px; height:18px; display:flex;
+  align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--muted);
+  background:var(--white); color:var(--muted); font:italic 11px/1 Georgia,serif; cursor:pointer; padding:0;
+  box-shadow:0 1px 4px rgba(15,34,64,.15); z-index:2; }
+.all-clinics-info:hover, .all-clinics-info[aria-expanded="true"] { border-color:var(--orange); color:var(--orange); }
+.all-clinics-tip { position:absolute; top:46px; right:0; width:min(250px,calc(100vw - 48px)); z-index:20;
+  background:var(--navy); color:#fff; border-radius:9px; padding:9px 11px; font-size:12px; line-height:1.4;
+  box-shadow:0 5px 18px rgba(15,34,64,.28); }
+.all-clinics-tip::before { content:''; position:absolute; right:9px; top:-6px; width:12px; height:12px;
+  background:var(--navy); transform:rotate(45deg); }
+:root[data-theme="sombre"] .all-clinics-toggle[aria-checked="true"] { background:#17314a; color:#dbeafe; }
+.sb-item.non-recruiting .sb-num { color:var(--navy); border:1px solid var(--rls-base,var(--navy)); box-sizing:border-box; }
+.sb-status { display:inline-block; margin-top:4px; padding:2px 6px; border-radius:999px; background:var(--cream);
+  border:1px solid var(--border); color:var(--muted); font-size:10.5px; line-height:1.2; }
 .cmp-export-btn { margin-top: 8px; display: none; align-items: center; justify-content: center; gap: 6px; width: 100%;
   padding: 9px 12px; border-radius: 8px; border: 1.5px solid var(--navy); background: var(--navy); color: #fff;
   font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12.5px; cursor: pointer; }
@@ -443,6 +471,12 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 .niveau-explain.show { display:block; }
 .niveau-explain a { color:var(--blue); font-weight:600; text-decoration:underline; }
 .vw-divider { height:1px; background:var(--border); margin:14px 18px 0; }
+.recruit-status { margin:12px 18px 0; padding:9px 11px; border-radius:9px; display:flex;
+  align-items:flex-start; gap:8px; background:#fff3e8; border:1px solid #efb27c; color:#8a470c;
+  font-size:13px; line-height:1.4; }
+.recruit-status .status-i { width:18px; height:18px; flex:0 0 auto; display:inline-flex; align-items:center;
+  justify-content:center; border-radius:50%; background:#c56613; color:#fff; font:italic 11px/1 Georgia,serif; }
+:root[data-theme="sombre"] .recruit-status { background:#3d2918; border-color:#8f5526; color:#f7c99e; }
 
 /* Horaire grid */
 .hor-grid { display:grid; grid-template-columns:auto 1fr; gap:4px 14px; }
@@ -1025,14 +1059,23 @@ body.cmp-open { overflow:hidden; }
   <div class="sidebar">
     <div class="sb-head">
       <button class="sb-close" id="sb-close" aria-label="Fermer la liste">&times;</button>
-      <h2>Cliniques en recrutement</h2>
+      <h2 id="sb-title">Cliniques en recrutement</h2>
       <p class="maj" id="maj-date"></p>
       <div class="sb-search" id="sb-search">
         <span class="sb-search-ic" aria-hidden="true">🔍</span>
         <input type="search" id="sb-search-input" placeholder="Rechercher une clinique ou une ville…" autocomplete="off" aria-label="Rechercher une clinique ou une ville">
         <button type="button" class="sb-search-clear" id="sb-search-clear" aria-label="Effacer la recherche" title="Effacer">✕</button>
       </div>
-      <button class="fav-toggle" id="fav-toggle">★ Voir mes favoris</button>
+      <div class="sb-view-row">
+        <button class="fav-toggle" id="fav-toggle">★ Voir mes favoris</button>
+        <div class="all-clinics-wrap">
+          <button type="button" class="all-clinics-toggle" id="all-clinics-toggle" role="switch" aria-checked="false" aria-describedby="all-clinics-tip">
+            <span>Toutes les cliniques</span><span class="mini-toggle" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="all-clinics-info" id="all-clinics-info" aria-label="Information sur les autres cliniques" aria-expanded="false" aria-controls="all-clinics-tip">i</button>
+          <div class="all-clinics-tip" id="all-clinics-tip" role="tooltip" hidden>Inclut aussi les cliniques qui ne recrutent pas pour le moment. Leurs épingles sont affichées dans une couleur plus pâle.</div>
+        </div>
+      </div>
       <button class="cmp-export-btn" id="cmp-export-btn">⤓ Exporter le comparatif (PDF)</button>
       <div class="reg-filter" id="reg-filter" role="group" aria-label="Filtrer par région"></div>
       <select class="rls-filter" id="rls-filter" aria-label="Filtrer par RLS"></select>
@@ -1096,6 +1139,11 @@ let favOrder = [];
 let dataMeta = {};
 let favoris = new Set();
 let favOnly = false;
+// Par défaut, seules les cliniques qui recrutent sont affichées. Le bouton
+// « Toutes les cliniques » ajoute temporairement les milieux dont visible=false.
+// Cet état n'est volontairement pas sauvegardé : chaque nouvelle visite revient
+// toujours à la vue de recrutement demandée pour le projet Montérégie-Est.
+let showAllClinics = false;
 let regionFilter = new Set();
 let rlsFilter = '';
 let searchQuery = '';
@@ -1117,19 +1165,20 @@ const ANNONCE_KEY = 'dtmf-mtg-annonce-fermee';
 
 const byId = id => gmfs.find(g => g.id === id);
 const normTxt = s => (s == null ? '' : String(s)).toLowerCase().replace(/\u0153/g, 'oe').replace(/\u00e6/g, 'ae').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+const recruteActuellement = g => !!g && g.visible !== false && g.recrutementActif !== false;
+const statutVisible = g => showAllClinics || recruteActuellement(g);
 function matchesFilters(id) {
+  const g = byId(id);
+  if (!statutVisible(g)) return false;
   if (favOnly && !favoris.has(id)) return false;
   if (searchQuery) {
-    const g = byId(id);
     const hay = normTxt([g && g.nom, g && g.alias, g && g.ville, g && g.type, g && g.rls].filter(Boolean).join(' '));
     if (!hay.includes(searchQuery)) return false;
   }
   if (regionFilter.size) {
-    const g = byId(id);
     if (!regionFilter.has(g && g.region)) return false;
   }
   if (rlsFilter) {
-    const g = byId(id);
     if (!g || (g.rls || '') !== rlsFilter) return false;
   }
   return true;
@@ -1223,12 +1272,26 @@ const RLS_COLORS_EST = {
   'Richelieu-Yamaska': '#15803d',
   'Pierre-De Saurel':  '#2f4a7a'
 };
+// Même identité de couleur, mais nettement éclaircie pour les cliniques qui
+// ne recrutent pas actuellement. Des couleurs fixes évitent qu'un navigateur
+// plus ancien interprète différemment un mélange CSS calculé.
+const RLS_COLORS_EST_PALES = {
+  'Pierre-Boucher':    '#f6a8bc',
+  'Richelieu-Yamaska': '#a7cfb2',
+  'Pierre-De Saurel':  '#b5bfd1'
+};
 /* Couleur d'un milieu : par RLS sur la carte Est, par territoire partout ailleurs. Tout passe
    par cette seule fonction, de sorte que la carte des trois territoires garde exactement le
    comportement qu'elle avait avant (regionColor, inchangé). */
 function couleurMilieu(g) {
   if (MODE_EST && g && RLS_COLORS_EST[g.rls]) return RLS_COLORS_EST[g.rls];
   return regionColor(g && g.region);
+}
+function couleurEpingle(g) {
+  if (MODE_EST && g && !recruteActuellement(g) && RLS_COLORS_EST_PALES[g.rls]) {
+    return RLS_COLORS_EST_PALES[g.rls];
+  }
+  return couleurMilieu(g);
 }
 
 // Légende des couleurs. Carte des trois territoires : une ligne par territoire. Carte
@@ -1242,7 +1305,8 @@ let legendEl = null;
       `<div class="rls-legend-row"><span class="rls-dot" style="background:${couleur}"></span>${texte}</div>`;
     d.innerHTML = MODE_EST
       ? '<div class="rls-legend-title">Réseau local (RLS)</div>' +
-        Object.keys(RLS_COLORS_EST).map(r => ligne(RLS_COLORS_EST[r], r)).join('')
+        Object.keys(RLS_COLORS_EST).map(r => ligne(RLS_COLORS_EST[r], r)).join('') +
+        '<div class="rls-legend-row" id="nonrecruit-legend" hidden><span class="rls-dot" style="background:#c8cbd2;border:1px solid #64748b"></span>Couleur pâle : ne recrute pas</div>'
       : '<div class="rls-legend-title">Région</div>' +
         ligne('#e6007e', 'Montérégie-Est') +
         ligne('#43a047', 'Montérégie-Centre') +
@@ -1285,14 +1349,17 @@ const TYPE_LABELS = {
 };
 function typeLabel(t) { return TYPE_LABELS[t] || t || ''; }
 
-function makeIcon(active, rank, couleur) {
+function makeIcon(active, rank, couleur, nonRecruiting) {
   const c = couleur;
   const size = active ? 26 : 20;
   const border = active ? '#0f2240' : '#fff';
   const bw = active ? 3 : 2.5;
   return L.divIcon({ className:'',
-    html:`<div style="position:relative;width:${size}px;height:${size}px;background:${c};border:${bw}px solid ${border};border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 8px rgba(0,0,0,.35)"><span class="pin-num">${rank}</span></div>`,
+    html:`<div style="position:relative;width:${size}px;height:${size}px;background:${c};border:${bw}px solid ${border};border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 8px rgba(0,0,0,.35)"><span class="pin-num"${nonRecruiting ? ' style="color:#0f2240"' : ''}>${rank}</span></div>`,
     iconSize:[size,size], iconAnchor:[size/2,size], popupAnchor:[0,-size-2] });
+}
+function makeClinicIcon(g, active, rank) {
+  return makeIcon(active, rank, couleurEpingle(g), !recruteActuellement(g));
 }
 
 // Ne touche qu'aux marqueurs actuellement affichés (matchesFilters) : en vue
@@ -1302,7 +1369,7 @@ function makeIcon(active, rank, couleur) {
 // touche pas plutôt que de leur écrire une icône fausse qui resterait figée
 // (bug du 18 août : jusqu'à « 0 » sur 58 épingles après un glisser-déposer).
 function refreshMarkerIcons() {
-  gmfs.forEach(g => { if (markers[g.id] && matchesFilters(g.id)) markers[g.id].setIcon(makeIcon(g.id === activeId, rankOf(g.id), couleurMilieu(g))); });
+  gmfs.forEach(g => { if (markers[g.id] && matchesFilters(g.id)) markers[g.id].setIcon(makeClinicIcon(g, g.id === activeId, rankOf(g.id))); });
 }
 
 function buildMarkers() {
@@ -1312,8 +1379,9 @@ function buildMarkers() {
   // et fitToData() ne s'exécutent jamais et la page reste vide.
   gmfs.forEach(g => {
     try {
-      const m = L.marker([g.lat, g.lng], { icon:makeIcon(false, rankOf(g.id), couleurMilieu(g)), draggable:false }).addTo(map);
-      m.bindTooltip(`<b>${esc(g.nom.trim())}</b><br><small>${esc(g.ville)}</small>`, { direction:'top', offset:[0,-20] });
+      const m = L.marker([g.lat, g.lng], { icon:makeClinicIcon(g, false, rankOf(g.id)), draggable:false });
+      if (matchesFilters(g.id)) m.addTo(map);
+      m.bindTooltip(`<b>${esc(g.nom.trim())}</b><br><small>${esc(g.ville)}${recruteActuellement(g) ? '' : ' · Ne recrute pas actuellement'}</small>`, { direction:'top', offset:[0,-20] });
       m.on('click', (e) => { L.DomEvent.stopPropagation(e); toggleDetail(g.id); });
       markers[g.id] = m;
     } catch (e) {
@@ -1399,7 +1467,7 @@ function buildHopitalMarkers() {
 }
 
 function fitToData() {
-  const pts = gmfs.filter(g => g.lat && g.lng).map(g => [g.lat, g.lng]);
+  const pts = gmfs.filter(g => statutVisible(g) && g.lat && g.lng).map(g => [g.lat, g.lng]);
   if (pts.length) { try { map.fitBounds(pts, { padding:[40,40], maxZoom:11 }); } catch(e){} }
 }
 
@@ -1435,7 +1503,13 @@ function favListOrder() {
   const rest = order.filter(id => favoris.has(id) && !inFav.includes(id));
   return inFav.concat(rest);
 }
-function currentOrder() { return favOnly ? favListOrder() : order; }
+function currentOrder() {
+  const base = favOnly ? favListOrder() : order;
+  // Les 26 cliniques recruteuses conservent leur numérotation continue dans la
+  // vue par défaut. Les 43 autres ne participent au classement que si le toggle
+  // « Toutes les cliniques » est activé.
+  return base.filter(id => statutVisible(byId(id)));
+}
 
 function renderSidebar() {
   sbList.innerHTML = '';
@@ -1449,14 +1523,16 @@ function renderSidebar() {
     const parenMatch = g.nom.trim().match(/^(.*?)\s*(\(.*\))\s*$/);
     const nomMain = parenMatch ? parenMatch[1] : g.nom.trim();
     const el = document.createElement('div');
-    el.className = 'sb-item' + (id === activeId ? ' active' : '');
+    const nonRecruiting = !recruteActuellement(g);
+    el.className = 'sb-item' + (nonRecruiting ? ' non-recruiting' : '') + (id === activeId ? ' active' : '');
     el.id = 'si-' + id;
     el.draggable = dragEnabled;
     el.innerHTML = `${dragEnabled ? '<span class="sb-grip" title="Glisser pour reclasser">⠿</span>' : ''}
-      <div class="sb-num" style="--rls:${couleurMilieu(g)}">${i+1}</div>
+      <div class="sb-num" style="--rls:${couleurEpingle(g)};--rls-base:${couleurMilieu(g)}">${i+1}</div>
       <div class="sb-info">
         <div class="sb-name">${esc(nomMain)}</div>
         <div class="sb-city">📍 ${esc(g.ville)}</div>
+        ${nonRecruiting ? '<span class="sb-status">Ne recrute pas actuellement</span>' : ''}
       </div>
       <button class="sb-star${favoris.has(id) ? ' fav' : ''}" title="Marquer comme favori" aria-label="${esc((favoris.has(id) ? 'Retirer ' : 'Ajouter ') + nomMain + (favoris.has(id) ? ' des favoris' : ' aux favoris'))}" draggable="false">${favoris.has(id) ? '★' : '☆'}</button>`;
 
@@ -1655,7 +1731,7 @@ function toggleFavView() {
   favOnly = !favOnly;
   const b = document.getElementById('fav-toggle');
   if (b) {
-    b.textContent = favOnly ? '↩ Voir toutes les cliniques' : '★ Voir mes favoris';
+    b.textContent = favOnly ? '↩ Quitter les favoris' : '★ Voir mes favoris';
     b.classList.toggle('active', favOnly);
   }
   renderSidebar();
@@ -1663,6 +1739,36 @@ function toggleFavView() {
   // Sans ce recalcul, une fiche démasquée en revenant à la vue complète
   // pouvait garder le rang « 0 » que lui avait laissé un tri des favoris.
   refreshMarkerIcons();
+}
+
+function syncAllClinicsToggle() {
+  const b = document.getElementById('all-clinics-toggle');
+  if (b) b.setAttribute('aria-checked', showAllClinics ? 'true' : 'false');
+  const titre = document.getElementById('sb-title');
+  if (titre) titre.textContent = showAllClinics ? 'Toutes les cliniques' : 'Cliniques en recrutement';
+  const ligneLegende = document.getElementById('nonrecruit-legend');
+  if (ligneLegende) ligneLegende.hidden = !showAllClinics;
+}
+
+function toggleAllClinics() {
+  const prochainEtat = !showAllClinics;
+  const active = activeId !== null ? byId(activeId) : null;
+  if (!prochainEtat && active && !recruteActuellement(active)) {
+    if (notesDirty && !confirm("Vos notes ne sont pas sauvegardées. Masquer cette clinique sans les sauvegarder ?")) return;
+    notesDirty = false;
+    detailHistoryActive = false;
+    closeDetailUI();
+  }
+  showAllClinics = prochainEtat;
+  syncAllClinicsToggle();
+  renderSidebar();
+  updateMarkerVisibility();
+  refreshMarkerIcons();
+  fitToVisible();
+  const n = currentOrder().filter(id => matchesFilters(id)).length;
+  annoncerA11y(showAllClinics
+    ? n + ' cliniques affichées, incluant celles qui ne recrutent pas actuellement.'
+    : n + ' cliniques en recrutement affichées.');
 }
 
 // ===== Export du comparatif des favoris (PDF via impression) =====
@@ -1706,6 +1812,7 @@ function buildComparatif(favs) {
   let rows = '';
   rows += row('Région', g => `<span class="cmp-dot" style="background:${regionColor(g.region)}"></span>${REGION_LABELS[g.region] || ''}`);
   rows += row('Réseau (RLS)', g => cmpVal(g.rls));
+  rows += row('Statut', g => recruteActuellement(g) ? 'En recrutement' : 'Ne recrute pas actuellement');
   rows += row('Niveaux', g => cmpVal(g.niveau));
   rows += row('Ville', g => cmpVal(g.ville));
   rows += row('Pratique', g => cmpChips(g.pratiques));
@@ -1994,12 +2101,15 @@ function openDetail(id) {
   if (activeId !== null && activeId !== id && notesDirty &&
       !confirm("Vos notes ne sont pas sauvegardées. Changer de clinique sans les sauvegarder ?")) return;
   notesDirty = false;
-  if (activeId !== null && markers[activeId]) markers[activeId].setIcon(makeIcon(false, rankOf(activeId), couleurMilieu(byId(activeId))));
+  if (activeId !== null && markers[activeId]) {
+    const precedente = byId(activeId);
+    if (precedente) markers[activeId].setIcon(makeClinicIcon(precedente, false, rankOf(activeId)));
+  }
   document.querySelectorAll('.sb-item').forEach(e => e.classList.remove('active'));
   activeId = id;
   // Garde : buildMarkers() peut avoir sauté ce marqueur (fiche invalide,
   // filet de sécurité du 17 août) sans que la fiche elle-même soit exclue.
-  if (markers[id]) markers[id].setIcon(makeIcon(true, rankOf(id), couleurMilieu(g)));
+  if (markers[id]) markers[id].setIcon(makeClinicIcon(g, true, rankOf(id)));
   updateLegendVisibility();
   document.getElementById('si-'+id)?.classList.add('active');
   map.flyTo([g.lat, g.lng], 14, { duration:1 });
@@ -2022,7 +2132,7 @@ function openDetail(id) {
   // Horaire (lecture seule)
   let horRows = '';
   for (const [jour, heure] of Object.entries(g.horaire || {})) {
-    const ferme = /ferm/i.test(heure);
+    const ferme = /ferm|non disponible/i.test(heure);
     horRows += `<span class="hor-day">${jour}</span><span class="hor-val${ferme?' ferme':''}">${heure && String(heure).trim() ? esc(heure) : 'À venir'}</span>`;
   }
   if (!horRows) horRows = '<span class="hor-day" style="grid-column:1 / -1; color:#b8b1a0;">À venir</span>';
@@ -2092,7 +2202,9 @@ function openDetail(id) {
     : 'À venir';
   const pratRow = `<div class="vw-row"><span class="vw-label">Pratique</span><span class="vw-value">${pratChips}</span></div>`;
   const recruitRows = assembler([
-    d_('Postes disponibles', g.medecinsRecherches ? g.medecinsRecherches + (Number(g.medecinsRecherches) > 1 ? ' médecins de famille' : ' médecin de famille') : ''),
+    d_('Postes disponibles', !recruteActuellement(g)
+      ? 'Aucun recrutement en cours'
+      : (g.medecinsRecherches ? g.medecinsRecherches + (Number(g.medecinsRecherches) > 1 ? ' médecins de famille' : ' médecin de famille') : '')),
     {label:'Pratique', html: pratRow},
     d_('Bureau', g.bureau),
     d_('Frais de bureau', g.frais)
@@ -2115,8 +2227,12 @@ function openDetail(id) {
     + encodeURIComponent('Correction \u2013 ' + g.nom + ' (Trouve ta clinique — Carte des cliniques en recrutement)')
     + '&body=' + encodeURIComponent('Bonjour,\n\nJe souhaite signaler une correction concernant la clinique : ' + g.nom + '.\n\nCorrection propos\u00e9e :\n');
 
+  const recruitStatus = recruteActuellement(g) ? '' : `
+    <div class="recruit-status"><span class="status-i" aria-hidden="true">i</span><span><strong>Ne recrute pas actuellement.</strong> Cette fiche demeure accessible dans le répertoire complet de la Montérégie-Est à titre informatif.</span></div>`;
+
   document.getElementById('dp-body').innerHTML = `
     <div class="dp-actions"><button type="button" class="dp-fav-btn${favoris.has(g.id) ? ' fav' : ''}" id="dp-fav-btn">${favoris.has(g.id) ? '★ Retirer des favoris' : '☆ Ajouter aux favoris'}</button><button type="button" class="dp-ic dp-ic-share" id="dp-share-btn" title="Partager cette fiche" aria-label="Partager cette fiche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg></button><button type="button" class="dp-ic dp-ic-pdf" id="export-pdf-btn" title="Exporter la fiche en PDF" aria-label="Exporter la fiche en PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg></button></div>
+    ${recruitStatus}
     ${g.presentation && String(g.presentation).trim() ? `<div class="vw-sec">
       <div class="vw-pres-title">Mot de présentation</div>
       <p class="vw-pres">${esc(g.presentation)}</p>
@@ -2139,7 +2255,7 @@ function openDetail(id) {
       <div class="vw-sec-title">Recrutement</div>
       ${recruitRows}
       ${poRaw ? `<div class="vw-row"><span class="vw-label">Portes ouvertes</span><span class="vw-value">${poDisp}</span></div>` : ''}
-      <div class="vw-row"><span class="vw-label">Contact</span><span class="vw-value">${contactLink(g.personneRessource)}</span></div>
+      <div class="vw-row"><span class="vw-label">Contact</span><span class="vw-value">${recruteActuellement(g) ? contactLink(g.personneRessource) : 'Non disponible dans la source'}</span></div>
     </div>
     <div class="vw-divider"></div>
     ${gardeHasData ? `<div class="vw-sec">
@@ -2202,7 +2318,10 @@ function saveNotes(flash = true) {
 function closeDetailUI() {
   // On retire le paramètre ?c= pour que l'URL reflète l'état réel de l'app.
   if (location.search) { try { history.replaceState({}, '', location.pathname); } catch (e) {} }
-  if (activeId !== null && markers[activeId]) markers[activeId].setIcon(makeIcon(false, rankOf(activeId), couleurMilieu(byId(activeId))));
+  if (activeId !== null && markers[activeId]) {
+    const precedente = byId(activeId);
+    if (precedente) markers[activeId].setIcon(makeClinicIcon(precedente, false, rankOf(activeId)));
+  }
   activeId = null;
   document.querySelectorAll('.sb-item').forEach(e => e.classList.remove('active'));
   document.getElementById('detail').classList.remove('open');
@@ -2238,6 +2357,8 @@ window.addEventListener('popstate', function () {
 // l'application (audit du 18 août).
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
+  const infoTip = document.getElementById('all-clinics-tip');
+  if (infoTip && !infoTip.hidden) { closeAllClinicsInfo(); return; }
   const cp = document.getElementById('cmp-print');
   if (cp && cp.classList.contains('cmp-show')) { cmpClose(); return; }
   if (activeId !== null) { closeDetail(); return; }
@@ -2339,6 +2460,25 @@ if (sbOverlay) sbOverlay.addEventListener('click', closeDrawer);
 
 const favToggleBtn = document.getElementById('fav-toggle');
 if (favToggleBtn) favToggleBtn.addEventListener('click', toggleFavView);
+const allClinicsToggleBtn = document.getElementById('all-clinics-toggle');
+if (allClinicsToggleBtn) allClinicsToggleBtn.addEventListener('click', toggleAllClinics);
+const allClinicsInfoBtn = document.getElementById('all-clinics-info');
+const allClinicsTip = document.getElementById('all-clinics-tip');
+function closeAllClinicsInfo() {
+  if (allClinicsTip) allClinicsTip.hidden = true;
+  if (allClinicsInfoBtn) allClinicsInfoBtn.setAttribute('aria-expanded', 'false');
+}
+if (allClinicsInfoBtn && allClinicsTip) {
+  allClinicsInfoBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const ouvrir = allClinicsTip.hidden;
+    allClinicsTip.hidden = !ouvrir;
+    allClinicsInfoBtn.setAttribute('aria-expanded', ouvrir ? 'true' : 'false');
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.all-clinics-wrap')) closeAllClinicsInfo();
+  });
+}
 
 // Fermeture de la bannière d'annonce (mémorise la fermeture jusqu'au prochain message)
 const annonceClose = document.getElementById('annonce-close');
@@ -2417,16 +2557,15 @@ function showUpdateDate() {
 
 function initData(data) {
   const brut = Array.isArray(data) ? data : (data.cliniques || []);
-  // Une fiche dont « visible » vaut false est conservée dans data.json mais
-  // n'apparaît nulle part dans l'application : c'est le cas d'un milieu qui ne
-  // recrute pas cette année. Elle revient dès que le drapeau repasse à true.
-  // Une fiche dont les coordonnées ou le nom sont absents ou invalides est
-  // aussi écartée ici : sans ce filtre, une seule fiche mal formée fait
+  // visible=false signifie maintenant « ne recrute pas actuellement ». La fiche
+  // reste chargée afin que le bouton « Toutes les cliniques » puisse l'afficher,
+  // mais matchesFilters() la masque dans la vue initiale. Une fiche dont les
+  // coordonnées ou le nom sont absents ou invalides est toutefois écartée ici :
+  // sans ce filtre, une seule fiche mal formée fait
   // planter buildMarkers() en cours de route et vide toute la carte pour tout
   // le monde (constat d'audit du 17 août). On garde une trace dans la
   // console pour la retrouver facilement.
   gmfs = brut.filter(g => {
-    if (g.visible === false) return false;
     // Nombre OU texte numérique ("45.45", accident plausible venant d'un
     // tableur) sont acceptés ; null/undefined/booléen/objet sont rejetés
     // comme avant (Number(null) vaudrait 0, un faux positif au golfe de
@@ -2448,6 +2587,7 @@ function initData(data) {
   // Montérégie-Est — carte, liste, recherche, favoris, comparatif PDF, menu RLS en découlent
   // tous automatiquement, sans rien pouvoir « réactiver » depuis l'interface.
   if (MODE_EST) gmfs = gmfs.filter(g => g.region === 'Est');
+  showAllClinics = false;
   dataMeta = Array.isArray(data) ? {} : (data || {});
 
   // Hôpitaux : mêmes garde-fous de validité que les cliniques (lat/lng/nom), mais aucun
@@ -2518,6 +2658,7 @@ function initData(data) {
   buildMarkers();
   buildHopitalMarkers();
   buildFilters();
+  syncAllClinicsToggle();
   renderSidebar();
   showUpdateDate();
   showBanner();
@@ -2525,7 +2666,19 @@ function initData(data) {
   // Lien direct : ?c=6 ouvre la fiche de la clinique 6.
   const cibleBrute = new URLSearchParams(location.search).get('c');
   const cible = Number(cibleBrute);
-  if (cible && byId(cible)) { openDetail(cible); return; }
+  if (cible && byId(cible)) {
+    const cliniqueCible = byId(cible);
+    // Un lien partagé vers une clinique non recruteuse doit rester fonctionnel.
+    // On active automatiquement la vue complète avant d'ouvrir sa fiche.
+    if (!recruteActuellement(cliniqueCible)) {
+      showAllClinics = true;
+      syncAllClinicsToggle();
+      renderSidebar();
+      updateMarkerVisibility();
+      refreshMarkerIcons();
+    }
+    openDetail(cible); return;
+  }
   // ?c= présent mais invalide (clinique retirée, lien copié il y a longtemps…) :
   // avant, rien ne s'affichait et l'URL gardait le paramètre mort en silence.
   if (cibleBrute) {
