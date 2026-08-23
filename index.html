@@ -100,12 +100,15 @@ header {
 header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
   background: linear-gradient(90deg, var(--logo-blue), var(--logo-teal), var(--logo-mint)); }
 .draft-strip { position:absolute; top:0; left:0; right:0; height:22px; z-index:2;
-  display:flex; align-items:center; justify-content:center; gap:8px;
-  background:#f59e0b; color:#4a2500; border-bottom:1px solid rgba(74,37,0,.25);
+  overflow:hidden; background:#e6007e; color:#fff; border-bottom:1px solid rgba(255,255,255,.25);
   font-family:'Raleway',sans-serif; text-transform:uppercase; white-space:nowrap;
   box-shadow:0 2px 8px rgba(0,0,0,.2); pointer-events:none; }
-.draft-strip strong { font-size:11px; font-weight:900; letter-spacing:.14em; }
-.draft-strip span { font-size:10px; font-weight:800; letter-spacing:.09em; }
+.draft-strip__track { display:flex; align-items:center; width:max-content; height:100%;
+  animation:draftTicker 24s linear infinite; will-change:transform; }
+.draft-strip__message { display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  min-width:100vw; padding:0 48px; color:#fff; font-size:10.5px; font-weight:800;
+  line-height:1; letter-spacing:.08em; text-align:center; }
+@keyframes draftTicker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 .brand { display:flex; align-items:center; gap:14px; cursor:pointer; }
 .brand:hover { opacity:.85; }
 .brand:focus-visible { outline:2px solid var(--orange); outline-offset:3px; border-radius:6px; }
@@ -113,6 +116,9 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .brand.tapped .logo-img { animation: brandTap .4s ease; }
 @media (prefers-reduced-motion: reduce) { .brand.tapped .logo-img { animation: none; }
   .logo-img::after { animation: none; }
+  .draft-strip__track { width:100%; animation:none; transform:none; }
+  .draft-strip__message { min-width:100%; padding:0 8px; overflow:hidden; text-overflow:ellipsis; }
+  .draft-strip__message[aria-hidden="true"] { display:none; }
   /* !important requis : la règle .sidebar-toggle{animation:sbPeek…} (l. 373,
      même spécificité, mais plus bas dans le fichier) gagnait sinon la cascade
      — l'onglet « Liste » continuait de bouger avec « Réduire les animations »
@@ -999,13 +1005,16 @@ body.cmp-open { overflow:hidden; }
 </div>
 
 <header>
-  <div class="draft-strip" role="note" aria-label="Brouillon, version non officielle">
-    <strong>Brouillon</strong><span>Version non officielle</span>
+  <div class="draft-strip" role="note" aria-label="Version brouillon non officielle, présentée uniquement pour révision et validation avant toute publication">
+    <div class="draft-strip__track">
+      <span class="draft-strip__message">Version brouillon non officielle, présentée uniquement pour révision et validation avant toute publication.</span>
+      <span class="draft-strip__message" aria-hidden="true">Version brouillon non officielle, présentée uniquement pour révision et validation avant toute publication.</span>
+    </div>
   </div>
   <div class="brand" id="brand-home" role="button" tabindex="0" title="Revenir à la carte">
   <span class="logo-img" role="img" aria-label="Logo Trouve ta clinique"></span>
   <div class="logo-text">
-    <span class="brand-org">RECRUTEMENT</span>
+    <span class="brand-org">TROUVE TA CLINIQUE</span>
     <strong>Montérégie<span class="brand-tiret">-</span><span class="brand-est">est</span></strong>
   </div>
   </div>

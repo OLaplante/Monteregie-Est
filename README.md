@@ -1,7 +1,8 @@
 # Trouve ta clinique | Montérégie-Est
 
+[Ouvrir rapidement la page Brouillon](https://olaplante.github.io/Monteregie-Est/)
+
 Ce dépôt est un brouillon autonome consacré uniquement à la Montérégie-Est.
-https://olaplante.github.io/Monteregie-Est/
 
 ## Source officielle
 
