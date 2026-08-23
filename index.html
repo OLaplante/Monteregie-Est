@@ -105,9 +105,11 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
   box-shadow:0 2px 8px rgba(0,0,0,.2); pointer-events:none; }
 .draft-strip__track { display:flex; align-items:center; width:max-content; height:100%;
   animation:draftTicker 24s linear infinite; will-change:transform; }
-.draft-strip__message { display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  min-width:100vw; padding:0 48px; color:#fff; font-size:10.5px; font-weight:800;
-  line-height:1; letter-spacing:.08em; text-align:center; }
+.draft-strip__group { display:flex; align-items:center; justify-content:space-between; flex-shrink:0;
+  min-width:100vw; padding:0 clamp(18px,2vw,32px); gap:clamp(14px,2vw,28px);
+  color:#fff; font-size:10.5px; font-weight:800; line-height:1; letter-spacing:.08em; }
+.draft-strip__group > span { flex:0 0 auto; }
+.draft-strip__separator { font-size:12px; opacity:.9; }
 @keyframes draftTicker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 .brand { display:flex; align-items:center; gap:14px; cursor:pointer; }
 .brand:hover { opacity:.85; }
@@ -117,8 +119,8 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 @media (prefers-reduced-motion: reduce) { .brand.tapped .logo-img { animation: none; }
   .logo-img::after { animation: none; }
   .draft-strip__track { width:100%; animation:none; transform:none; }
-  .draft-strip__message { min-width:100%; padding:0 8px; overflow:hidden; text-overflow:ellipsis; }
-  .draft-strip__message[aria-hidden="true"] { display:none; }
+  .draft-strip__group { min-width:100%; padding:0 8px; justify-content:center; overflow:hidden; }
+  .draft-strip__group[aria-hidden="true"] { display:none; }
   /* !important requis : la règle .sidebar-toggle{animation:sbPeek…} (l. 373,
      même spécificité, mais plus bas dans le fichier) gagnait sinon la cascade
      — l'onglet « Liste » continuait de bouger avec « Réduire les animations »
@@ -1007,8 +1009,18 @@ body.cmp-open { overflow:hidden; }
 <header>
   <div class="draft-strip" role="note" aria-label="Version brouillon non officielle, présentée uniquement pour révision et validation avant toute publication. Page non destinée au public. Ne pas partager ce lien.">
     <div class="draft-strip__track">
-      <span class="draft-strip__message">Version brouillon non officielle, présentée uniquement pour révision et validation avant toute publication. Page non destinée au public. Ne pas partager ce lien.</span>
-      <span class="draft-strip__message" aria-hidden="true">Version brouillon non officielle, présentée uniquement pour révision et validation avant toute publication. Page non destinée au public. Ne pas partager ce lien.</span>
+      <div class="draft-strip__group">
+        <span>Version brouillon non officielle</span><span class="draft-strip__separator" aria-hidden="true">•</span>
+        <span>présentée uniquement pour révision et validation avant toute publication</span><span class="draft-strip__separator" aria-hidden="true">•</span>
+        <span>Page non destinée au public</span><span class="draft-strip__separator" aria-hidden="true">•</span>
+        <span>Ne pas partager ce lien</span>
+      </div>
+      <div class="draft-strip__group" aria-hidden="true">
+        <span>Version brouillon non officielle</span><span class="draft-strip__separator" aria-hidden="true">•</span>
+        <span>présentée uniquement pour révision et validation avant toute publication</span><span class="draft-strip__separator" aria-hidden="true">•</span>
+        <span>Page non destinée au public</span><span class="draft-strip__separator" aria-hidden="true">•</span>
+        <span>Ne pas partager ce lien</span>
+      </div>
     </div>
   </div>
   <div class="brand" id="brand-home" role="button" tabindex="0" title="Revenir à la carte">
