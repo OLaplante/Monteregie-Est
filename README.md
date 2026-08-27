@@ -22,6 +22,13 @@ Les changements faits ici ne sont jamais transférés automatiquement vers le d�
 - Épingles pâles par RLS pour distinguer les cliniques qui ne recrutent pas actuellement
 - Pages PTEM, AMP, RLS et 69 fiches de cliniques propres à l'univers Montérégie-Est
 
+## Essai du fond vectoriel
+
+La carte principale utilise maintenant le fond vectoriel CARTO avec MapLibre GL JS 5.24.0
+et l'adaptateur MapLibre GL Leaflet 0.1.4. Leaflet continue de gérer toutes les épingles,
+les popups, les filtres, les favoris, la géolocalisation et les fiches. Les styles CARTO
+utilisés sont Positron en mode clair et Dark Matter en mode sombre.
+
 ## Garde-fous du brouillon
 
 - Aucun fichier `CNAME`

@@ -1,11 +1,14 @@
 // Service worker autonome du brouillon Montérégie-Est.
 // Ce cache est indépendant de celui du site officiel trouvetaclinique.ca.
-const CACHE = 'ptem-2027-monteregie-est-draft-v6';
+const CACHE = 'ptem-2027-monteregie-est-draft-vector-v7';
 const CORE = [
   './',
   './index.html',
   './leaflet.css',
   './leaflet.js',
+  './vendor/maplibre-gl.css',
+  './vendor/maplibre-gl.js',
+  './vendor/leaflet-maplibre-gl.js',
   './data.json',
   './manifest.webmanifest',
   './icon-est-192.png',

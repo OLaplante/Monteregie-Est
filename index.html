@@ -71,6 +71,7 @@
 <link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png">
 <link rel="apple-touch-icon" href="./apple-touch-icon-est.png">
 <link rel="stylesheet" href="./leaflet.css">
+<link rel="stylesheet" href="./vendor/maplibre-gl.css">
 <style>
 :root {
   --header-height: 98px;
@@ -1135,6 +1136,8 @@ body.cmp-open { overflow:hidden; }
 </div>
 
 <script src="./leaflet.js"></script>
+<script src="./vendor/maplibre-gl.js"></script>
+<script src="./vendor/leaflet-maplibre-gl.js"></script>
 <script>
 // ═══════════════════════════════════════════
 //  MODE « MONTÉRÉGIE-EST » (vue dédiée, même app/mêmes données)
@@ -1224,7 +1227,13 @@ const rankOf = id => currentOrder().indexOf(id) + 1;
 //  CARTE
 // ═══════════════════════════════════════════
 const HOME = { center:[45.45,-73.15], zoom:9 };
-const map = L.map('map', { center:HOME.center, zoom:HOME.zoom, zoomControl:false });
+const map = L.map('map', {
+  center:HOME.center,
+  zoom:HOME.zoom,
+  zoomControl:false,
+  minZoom:1,
+  maxZoom:19
+});
 L.control.zoom({ position:'topright' }).addTo(map);
 
 // Bouton « Me localiser » (sous les boutons de zoom)
@@ -1270,25 +1279,66 @@ map.on('locationerror', function () {
   showToast("Localisation impossible. Vérifiez que l'accès à votre position est autorisé dans votre navigateur.");
 });
 (function () {
-  // CartoDB fournit la même carte en clair et en sombre : on bascule la couche entière
-  // plutôt que d'appliquer un filtre, qui délaverait les couleurs des épingles.
-  var ATTR = '© OpenStreetMap © CartoDB<span class="credit-perso"> | © Olivier Laplante</span>';
-  function couche(sombre) {
-    return L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (sombre ? 'dark_all' : 'light_all')
-      + '/{z}/{x}/{y}{r}.png', { attribution: ATTR, maxZoom: 19 });
+  // Essai vectoriel autonome du brouillon Montérégie-Est : MapLibre dessine le fond CARTO,
+  // tandis que Leaflet continue de gérer les épingles, filtres, popups et contrôles existants.
+  var ATTR = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a><span class="credit-perso"> | © Olivier Laplante</span>';
+  var CARTO_KEY = 'cb1_29ok_1_b602e4a604176e32ebdf7824';
+  var STYLE_CLAIR = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+  var STYLE_SOMBRE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+
+  function styleUrl(sombre) {
+    return (sombre ? STYLE_SOMBRE : STYLE_CLAIR) + '?key=' + encodeURIComponent(CARTO_KEY);
   }
-  var actuelle = couche(document.documentElement.dataset.theme === 'sombre');
+
+  var vectorielDisponible = !!(window.maplibregl && maplibregl.supported && maplibregl.supported());
+
+  function coucheRasterRepli(sombre) {
+    return L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (sombre ? 'dark_all' : 'light_all')
+      + '/{z}/{x}/{y}{r}.png?key=' + encodeURIComponent(CARTO_KEY),
+      { attribution: ATTR, maxZoom: 19 });
+  }
+
+  function coucheVectorielle(sombre) {
+    return L.maplibreGL({
+      style: styleUrl(sombre),
+      interactive: false,
+      attributionControl: { customAttribution: ATTR }
+    });
+  }
+
+  function ajouterCouche(sombre) {
+    if (vectorielDisponible) {
+      try {
+        var vectorielle = coucheVectorielle(sombre);
+        vectorielle.addTo(map);
+        return vectorielle;
+      } catch (e) {
+        vectorielDisponible = false;
+        console.warn('Fond vectoriel indisponible, utilisation du fond raster de secours.', e);
+      }
+    }
+    var raster = coucheRasterRepli(sombre);
+    raster.addTo(map);
+    return raster;
+  }
+
+  var modeSombreActuel = document.documentElement.dataset.theme === 'sombre';
+  var actuelle = ajouterCouche(modeSombreActuel);
   // « map » est déclaré avec const : il n'existe pas sur window. On le capture ici,
   // dans la portée du script, plutôt que d'y accéder globalement.
   window.fondCarte = function (sombre) {
-    if (!actuelle) return;
-    var neuve = couche(sombre);
-    neuve.addTo(map);
+    if (!actuelle || sombre === modeSombreActuel) return;
+    modeSombreActuel = sombre;
+    var carteVectorielle = actuelle.getMaplibreMap && actuelle.getMaplibreMap();
+    if (carteVectorielle) {
+      carteVectorielle.setStyle(styleUrl(sombre));
+      return;
+    }
+    var neuve = ajouterCouche(sombre);
     map.removeLayer(actuelle);
     actuelle = neuve;
   };
-  return actuelle;
-})().addTo(map);
+})();
 
 const REGION_COLORS = { 'Est': '#e6007e', 'Centre': '#43a047', 'Ouest': '#0080d7' };
 function regionColor(r) { return REGION_COLORS[r] || '#64748b'; }

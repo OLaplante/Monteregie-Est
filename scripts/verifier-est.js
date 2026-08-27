@@ -82,6 +82,25 @@ if (!app.includes('let showAllClinics = false;')) erreurs.push('La vue initiale 
 if (!app.includes('id="all-clinics-toggle"')) erreurs.push('Bouton « Toutes les cliniques » manquant.');
 if (!app.includes('id="all-clinics-info"')) erreurs.push('Bouton d’information des cliniques non recruteuses manquant.');
 if (!app.includes('RLS_COLORS_EST_PALES')) erreurs.push('Couleurs pâles des épingles non recruteuses manquantes.');
+if (!app.includes('L.maplibreGL({')) erreurs.push('Fond vectoriel MapLibre manquant.');
+if (!app.includes('positron-gl-style/style.json')) erreurs.push('Style vectoriel clair CARTO Positron manquant.');
+if (!app.includes('dark-matter-gl-style/style.json')) erreurs.push('Style vectoriel sombre CARTO Dark Matter manquant.');
+if (!app.includes('function coucheRasterRepli(sombre)')) erreurs.push('Fond raster de secours manquant pour les appareils sans WebGL.');
+if (!app.includes("maplibregl.supported()")) erreurs.push('Détection de compatibilité WebGL manquante.');
+for (const requis of [
+  'vendor/maplibre-gl.css',
+  'vendor/maplibre-gl.js',
+  'vendor/leaflet-maplibre-gl.js',
+  'vendor/LICENSE-maplibre-gl.txt',
+  'vendor/LICENSE-maplibre-gl-leaflet.txt'
+]) {
+  if (!fs.existsSync(path.join(root, requis))) erreurs.push('Dépendance vectorielle manquante: ' + requis);
+}
+
+const serviceWorker = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
+for (const requis of ['vendor/maplibre-gl.css', 'vendor/maplibre-gl.js', 'vendor/leaflet-maplibre-gl.js']) {
+  if (!serviceWorker.includes(requis)) erreurs.push('Fichier vectoriel absent du cache PWA: ' + requis);
+}
 
 const slugs = JSON.parse(fs.readFileSync(path.join(root, 'scripts', 'slugs.json'), 'utf8'));
 if (Object.keys(slugs).length !== cliniques.length) erreurs.push('scripts/slugs.json ne couvre pas les 69 cliniques.');
