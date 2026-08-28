@@ -1236,10 +1236,37 @@ const map = L.map('map', {
   center:HOME.center,
   zoom:HOME.zoom,
   zoomControl:false,
+  preferCanvas:true,
   minZoom:1,
   maxZoom:19
 });
 L.control.zoom({ position:'topright' }).addTo(map);
+
+/* Les limites RLS sont dessinées dans le même canvas WebGL que le fond MapLibre lorsque
+   celui-ci est disponible. Les couches Leaflet/Canvas restent le repli automatique. */
+const couchesRlsEst = new Map();
+let carteMapLibreOverlays = null;
+const OVERLAY_SOURCE_ID = 'ttc-limites-rls-est-source';
+const OVERLAY_FILL_ID = 'ttc-limites-rls-est-remplissage';
+const OVERLAY_LINE_ID = 'ttc-limites-rls-est-contour';
+
+function retirerOverlaysLeaflet() {
+  couchesRlsEst.forEach(function (couche) {
+    if (map.hasLayer(couche)) map.removeLayer(couche);
+  });
+}
+
+function filtrerOverlaysMapLibre(valeurs) {
+  const gl = carteMapLibreOverlays;
+  if (!gl || !gl.getLayer(OVERLAY_FILL_ID) || !gl.getLayer(OVERLAY_LINE_ID)) return false;
+  const filtre = valeurs && valeurs.length
+    ? ['in', ['get', 'rls'], ['literal', valeurs]]
+    : null;
+  gl.setFilter(OVERLAY_FILL_ID, filtre);
+  gl.setFilter(OVERLAY_LINE_ID, filtre);
+  retirerOverlaysLeaflet();
+  return true;
+}
 
 /* Option 1 — Montérégie-Est seulement.
    Limites officielles MSSS 2026 : RLS Pierre-Boucher (1621),
@@ -1323,9 +1350,9 @@ if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
 
 /* Brouillon Montérégie-Est : les trois couleurs identifient maintenant les trois RLS.
    Même transparence que les anciens repères territoriaux, toujours sous les épingles. */
-const couchesRlsEst = new Map();
 function synchroniserOverlaysRlsEst() {
   if (!MODE_EST || !couchesRlsEst.size) return;
+  if (filtrerOverlaysMapLibre(rlsFilter ? [rlsFilter] : null)) return;
   couchesRlsEst.forEach(function (couche, nomRls) {
     const doitEtreVisible = !rlsFilter || rlsFilter === nomRls;
     if (doitEtreVisible && !map.hasLayer(couche)) couche.addTo(map);
@@ -1365,6 +1392,64 @@ if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
   });
 
   map.attributionControl.addAttribution('Limites RLS © MSSS 2026');
+}
+
+/* Reprend exactement les limites et couleurs ci-dessus, mais les confie au GPU de MapLibre.
+   Ça élimine le calque vectoriel séparé qui ralentissait le glisser et le zoom. */
+function installerOverlaysDansMapLibre(gl) {
+  if (!gl || typeof gl.addSource !== 'function' ||
+      !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) return;
+
+  const features = window.TERRITOIRES_RLS_EST_MSSS_2026.map(function (rls) {
+    return {
+      type: 'Feature',
+      properties: {
+        rls: rls.nom,
+        remplissage: rls.remplissage,
+        contour: rls.contour
+      },
+      geometry: rls.geometry
+    };
+  });
+  if (!features.length) return;
+
+  carteMapLibreOverlays = gl;
+  if (!gl.getSource(OVERLAY_SOURCE_ID)) {
+    gl.addSource(OVERLAY_SOURCE_ID, {
+      type: 'geojson',
+      data: { type: 'FeatureCollection', features: features }
+    });
+  }
+  if (!gl.getLayer(OVERLAY_FILL_ID)) {
+    gl.addLayer({
+      id: OVERLAY_FILL_ID,
+      type: 'fill',
+      source: OVERLAY_SOURCE_ID,
+      paint: {
+        'fill-color': ['get', 'remplissage'],
+        'fill-opacity': 0.07
+      }
+    });
+  }
+  if (!gl.getLayer(OVERLAY_LINE_ID)) {
+    gl.addLayer({
+      id: OVERLAY_LINE_ID,
+      type: 'line',
+      source: OVERLAY_SOURCE_ID,
+      layout: {
+        'line-join': 'round',
+        'line-cap': 'round'
+      },
+      paint: {
+        'line-color': ['get', 'contour'],
+        'line-opacity': 0.58,
+        'line-width': 1.5
+      }
+    });
+  }
+
+  retirerOverlaysLeaflet();
+  synchroniserOverlaysRlsEst();
 }
 
 
@@ -1446,6 +1531,12 @@ map.on('locationerror', function () {
       try {
         var vectorielle = coucheVectorielle(sombre);
         vectorielle.addTo(map);
+        var gl = vectorielle.getMaplibreMap && vectorielle.getMaplibreMap();
+        if (gl) {
+          // Un changement clair/sombre retire les sources ajoutées : style.load les recrée.
+          gl.on('style.load', function () { installerOverlaysDansMapLibre(gl); });
+          if (gl.isStyleLoaded && gl.isStyleLoaded()) installerOverlaysDansMapLibre(gl);
+        }
         return vectorielle;
       } catch (e) {
         vectorielDisponible = false;
@@ -3063,7 +3154,7 @@ if ('serviceWorker' in navigator) {
         });
       })
       .catch(() => {});
-    console.log('Trouve ta clinique — Montérégie-Est Brouillon — build 2026-08-28');
+    console.log('Trouve ta clinique — Montérégie-Est Brouillon — build 2026-08-28-v2');
   });
 }
 </script>

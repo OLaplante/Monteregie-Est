@@ -2,7 +2,8 @@
 // Quand le réseau est disponible, tous les fichiers locaux sont demandés sans utiliser
 // le cache HTTP. La copie locale ne sert qu'en cas d'indisponibilité du réseau.
 const CACHE_PREFIX = 'monteregie-est-brouillon-';
-const CACHE = CACHE_PREFIX + 'v1';
+// v2 : overlays RLS dessinés dans le canvas MapLibre pour supprimer le lag au déplacement.
+const CACHE = CACHE_PREFIX + 'v2';
 const FICHIERS_INITIAUX = ['./', './index.html', './territoires-rls-est.js'];
 
 self.addEventListener('install', event => {
