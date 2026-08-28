@@ -1142,6 +1142,7 @@ body.cmp-open { overflow:hidden; }
 <script src="./leaflet.js"></script>
 <script src="./vendor/maplibre-gl.js"></script>
 <script src="./vendor/leaflet-maplibre-gl.js"></script>
+<script src="./territoires-rls-est.js"></script>
 <script>
 // ═══════════════════════════════════════════
 //  MODE « MONTÉRÉGIE-EST » (vue dédiée, même app/mêmes données)
@@ -1243,7 +1244,7 @@ L.control.zoom({ position:'topright' }).addTo(map);
 /* Option 1 — Montérégie-Est seulement.
    Limites officielles MSSS 2026 : RLS Pierre-Boucher (1621),
    Richelieu-Yamaska (1622) et Pierre-De Saurel (1623). */
-if (MODE_EST) {
+if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
   const territoireMonteregieEst = {
     type: 'Feature',
     properties: {
@@ -1277,7 +1278,7 @@ if (MODE_EST) {
 /* Repères territoriaux complémentaires du brouillon Montérégie-Est.
    Les limites proviennent des RLS officiels MSSS 2026 :
    Centre (1611, 1612) et Ouest (1631 à 1634). */
-if (MODE_EST) {
+if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
   const territoiresVoisins = [
     {
       nom: 'Montérégie-Centre',
@@ -1318,6 +1319,40 @@ if (MODE_EST) {
       }
     }).addTo(map);
   });
+}
+
+/* Brouillon Montérégie-Est : les trois couleurs identifient maintenant les trois RLS.
+   Même transparence que les anciens repères territoriaux, toujours sous les épingles. */
+if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
+  if (!map.getPane('territoireEstFond')) map.createPane('territoireEstFond');
+  map.getPane('territoireEstFond').style.zIndex = '260';
+  map.getPane('territoireEstFond').style.pointerEvents = 'none';
+
+  window.TERRITOIRES_RLS_EST_MSSS_2026.forEach(function (rls) {
+    L.geoJSON({
+      type: 'Feature',
+      properties: {
+        nom: rls.nom,
+        code: rls.code,
+        source: 'MSSS',
+        version: '2026-04-01'
+      },
+      geometry: rls.geometry
+    }, {
+      pane: 'territoireEstFond',
+      interactive: false,
+      style: {
+        color: rls.contour,
+        opacity: 0.58,
+        weight: 1.5,
+        fillColor: rls.remplissage,
+        fillOpacity: 0.07,
+        lineJoin: 'round'
+      }
+    }).addTo(map);
+  });
+
+  map.attributionControl.addAttribution('Limites RLS © MSSS 2026');
 }
 
 
