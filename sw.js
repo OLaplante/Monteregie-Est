@@ -1,30 +1,14 @@
-// Service worker autonome du brouillon Montérégie-Est.
-// Ce cache est indépendant de celui du site officiel trouvetaclinique.ca.
-const CACHE = 'ptem-2027-monteregie-est-draft-vector-v7';
-const CORE = [
-  './',
-  './index.html',
-  './leaflet.css',
-  './leaflet.js',
-  './vendor/maplibre-gl.css',
-  './vendor/maplibre-gl.js',
-  './vendor/leaflet-maplibre-gl.js',
-  './data.json',
-  './manifest.webmanifest',
-  './icon-est-192.png',
-  './icon-est-512.png',
-  './icon-est-192-maskable.png',
-  './icon-est-512-maskable.png',
-  './apple-touch-icon-est.png',
-  './favicon-16.png',
-  './favicon-32.png',
-  './favicon-48.png'
-];
+// Mise à jour automatique et mode hors ligne du brouillon Montérégie-Est.
+// Quand le réseau est disponible, tous les fichiers locaux sont demandés sans utiliser
+// le cache HTTP. La copie locale ne sert qu'en cas d'indisponibilité du réseau.
+const CACHE_PREFIX = 'monteregie-est-brouillon-';
+const CACHE = CACHE_PREFIX + 'v1';
+const FICHIERS_INITIAUX = ['./', './index.html', './territoires-rls-est.js'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE)
-      .then(cache => cache.addAll(CORE))
+      .then(cache => Promise.allSettled(FICHIERS_INITIAUX.map(url => cache.add(url))))
       .then(() => self.skipWaiting())
   );
 });
@@ -32,50 +16,31 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(keys => Promise.all(
+        keys
+          .filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE)
+          .map(key => caches.delete(key))
+      ))
       .then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', event => {
-  const req = event.request;
-  if (req.method !== 'GET') return;
+  const requete = event.request;
+  if (requete.method !== 'GET') return;
 
-  const url = new URL(req.url);
-  const scope = new URL(self.registration.scope);
-  const basePath = scope.pathname.endsWith('/') ? scope.pathname : scope.pathname + '/';
-  const memeOrigine = url.origin === scope.origin;
-  const accueil = memeOrigine &&
-    (url.pathname === basePath || url.pathname === basePath + 'index.html');
-  const donnees = memeOrigine && url.pathname === basePath + 'data.json';
-
-  // Les pages PTEM, AMP, RLS et cliniques restent des documents indépendants.
-  if (req.mode === 'navigate' && !accueil) return;
-
-  if (accueil || donnees) {
-    const cle = accueil ? new Request(new URL('./index.html', scope).href) : req;
-    event.respondWith(
-      fetch(req).then(res => {
-        if (res && res.ok) {
-          const copie = res.clone();
-          caches.open(CACHE).then(cache => cache.put(cle, copie)).catch(() => {});
-        }
-        return res;
-      }).catch(() => caches.match(cle))
-    );
-    return;
-  }
+  const url = new URL(requete.url);
+  if (url.origin !== self.location.origin) return;
 
   event.respondWith(
-    caches.match(req).then(enCache => {
-      const reseau = fetch(req).then(res => {
-        if (res && (res.ok || res.type === 'opaque')) {
-          const copie = res.clone();
-          caches.open(CACHE).then(cache => cache.put(req, copie)).catch(() => {});
-        }
-        return res;
-      }).catch(() => enCache);
-      return enCache || reseau;
-    })
+    caches.open(CACHE).then(cache =>
+      fetch(requete, { cache: 'no-store' })
+        .then(reponse => {
+          if (reponse && reponse.ok) cache.put(requete, reponse.clone()).catch(() => {});
+          return reponse;
+        })
+        .catch(() => cache.match(requete, { ignoreSearch: requete.mode === 'navigate' })
+          .then(copie => copie || (requete.mode === 'navigate' ? cache.match('./index.html') : undefined)))
+    )
   );
 });

@@ -1323,13 +1323,23 @@ if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
 
 /* Brouillon Montérégie-Est : les trois couleurs identifient maintenant les trois RLS.
    Même transparence que les anciens repères territoriaux, toujours sous les épingles. */
+const couchesRlsEst = new Map();
+function synchroniserOverlaysRlsEst() {
+  if (!MODE_EST || !couchesRlsEst.size) return;
+  couchesRlsEst.forEach(function (couche, nomRls) {
+    const doitEtreVisible = !rlsFilter || rlsFilter === nomRls;
+    if (doitEtreVisible && !map.hasLayer(couche)) couche.addTo(map);
+    if (!doitEtreVisible && map.hasLayer(couche)) map.removeLayer(couche);
+  });
+}
+
 if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
   if (!map.getPane('territoireEstFond')) map.createPane('territoireEstFond');
   map.getPane('territoireEstFond').style.zIndex = '260';
   map.getPane('territoireEstFond').style.pointerEvents = 'none';
 
   window.TERRITOIRES_RLS_EST_MSSS_2026.forEach(function (rls) {
-    L.geoJSON({
+    const couche = L.geoJSON({
       type: 'Feature',
       properties: {
         nom: rls.nom,
@@ -1349,7 +1359,9 @@ if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
         fillOpacity: 0.07,
         lineJoin: 'round'
       }
-    }).addTo(map);
+    });
+    couche.addTo(map);
+    couchesRlsEst.set(rls.nom, couche);
   });
 
   map.attributionControl.addAttribution('Limites RLS © MSSS 2026');
@@ -2238,6 +2250,7 @@ function populateRlsButtons() {
         btn.classList.toggle('dim', paleBtn);
         btn.setAttribute('aria-pressed', rlsFilter === nomBtn ? 'true' : 'false');
       });
+      synchroniserOverlaysRlsEst();
       renderSidebar(); updateMarkerVisibility(); fitToVisible();
     });
     wrap.appendChild(b);
@@ -2290,6 +2303,7 @@ function buildFilters() {
     populateRlsSelect();
     sel.addEventListener('change', () => {
       rlsFilter = sel.value;
+      synchroniserOverlaysRlsEst();
       renderSidebar(); updateMarkerVisibility(); fitToVisible();
     });
   }
@@ -3026,11 +3040,30 @@ fetch('./data.json', { cache: 'no-cache' })
 </script>
 
 <script>
-// Enregistrement du service worker (mode hors-ligne + installable)
+// Enregistrement du service worker avec vérification automatique des mises à jour.
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-    console.log('Trouve ta clinique — Montérégie — build 2026-08-18');
+    let controleurConnu = navigator.serviceWorker.controller;
+    let rechargementDeMiseAJour = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!controleurConnu) {
+        controleurConnu = navigator.serviceWorker.controller;
+        return;
+      }
+      if (rechargementDeMiseAJour) return;
+      rechargementDeMiseAJour = true;
+      window.location.reload();
+    });
+    navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+      .then(registration => {
+        const verifierMiseAJour = () => registration.update().catch(() => {});
+        verifierMiseAJour();
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) verifierMiseAJour();
+        });
+      })
+      .catch(() => {});
+    console.log('Trouve ta clinique — Montérégie-Est Brouillon — build 2026-08-28');
   });
 }
 </script>
