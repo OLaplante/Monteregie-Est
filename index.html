@@ -1300,7 +1300,6 @@ if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
     }
   }).addTo(map);
 
-  map.attributionControl.addAttribution('Limites RLS © MSSS 2026');
 }
 /* Repères territoriaux complémentaires du brouillon Montérégie-Est.
    Les limites proviennent des RLS officiels MSSS 2026 :
@@ -1391,7 +1390,6 @@ if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
     couchesRlsEst.set(rls.nom, couche);
   });
 
-  map.attributionControl.addAttribution('Limites RLS © MSSS 2026');
 }
 
 /* Reprend exactement les limites et couleurs ci-dessus, mais les confie au GPU de MapLibre.

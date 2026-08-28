@@ -3,7 +3,9 @@
 // le cache HTTP. La copie locale ne sert qu'en cas d'indisponibilité du réseau.
 const CACHE_PREFIX = 'monteregie-est-brouillon-';
 // v2 : overlays RLS dessinés dans le canvas MapLibre pour supprimer le lag au déplacement.
-const CACHE = CACHE_PREFIX + 'v2';
+// v3 : retrait du crédit MSSS/RLS au bas de la carte et nouveau thème Santé Québec
+// pour les pages SEO, sans modification des données des cliniques.
+const CACHE = CACHE_PREFIX + 'v3';
 const FICHIERS_INITIAUX = ['./', './index.html', './territoires-rls-est.js'];
 
 self.addEventListener('install', event => {
