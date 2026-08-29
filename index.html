@@ -1425,7 +1425,9 @@ function installerOverlaysDansMapLibre(gl) {
       source: OVERLAY_SOURCE_ID,
       paint: {
         'fill-color': ['get', 'remplissage'],
-        'fill-opacity': 0.07
+        /* Opacite relevee de 0,07 a 0,21 le 29 aout 2026 (cible demandee : 0,20-0,22, max
+           0,25) - les routes, noms de villes et epingles restent lisibles par-dessus. */
+        'fill-opacity': 0.21
       }
     });
   }

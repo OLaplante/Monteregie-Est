@@ -5,7 +5,14 @@ const CACHE_PREFIX = 'monteregie-est-brouillon-';
 // v2 : overlays RLS dessinés dans le canvas MapLibre pour supprimer le lag au déplacement.
 // v3 : retrait du crédit MSSS/RLS au bas de la carte et nouveau thème Santé Québec
 // pour les pages SEO, sans modification des données des cliniques.
-const CACHE = CACHE_PREFIX + 'v3';
+// v4 (29 août) : bandeau rose uniformisé sur toutes les pages SEO — l'ancienne formule
+// longue a été retirée des 75 pages qui l'avaient encore, il ne reste que le texte court,
+// nouvelle bannière PTEM/AMP reconstruite en HTML/CSS d'après la maquette retenue par
+// Olivier (assets/logo-banniere-est.png ajouté), opacité des overlays RLS relevée à 0,21,
+// mention « Outil d'aide au PTEM 2027 » ajoutée aux pages guides.
+// L'EN-TÊTE DE LA CARTE N'EST PAS MODIFIÉ (choix d'Olivier le 29 août : on n'y touche pas).
+// Données des cliniques et champ visible strictement inchangés (SHA-256 revérifiées).
+const CACHE = CACHE_PREFIX + 'v4';
 const FICHIERS_INITIAUX = ['./', './index.html', './territoires-rls-est.js'];
 
 self.addEventListener('install', event => {
