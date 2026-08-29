@@ -13,8 +13,7 @@
      NE PAS renommer : les clés localStorage « dtmf-mtg-* » (favoris et notes des utilisateurs),
      le « id » du manifeste, ni le nom de domaine trouvetaclinique.ca. -->
 <!-- Titre/description/og : réalignés le 19 août sur les termes de recherche PTEM 2027 / AMP
-     (patch SEO validé par Olivier), au prix d'un léger retour en arrière assumé sur la
-     décision de renommage — voir claude/audit-18aout-4axes.md pour la discussion. -->
+     au prix d'un léger retour en arrière assumé sur la décision de renommage. -->
 <title>Cliniques en recrutement — Montérégie-Est | Trouve ta clinique</title>
 <meta name="description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet : coordonnées, pratiques, horaires et personnes-ressources.">
 <meta name="google-site-verification" content="-8EkDVTZKsywxr7fJMd3kZIMVaUedo7eU9ThFutr8dY" />
@@ -167,8 +166,8 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
    sans rien déplacer, et l'en-tête retrouve exactement la même mise en page que l'autre carte. */
 .logo-text .brand-est { font-family: 'Kaushan Script', cursive; font-weight: 400;
   font-size: 1.45em; line-height: 0; margin-left: 1px;
-  /* Couleur pleine, pas de dégradé (retiré le 21 août à la demande d'Olivier — la « brillance »
-     du dégradé blanc→rose ne convenait plus pour la bannière de l'en-tête). Même rose que le
+  /* Couleur pleine, pas de dégradé : la « brillance » du dégradé blanc→rose ne convenait
+     pas pour la bannière de l'en-tête. Même rose que le
      trait d'union juste en dessous et que le « est » de l'écran de chargement (.ldr-est) : les
      3 usages du lettrage manuscrit restent visuellement cohérents entre eux. */
   color: #ff3d96;
@@ -440,7 +439,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
    bord arrondi tourné à -45°), mais plus grande, toujours rouge, avec un rond blanc et un
    « H » rouge au centre — jamais confondue avec une épingle numérotée de clinique : un
    hôpital n'est pas « en recrutement », c'est un repère de référence. Choix retenu par
-   Olivier le 21 août (référence visuelle fournie). Voir buildHopitalMarkers(). */
+   d'après la référence visuelle retenue. Voir buildHopitalMarkers(). */
 .hosp-pin-circle { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   transform: rotate(45deg); }
 .hosp-pin-circle-inner { width: 58%; height: 58%; background: #fff; border-radius: 50%;
@@ -664,9 +663,8 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
    n'y ont aucun effet et la police Kaushan Script n'y est même pas téléchargée : un navigateur
    ne charge une police web que si un élément l'utilise vraiment. Rose #e6007e = la couleur qui
    désigne déjà la Montérégie-Est partout dans l'app (punaises, pastille de filtre). Choix
-   retenu par Olivier le 20 août (option « G7 ») ; un essai d'agencement différent (PTEM 2027 en
-   haut, Montérégie blanc + est sur la même ligne) a été testé le 21 août puis écarté au profit
-   de celui-ci, qu'on garde. */
+   retenu après essais : un agencement différent (PTEM 2027 en haut, Montérégie blanc + est
+   sur la même ligne) a été écarté au profit de celui-ci. */
 #app-loader .ldr-brand .ldr-est { display: block; font-family: 'Kaushan Script', cursive;
   font-weight: 400; font-size: 54px; line-height: 1; margin-top: 1px;
   color: #ff3d96; text-shadow: 0 0 26px rgba(230,0,126,.8); }
@@ -744,13 +742,13 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   border-radius:9px; font-family:'Lato',sans-serif; font-size:13px; background:var(--champ); color:var(--texte); cursor:pointer; }
 .rls-filter:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,128,215,.16); }
 /* Carte Montérégie-Est SEULEMENT (voir buildFilters/populateRlsButtons) : remplace le menu
-   déroulant #rls-filter par 3 boutons pleine largeur, un par RLS — demande d'Olivier du
+   déroulant #rls-filter par 3 boutons pleine largeur, un par RLS — retenu le
    21 août. Seulement 3 RLS sur cette carte (contre jusqu'à 9 sur la carte des trois
    territoires) : un choix de boutons reste lisible ici, ce qui ne serait pas le cas sur la
    carte des trois territoires — raison pour laquelle #rls-filter, lui, reste un menu
    déroulant partout ailleurs. */
 .rls-btns { margin-top:8px; width:100%; display:flex; gap:7px; }
-/* 22 août — demande d'Olivier : les 3 boutons sont foncés (pleins) par défaut, comme si les
+/* Les 3 boutons sont foncés (pleins) par défaut, comme si les
    trois RLS étaient actifs (ce qui est le cas tant qu'aucun filtre n'est choisi). Cliquer sur
    l'un d'eux l'ISOLE : lui reste foncé, les 2 autres pâlissent (.dim) — voir populateRlsButtons.
    Un 2e clic sur le même bouton retire le filtre et les 3 redeviennent foncés. */
@@ -763,10 +761,10 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 .rls-btn.dim:hover { background:color-mix(in srgb, var(--c) 12%, var(--champ)); filter:none; }
 .rls-btn:focus-visible { outline:2px solid var(--orange); outline-offset:2px; }
 /* PTEM / AMP — accès rapide aux 3 pages du site (icônes rondes), repliées
-   derrière un bouton « 📄 PTEM / AMP » comme avant (Olivier voulait garder ce
+   derrière un bouton « 📄 PTEM / AMP » comme avant (on garde ce
    petit clic pour ne pas tout étaler d'emblée). Les 2 PDF externes (moins
    consultés) restent dans le menu du bouton « i » de l'en-tête — voir
-   .info-menu plus bas (choix du 20 août, option « C3 » validée par Olivier). */
+   .info-menu plus bas (option « C3 » retenue). */
 .docs-wrap { margin-top:8px; }
 .docs-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px;
   padding:9px 12px; border:1.5px solid var(--navy); border-radius:9px; background:var(--navy); color:#fff;
@@ -981,7 +979,7 @@ body.cmp-open { overflow:hidden; }
      invisible (retiré le 19 août pour éviter de maintenir 2 copies des mêmes liens). Depuis le
      20 août, les 2 PDF officiels externes (moins consultés) ont été déplacés dans le menu du
      bouton « i » de l'en-tête (#info-menu) pour alléger #docs-row à 3 icônes rondes (option « C3 »
-     validée par Olivier). Le contenu de #docs-row et #info-menu est présent dans le HTML dès le
+     retenue). Le contenu de #docs-row et #info-menu est présent dans le HTML dès le
      chargement, donc toujours lisible par Google sans exécuter le JS. -->
 
 <div id="app-loader" aria-hidden="true">
@@ -1151,9 +1149,8 @@ body.cmp-open { overflow:hidden; }
 // « /monteregie-est/ » (copie strictement identique, recopiée automatiquement par le workflow
 // GitHub — voir .github/workflows/generer-pages-seo.yml). Une seule ligne de détection au
 // chargement suffit à faire dévier tout le comportement ci-dessous : on ne garde AUCUNE copie
-// séparée de la logique, du CSS ou des données. Ajouté le 20 août 2026 à la demande d'Olivier
-// (courriel de Nancy Langlois, DTMF Montérégie-Est, qui ne peut pas relayer une carte montrant
-// les trois territoires).
+// séparée de la logique, du CSS ou des données. La page dédiée n'affiche que la
+// Montérégie-Est, à la demande du territoire.
 // Le test porte sur le SEGMENT « monteregie-est » n'importe où dans le chemin, et non sur un
 // début de chemin figé : le site est servi à la racine (trouvetaclinique.ca/monteregie-est/)
 // mais aussi, historiquement, dans un sous-dossier (dtmf-monteregie.github.io/Map/) — l'ancienne
@@ -1701,11 +1698,11 @@ function buildMarkers() {
 }
 
 // Icône « H » — même goutte que les épingles de clinique (makeIcon), à peine plus grande
-// (28px contre 20-26px, ajusté le 21 août à la demande d'Olivier — d'abord 34px, jugé trop
-// gros) et toujours rouge, avec un rond blanc et un « H » rouge au centre. Pas de variante
+// (28px contre 20-26px pour les cliniques ; un premier essai à 34px était trop gros)
+// et toujours rouge, avec un rond blanc et un « H » rouge au centre. Pas de variante
 // « active » : un hôpital ne s'ouvre jamais dans le panneau de détail des cliniques, un
 // simple popup Leaflet suffit (buildHopitalMarkers()).
-/* Icône d'hôpital (21 août, demande d'Olivier — délai porté de 5 à 10 secondes le même soir ;
+/* Icône d'hôpital (délai porté de 5 à 10 secondes ;
    22 août : la taille ne change plus du tout, seul le plan change — voir plus bas).
    À l'ouverture de la carte, le repère « H » est AU PREMIER PLAN (zIndexOffset positif, voir
    buildHopitalMarkers) : c'est le moment où l'usager balaie la carte et où il a besoin de situer
@@ -2080,7 +2077,10 @@ function toggleAllClinics() {
 }
 
 // ===== Export du comparatif des favoris (PDF via impression) =====
-const QR_DATA = "data:image/png;base64,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";
+// Code QR du comparatif et des fiches PDF. Il doit encoder l'adresse PUBLIQUE du site,
+// la même que celle imprimée juste à côté dans le PDF (trouvetaclinique.ca).
+// Régénéré le 29 août 2026 : l'ancien encodait encore une adresse de dépôt GitHub.
+const QR_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAGiklEQVR42u3dS27cUAxFwSjQ/rfszDJUHD/Tl6Sq5v1Ttw+eAIK+Pj4+fgF8n98uASArgKwAsgIgK4CsALICICuArACyAiArgKwAsgLICoCsALICyAqArACyAuxznzz4uq5ll+N5s+/J5z155tS+4bp3VffLSV3nt/0tOK0AboIAWQGQFUBWAFkBZAVAVgBZAda76546NRv6LDXfefLYk9nQ1Fzp8zP3/G34W3BaAdwEAbICICuArACyAiArgKwAsgLw15164Z7TrifPXLfptu51665k3dVI/Sbr3tXEvwWnFUBWAFkBkBVAVgBZAWQFQFYAWQHWu12Cz6ubhjx53bftha3boZv6fp1WAGQFkBVAVgBkBZAVQFYAWQGQFaAhU7b/oedO2boZ3J47Vk3KOq0AsgIgK4CsALICICuArACyAiArwA+ITdnu28Ca+kQ9Z397fgs9twLv+1twWgFkBZAVQFYAZAWQFUBWAGQFkBVggcIp231bRU9mNFOPfVY3oTvxWk3cCuy0AsgKgKwAsgLICoCsALICyAqArABFrn17NAsvVmhWsu476jn9WTfPOnHTrdMKgKwAsgLICiArALICyAogKwCyAkQc7bKtm2h8VvfMJ697cq3qmKP9mauR2oOb+itzWgHcBAGyAiArgKwAsgLICoCsALICrNd0l21qOrDnttqJV2PijPW+a1X3m3RaAdwEAbICICuArACyAsgKgKwAsgKsd/Xcstlz3rHudU/e1cQtqj3nSlPfUc/XNWULuAkCZAVAVgBZAWQFQFYAWQFkBXi5O/XCdTOaddt53zYZnJrunfirS72rut+G0wrgJgiQFQBZAWQFkBUAWQFkBZAV4OUKp2zrJmUn7knt+boT9w2nTLwaqblhpxVAVgBZAWQFQFYAWQFkBUBWAFkBFiicsk3NHabmSvfNpKb2DaeuZGpbbc9v32kFkBVAVgBkBZAVQFYAZAWQFUBWgJe7Uv9T/mR28G0zixPnSuuuc+o9p3YkpyaSnVYAN0GArADICiArgKwAyAogK4CsAC93pSY4e+5nPfm8KRNncI9+si13Fff81ZmyBdwEAcgKICuArACy4hIAsgLICiArAF921z11z22mqbnS1PTn82P37YWdOPk9cb+y0wogK4CsAMgKICuArACyAiArgKwA6x1N2U7cC7tvjvZE3Z7Unte57vP2/D2n9uA6rQBuggBZAWQFQFYAWQFkBUBWAFkBFrhTL9xzQnfiltye6q5G6jqn5qR7ztE6rQBuggBZAZAVQFYAWQFkBUBWAFkB1juasu25n7XnPOvE2dCTZ67Tc2dwzxnc1G/DaQVwEwTICiArALICyAogKwCyAsgKsMCVmrNMzZWevKu3TVJO3M7b8zf5tk/ktALICiArgKwAyAogK4CsAMgKICvAAnfqhXtuQk1J7f1NfQs935X9yt/1np1WADdBgKwAsgIgK4CsALICICuArAALXD3n//7xplvuZ01tuq3T8z3v+44m7nV2WgHcBAGyAiArgKwAsgLICoCsALICrHelJvwmvm7PWdhn+2aO982k9vw9m7IF3AQBsgIgK4CsALICICuArACyArzcffLgnvOsPTeS9tyEmvqOJk6O1l2Nuu/IaQVwEwQgK4CsALICyIpLAMgKICuArAB82dGUbd38X89nnrjLtuf0Z2pCd+K22olbgZ1WAFkBZAWQFQBZAWQFkBUAWQFkBVigcJftRD1ncHtOju779uv+FlL7hlN7cJ1WAFkBZAWQFQBZAWQFkBUAWQFkBVjgrnvqnv/pfuIsbGojaeq3MfHzpjbd9rzOTiuAmyBAVgBZAZAVQFYAWQGQFUBWgAXu1Aunpl0nPnNqQrfuO6qb70y95zon31FqXtlpBZAVQFYAWQGQFUBWAFkBkBVAVoAFbpfg81Izi2/bVtvzXdXN/ta9q9QMrtMK4CYIkBVAVgBkBZAVQFYAZAWQFWABU7bfJjVJWfee69RdjX3Xqu46O60AboIAWQGQFUBWAFkBkBVAVgBZAXgQm7J9237W1J7Uum+h59Rp3XWu287bc8baLlvATRAgKwCyAsgKICsAsgLICiArwMsVTtlO3P158ol6TkPWTX/WPbZu023qG+w5oVv3eZ1WAFkBZAWQFQBZAWQFkBUAWQFkBVjgmrhTFnBaAWQFQFYAWQFkBUBWAFkBZAVAVgBZAWQFkBUAWQFkBZAVAFkBZAWQFQBZAX7UH/mCDwS+uE3XAAAAAElFTkSuQmCC";
 
 function updateCmpButton() {
   const b = document.getElementById('cmp-export-btn');
@@ -3029,8 +3029,7 @@ fetch('./data.json', { cache: 'no-cache' })
   var btn = document.getElementById('btn-share');
   if (!btn) return;
   // Vue Montérégie-Est : partager doit renvoyer vers /monteregie-est/, pas vers la carte
-  // complète — sinon le bouton « Partager » de cette page ferait exactement ce que Nancy
-  // Langlois ne voulait pas (promouvoir les autres territoires).
+  // complète, pour rester cohérent avec le périmètre de la page.
   var estMode = typeof MODE_EST !== 'undefined' && MODE_EST;
   var URL_APP = estMode ? 'https://trouvetaclinique.ca/monteregie-est/' : 'https://trouvetaclinique.ca/';
   var TITRE = estMode ? 'Trouve ta clinique — Montérégie-Est' : 'Trouve ta clinique — Montérégie';
@@ -3071,7 +3070,7 @@ fetch('./data.json', { cache: 'no-cache' })
 // Bouton d'installation visible (PWA). Visible EN PERMANENCE dans l'en-tête (tant que l'appli
 // n'est pas déjà installée) — plus seulement quand le navigateur déclenche son invite native
 // (Chrome/Edge attend parfois plusieurs visites avant de le faire, et Safari ne le fait jamais) :
-// demande d'Olivier du 22 août, « comme avant ». Un second accès identique vit dans le menu
+// « comme avant ». Un second accès identique vit dans le menu
 // « i » (#info-menu-install), pour qui ne remarque pas le bouton de l'en-tête.
 (function () {
   var btn = document.getElementById('btn-install');
@@ -3165,8 +3164,8 @@ if ('serviceWorker' in navigator) {
     if (done) return; done = true;
     var el = document.getElementById('app-loader');
     if (!el) return;
-    // Remis à 2,75 s le 19 août à la demande explicite d'Olivier — l'essai à 600 ms
-    // (18 août, audit) a été annulé : il voulait garder le même temps qu'avant.
+    // Délai de 2,75 s conservé volontairement : l'écran de chargement doit rester lisible
+    // (un essai à 600 ms a été écarté).
     var wait = Math.max(0, 2750 - (Date.now() - start));
     setTimeout(function () {
       el.classList.add('hide');

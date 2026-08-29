@@ -44,8 +44,8 @@ h2{font-size:clamp(1.55rem,3vw,2rem);line-height:1.16;letter-spacing:-.025em;col
 @media(max-width:900px){.fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toc ul{columns:1}.split-card{grid-template-columns:1fr}}
 @media(max-width:680px){.site-header__inner{align-items:flex-start;flex-direction:column;padding:.85rem 0}.nav{width:100%;gap:.2rem}.nav a{padding:.4rem .55rem}.hero{padding:2.4rem 1.1rem 2rem;border-radius:18px;margin-top:.7rem}.fact-grid{grid-template-columns:1fr}.fact-card{min-height:auto}.card-grid.two{grid-template-columns:1fr}.content-section{padding:1.45rem 1rem}.fiche{grid-template-columns:minmax(0,1fr);gap:0;padding:0 .85rem}.fiche dt{border-bottom:0;padding-bottom:0}.horaire th{width:7em}.visual-banner{border-radius:14px}.source-chip{white-space:normal}.step{grid-template-columns:34px 1fr}.site-header{position:relative}}
 
-/* Thème Brouillon Santé Québec — 28 août 2026.
-   Palette transmise par Nancy Langlois : Bleu Santé Québec, Menthe, Sarcelle et Azur.
+/* Thème Brouillon — 28 août 2026.
+   Palette inspirée des couleurs institutionnelles fournies pour le territoire.
    Le thème touche uniquement les pages HTML/SEO; les données des cliniques et la carte
    interactive ne sont pas modifiées. */
 :root{
@@ -331,7 +331,7 @@ p, li { text-wrap: pretty; }
 .resident-note p{ margin:0; color:#4a5568; font-size:.92rem; }
 
 /* ─── Bannière « Carte interactive » — reconstruction HTML/CSS ────────────────
-   Reproduit fidèlement la bannière de référence retenue par Olivier : proportions,
+   Reproduit fidèlement la bannière de référence retenue : proportions,
    couleurs, tailles et position de chaque élément relevées au pixel sur l'original
    (ratio 3,19:1), puis vérifiées par comparaison automatique du rendu à la référence.
    Le logo est le vrai logo du projet, détouré (centre transparent, point bleu).
@@ -428,3 +428,13 @@ p, li { text-wrap: pretty; }
   .sqb-region { font-size:1.62rem; padding-bottom:.15rem; }
   .sqb-rule { position:static; width:100%; height:3px; margin-top:.85rem; }
 }
+
+/* ─── Correctif du survol — 29 août 2026 ──────────────────────────────────────
+   La règle globale « a:hover{color:#170a72} » du thème s'applique aussi aux liens
+   posés sur les fonds bleu foncé (titre de l'en-tête, liens du pied de page) : le
+   texte y devenait bleu foncé sur bleu foncé, donc invisible (contraste 1,00:1).
+   On leur redonne une couleur lisible au survol ET au focus clavier. */
+.brand:hover, .brand:focus-visible { color:#90f1e9; }
+.site-header .nav a:hover, .site-header .nav a:focus-visible { color:#170a72; }
+.site-footer a:hover, .site-footer a:focus-visible { color:#90f1e9; }
+.skip-link:hover, .skip-link:focus, .skip-link:focus-visible { color:#170a72; }
