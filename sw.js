@@ -93,7 +93,9 @@
 // décalage visuel des épingles partageant les mêmes coordonnées, date des données automatisée.
 // v51 (30 août 2026) : retrait des adresses courriel de recrutement de la version publique.
 // RLS ou une région masque les « H » des autres territoires, comme leurs cliniques.
-const CACHE = 'ptem-2027-v51';
+// v52 (30 août 2026) : prototype Montérégie-Est aux couleurs de Santé Québec, avec une vue
+// distincte « Établissements » qui active les sept fiches déjà présentes dans data.json.
+const CACHE = 'ptem-2027-v52';
 const CORE = [
   './',
   './index.html',

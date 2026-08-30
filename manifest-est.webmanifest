@@ -9,8 +9,8 @@
   "scope": "/monteregie-est/",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#0f2240",
-  "theme_color": "#0f2240",
+  "background_color": "#170A72",
+  "theme_color": "#170A72",
   "categories": [
     "medical",
     "health",

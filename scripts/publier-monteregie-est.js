@@ -60,13 +60,13 @@ const REMPLACEMENTS = [
     '      </a>',
     '      <hr>\n' +
     '      <a class="info-menu-link" role="menuitem" href="rls/pierre-boucher/">\n' +
-    '        <span class="info-menu-ic" style="background:#ee2d62">📋</span> Cliniques — RLS Pierre-Boucher\n' +
+    '        <span class="info-menu-ic" style="background:#0080D7">📋</span> Cliniques — RLS Pierre-Boucher\n' +
     '      </a>\n' +
     '      <a class="info-menu-link" role="menuitem" href="rls/richelieu-yamaska/">\n' +
-    '        <span class="info-menu-ic" style="background:#15803d">📋</span> Cliniques — RLS Richelieu-Yamaska\n' +
+    '        <span class="info-menu-ic" style="background:#08A0A0">📋</span> Cliniques — RLS Richelieu-Yamaska\n' +
     '      </a>\n' +
     '      <a class="info-menu-link" role="menuitem" href="rls/pierre-de-saurel/">\n' +
-    '        <span class="info-menu-ic" style="background:#2f4a7a">📋</span> Cliniques — RLS Pierre-De Saurel\n' +
+    '        <span class="info-menu-ic" style="background:#170A72">📋</span> Cliniques — RLS Pierre-De Saurel\n' +
     '      </a>\n' +
     '      <hr>\n' +
     '      <a class="info-menu-link" role="menuitem" href="ptem/">\n' +

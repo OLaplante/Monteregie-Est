@@ -70,13 +70,13 @@ const TERRITOIRES = [
     dossier: 'monteregie-est',
     nom: 'Montérégie-Est',
     mot: 'est',
-    couleur: '#ff3d96',
-    halo: 'rgba(230,0,126,.8)',
-    accent: '#e6007e',
+    couleur: '#90F1E9',
+    halo: 'rgba(144,241,233,.55)',
+    accent: '#08A0A0',
     rls: [
-      ['Pierre-Boucher',    '#ee2d62', 'pierre-boucher'],
-      ['Richelieu-Yamaska', '#15803d', 'richelieu-yamaska'],
-      ['Pierre-De Saurel',  '#2f4a7a', 'pierre-de-saurel']
+      ['Pierre-Boucher',    '#0080D7', 'pierre-boucher'],
+      ['Richelieu-Yamaska', '#08A0A0', 'richelieu-yamaska'],
+      ['Pierre-De Saurel',  '#170A72', 'pierre-de-saurel']
     ],
     recrutement: 'https://www.santemonteregie.qc.ca/est/recrutement-medical-monteregie-est',
     app: true,
