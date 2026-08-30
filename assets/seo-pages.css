@@ -51,10 +51,7 @@ h1 .badge-verif{width:.62em;height:.62em;margin-left:.16em}h1 .badge-verif svg{w
 .site-footer{margin-top:4rem;border-top:1px solid #163958;background:var(--navy);color:#cad8e7}.site-footer__inner{padding:1.55rem 0 2rem;font-size:.88rem}.site-footer a{color:#fff}
 @media(max-width:900px){.fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toc ul{columns:1}.split-card{grid-template-columns:1fr}}
 @media(max-width:680px){.site-header__inner{align-items:flex-start;flex-direction:column;padding:.85rem 0}.nav{width:100%;gap:.2rem}.nav a{padding:.4rem .55rem}.hero{padding:2.4rem 1.1rem 2rem;border-radius:18px;margin-top:.7rem}.fact-grid{grid-template-columns:1fr}.fact-card{min-height:auto}.card-grid.two{grid-template-columns:1fr}.content-section{padding:1.45rem 1rem}.fiche{grid-template-columns:minmax(0,1fr);gap:0;padding:0 .85rem}.fiche dt{border-bottom:0;padding-bottom:0}.horaire th{width:7em}.visual-banner{border-radius:14px}.source-chip{white-space:normal}.step{grid-template-columns:34px 1fr}.site-header{position:relative}}
-/* Identité visuelle Santé Québec — 29 août 2026.
-   Palette institutionnelle appliquée à l'ensemble des pages HTML/SEO du site (carte générale,
-   Montérégie-Est/Centre/Ouest, PTEM, AMP, répertoires). Ne touche pas l'application cartographique
-   (index.html des cartes), qui n'utilise pas cette feuille de style. */
+/* Identité visuelle Santé Québec du brouillon Montérégie-Est. */
 :root{
   --navy:#170A72;
   --navy-2:#24118d;

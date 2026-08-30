@@ -313,36 +313,20 @@ function remplacements(t) {
     );
   }
 
-  // ── Lettrage manuscrit du territoire ──
-  // Kaushan Script n'est demandée QUE sur les pages régionales — la carte complète ne la
-  // télécharge pas.
-  pousser(
-    '<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">',
-    '<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Lato:wght@300;400;700&family=Kaushan+Script&display=swap" rel="stylesheet">'
-  );
-  // Les deux couleurs du lettrage + le trait sous « CLINIQUES EN RECRUTEMENT ». Écrites ICI, en
-  // dur dans le HTML de la page dédiée, plutôt qu'appliquées en JavaScript au chargement :
-  // l'écran de chargement s'affiche AVANT l'exécution des scripts, et le mot serait apparu en
-  // retard, ou pire, dans la mauvaise couleur pendant une fraction de seconde.
-  pousser(
-    ':root { --mot-region: #ff3d96; --mot-halo: rgba(230,0,126,.8); }',
-    `:root { --mot-region: ${t.couleur}; --mot-halo: ${t.halo}; }`
-  );
+  // ── Nom du territoire en Segoe UI ──
+  const motAffiche = t.mot.charAt(0).toUpperCase() + t.mot.slice(1);
   pousser(
     ':root { --sb-accent: linear-gradient(90deg, var(--logo-blue), var(--logo-teal), var(--logo-mint)); }',
     `:root { --sb-accent: ${t.accent}; }`
   );
-  // Écran de chargement : le mot sous MONTÉRÉGIE (option « G7 » retenue le 20 août pour l'Est —
-  // un essai d'agencement différent, testé le 21 août, a été écarté au profit de
-  // celui-ci).
+  // Écran de chargement et en-tête : casse normale, sans lettrage attaché.
   pousser(
-    '      <span class="ldr-region">MONTÉRÉGIE</span>',
-    `      <span class="ldr-region">MONTÉRÉGIE</span>\n      <span class="ldr-mot">${t.mot}</span>`
+    '      <span class="ldr-mot">Est</span>',
+    `      <span class="ldr-mot">${motAffiche}</span>`
   );
-  // En-tête : « Montérégie » suivi du mot manuscrit.
   pousser(
-    '    <strong>Montérégie</strong>',
-    `    <strong>Montérégie<span class="brand-tiret">-</span><span class="brand-mot">${t.mot}</span></strong>`
+    '    <strong>Montérégie<span class="brand-tiret">-</span><span class="brand-mot">Est</span></strong>',
+    `    <strong>Montérégie<span class="brand-tiret">-</span><span class="brand-mot">${motAffiche}</span></strong>`
   );
 
   // ── Aperçu de partage ──
