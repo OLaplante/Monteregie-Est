@@ -13,7 +13,6 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSy
 a{color:#076b91;text-underline-offset:3px}a:hover{text-decoration-thickness:2px;color:#004d70}
 .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;z-index:999;background:#fff;padding:.75rem 1rem;border-radius:10px;box-shadow:var(--shadow)}
 .site-header{background:rgba(7,31,61,.97);color:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
-.site-header .draft-strip{height:24px;overflow:hidden;background:#e6007e;color:#fff;border-bottom:1px solid rgba(255,255,255,.25);font-family:Raleway,Arial,sans-serif;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.18)}.site-header .draft-strip__track{display:flex;align-items:center;width:max-content;height:100%;animation:draftTicker 24s linear infinite;will-change:transform}.site-header .draft-strip__group{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;min-width:100vw;padding:0 clamp(9px,1vw,16px);gap:clamp(7px,1vw,14px);color:#fff;font-size:.66rem;font-weight:800;line-height:1;letter-spacing:.08em}.site-header .draft-strip__group>span{flex:0 0 auto}.site-header .draft-strip__separator{font-size:.75rem;opacity:.9}@keyframes draftTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.site-header .draft-strip__track{width:100%;animation:none;transform:none}.site-header .draft-strip__group{min-width:100%;padding:0 8px;justify-content:center;overflow:hidden}.site-header .draft-strip__group[aria-hidden="true"]{display:none}}
 .site-header__inner,main,.site-footer__inner{width:min(1080px,calc(100% - 36px));margin:0 auto}.site-header__inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{color:#fff;text-decoration:none;font-weight:900;letter-spacing:-.025em;font-size:1.08rem}.brand::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--mint));margin-left:7px;vertical-align:middle}
 .nav{display:flex;flex-wrap:wrap;gap:.35rem}.nav a{color:#ddebfa;text-decoration:none;font-weight:700;padding:.48rem .68rem;border-radius:10px;font-size:.92rem}.nav a:hover,.nav a[aria-current="page"]{background:rgba(91,210,197,.13);color:#fff}
@@ -40,14 +39,22 @@ h2{font-size:clamp(1.55rem,3vw,2rem);line-height:1.16;letter-spacing:-.025em;col
 .fiche{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:0 1.4rem;margin:1rem 0;padding:0 1rem;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.fiche dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.055em;color:var(--muted);padding:.68rem 0 .2rem;border-bottom:1px solid var(--line);min-width:10em;font-weight:800}.fiche dd{margin:0;padding:.63rem 0;border-bottom:1px solid var(--line);min-width:0;overflow-wrap:anywhere}.fiche dt:last-of-type,.fiche dd:last-of-type{border-bottom:0}
 .horaire{border-collapse:separate;border-spacing:0;margin:1rem 0;width:min(470px,100%);border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff}.horaire th,.horaire td{text-align:left;padding:.62rem .82rem;border-bottom:1px solid var(--line);font-weight:400}.horaire tr:last-child th,.horaire tr:last-child td{border-bottom:0}.horaire th{color:var(--muted);font-weight:700;width:9em;background:#f8fbfd}.equipe{list-style:none;margin:1rem 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.6rem}.equipe li{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;padding:.55rem .75rem;background:#fff}.eq-n{font-weight:900;color:var(--navy)}
 .repertoire{list-style:none;margin:1rem 0 0;padding:0;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.repertoire li{padding:.78rem .9rem;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.2rem 1rem;align-items:baseline;justify-content:space-between}.repertoire li:last-child{border-bottom:0}.repertoire a{text-decoration:none}.repertoire a:hover strong{text-decoration:underline}.rep-meta{color:var(--muted);font-size:.9rem}.rep-lien{margin:.2rem 0 .7rem;font-size:.94rem}.compte{display:inline-block;background:#eaf8f6;color:#08756a;border:1px solid #c2e7e0;border-radius:999px;font-size:.8rem;font-weight:800;padding:.08rem .58rem;vertical-align:middle}
+/* Badge « Vérifié » — ajouté le 26 août 2026, voir badgeVerif() dans generer-pages-seo.js et le
+   même composant côté app (index.html, .badge-verif). Icône seule, couleur d'accent existante
+   (--success), infobulle au survol/focus/toucher (voir le petit script inline dans page()). */
+.badge-verif{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;padding:0;margin-left:.32em;vertical-align:-3px;background:none;border:none;color:var(--success);cursor:pointer;position:relative;flex:none;-webkit-tap-highlight-color:transparent;font-size:inherit}
+.badge-verif svg{width:17px;height:17px;display:block}
+.badge-verif-tip{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);background:var(--navy);color:#fff;font-size:.76rem;font-weight:500;line-height:1.42;padding:.5rem .62rem;border-radius:8px;white-space:normal;width:max-content;max-width:230px;box-shadow:0 8px 20px rgba(7,31,61,.24);opacity:0;visibility:hidden;transition:opacity .12s ease,transform .12s ease;pointer-events:none;z-index:60;text-align:left}
+.badge-verif-tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy)}
+.badge-verif:hover .badge-verif-tip,.badge-verif:focus-visible .badge-verif-tip,.badge-verif.show .badge-verif-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+h1 .badge-verif{width:.62em;height:.62em;margin-left:.16em}h1 .badge-verif svg{width:100%;height:100%}
 .site-footer{margin-top:4rem;border-top:1px solid #163958;background:var(--navy);color:#cad8e7}.site-footer__inner{padding:1.55rem 0 2rem;font-size:.88rem}.site-footer a{color:#fff}
 @media(max-width:900px){.fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toc ul{columns:1}.split-card{grid-template-columns:1fr}}
 @media(max-width:680px){.site-header__inner{align-items:flex-start;flex-direction:column;padding:.85rem 0}.nav{width:100%;gap:.2rem}.nav a{padding:.4rem .55rem}.hero{padding:2.4rem 1.1rem 2rem;border-radius:18px;margin-top:.7rem}.fact-grid{grid-template-columns:1fr}.fact-card{min-height:auto}.card-grid.two{grid-template-columns:1fr}.content-section{padding:1.45rem 1rem}.fiche{grid-template-columns:minmax(0,1fr);gap:0;padding:0 .85rem}.fiche dt{border-bottom:0;padding-bottom:0}.horaire th{width:7em}.visual-banner{border-radius:14px}.source-chip{white-space:normal}.step{grid-template-columns:34px 1fr}.site-header{position:relative}}
-
-/* Thème Brouillon — 28 août 2026.
-   Palette inspirée des couleurs institutionnelles fournies pour le territoire.
-   Le thème touche uniquement les pages HTML/SEO; les données des cliniques et la carte
-   interactive ne sont pas modifiées. */
+/* Identité visuelle Santé Québec — 29 août 2026.
+   Palette institutionnelle appliquée à l'ensemble des pages HTML/SEO du site (carte générale,
+   Montérégie-Est/Centre/Ouest, PTEM, AMP, répertoires). Ne touche pas l'application cartographique
+   (index.html des cartes), qui n'utilise pas cette feuille de style. */
 :root{
   --navy:#170A72;
   --navy-2:#24118d;
@@ -89,10 +96,6 @@ a:hover{color:#170a72}
   border-bottom:0;
   box-shadow:0 8px 26px rgba(23,10,114,.16);
   backdrop-filter:blur(12px);
-}
-
-.site-header .draft-strip{
-  font-family:"Segoe UI",SegoeUI,Arial,sans-serif;
 }
 
 .site-header__inner{min-height:74px}
@@ -295,6 +298,13 @@ h1{
   background:var(--navy);
   color:#e5e3f4;
 }
+.site-footer__copyright{
+  margin-top:.85rem;
+  padding-top:.85rem;
+  border-top:1px solid rgba(255,255,255,.14);
+  color:#aab3d6;
+  font-size:.82rem;
+}
 
 @media(max-width:680px){
   .site-header__inner{padding:.8rem 0}
@@ -335,8 +345,9 @@ p, li { text-wrap: pretty; }
    couleurs, tailles et position de chaque élément relevées au pixel sur l'original
    (ratio 3,19:1), puis vérifiées par comparaison automatique du rendu à la référence.
    Le logo est le vrai logo du projet, détouré (centre transparent, point bleu).
-   Les textes sont du vrai texte HTML — ils ne sont pas gravés dans une image.
-   Toute la bannière est un lien vers la carte Montérégie-Est. */
+   Les textes sont du vrai texte HTML — ils ne sont pas gravés dans une image, ce qui permet de
+   réutiliser le même gabarit pour chaque territoire (le nom affiché change, pas l'image).
+   Toute la bannière est un lien vers la carte du territoire (ou la carte générale). */
 
 .sqb-wrap { margin:1.7rem 0 2.2rem; }
 .sqb-wrap.compact { margin-top:1.25rem; }

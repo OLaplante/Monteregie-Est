@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-08-18 -->
+<!-- build: 2026-08-29 -->
 <html lang="fr"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,26 +13,27 @@
      NE PAS renommer : les clés localStorage « dtmf-mtg-* » (favoris et notes des utilisateurs),
      le « id » du manifeste, ni le nom de domaine trouvetaclinique.ca. -->
 <!-- Titre/description/og : réalignés le 19 août sur les termes de recherche PTEM 2027 / AMP
-     au prix d'un léger retour en arrière assumé sur la décision de renommage. -->
-<title>Cliniques en recrutement — Montérégie-Est | Trouve ta clinique</title>
-<meta name="description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet : coordonnées, pratiques, horaires et personnes-ressources.">
+     (patch SEO validé), au prix d'un léger retour en arrière assumé sur la
+     décision de renommage — voir claude/audit-18aout-4axes.md pour la discussion. -->
+<title>PTEM 2027 Montérégie — Cliniques en recrutement | Trouve ta clinique</title>
+<meta name="description" content="Explorez les cliniques en recrutement en Montérégie et comparez les milieux de pratique pour préparer votre PTEM en médecine familiale et vos AMP.">
 <meta name="google-site-verification" content="-8EkDVTZKsywxr7fJMd3kZIMVaUedo7eU9ThFutr8dY" />
-<link rel="canonical" href="https://trouvetaclinique.ca/monteregie-est/">
-<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://trouvetaclinique.ca/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Trouve ta clinique">
 <meta property="og:locale" content="fr_CA">
-<meta property="og:url" content="https://trouvetaclinique.ca/monteregie-est/">
-<meta property="og:title" content="Cliniques en recrutement — Montérégie-Est | Trouve ta clinique">
-<meta property="og:description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet des cliniques du territoire.">
-<meta property="og:image" content="https://trouvetaclinique.ca/assets/banniere_monteregie-est.png">
-<meta property="og:image:width" content="1600">
-<meta property="og:image:height" content="400">
-<meta property="og:image:alt" content="Carte interactive Montérégie-Est — Trouve ta clinique.">
+<meta property="og:url" content="https://trouvetaclinique.ca/">
+<meta property="og:title" content="PTEM 2027 Montérégie — Cliniques en recrutement | Trouve ta clinique">
+<meta property="og:description" content="Carte interactive des cliniques en recrutement en Montérégie pour préparer son choix de milieu de pratique en médecine familiale.">
+<meta property="og:image" content="https://trouvetaclinique.ca/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carte des cliniques en recrutement de la Montérégie — Trouve ta clinique.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cliniques en recrutement — Montérégie-Est | Trouve ta clinique">
-<meta name="twitter:description" content="Carte interactive des cliniques en recrutement en Montérégie-Est, avec accès optionnel au répertoire complet des cliniques du territoire.">
-<meta name="twitter:image" content="https://trouvetaclinique.ca/assets/banniere_monteregie-est.png">
+<meta name="twitter:title" content="PTEM 2027 Montérégie — Cliniques en recrutement | Trouve ta clinique">
+<meta name="twitter:description" content="Carte interactive des cliniques en recrutement en Montérégie pour préparer son choix de milieu de pratique en médecine familiale.">
+<meta name="twitter:image" content="https://trouvetaclinique.ca/og-image.png?v=2">
 <!-- Données structurées : aident Google à comprendre de quoi parle le site et à quel
      territoire il s'applique. Volontairement minimal — on ne déclare aucun éditeur
      institutionnel, le projet n'étant pas hébergé par un établissement.
@@ -41,15 +42,15 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://trouvetaclinique.ca/monteregie-est/#website",
-  "name": "Trouve ta clinique — Montérégie-Est",
-  "alternateName": "Cliniques en recrutement — Montérégie-Est",
-  "url": "https://trouvetaclinique.ca/monteregie-est/",
+  "@id": "https://trouvetaclinique.ca/#website",
+  "name": "Trouve ta clinique — Cliniques en recrutement en Montérégie",
+  "alternateName": "PTEM 2027 — Cliniques en recrutement en Montérégie",
+  "url": "https://trouvetaclinique.ca/",
   "inLanguage": "fr-CA",
-  "description": "Carte interactive des cliniques en recrutement médical de la Montérégie-Est, avec accès optionnel au répertoire complet du territoire.",
+  "description": "Carte interactive des cliniques en recrutement médical de la Montérégie (Est, Centre et Ouest) : coordonnées, pratiques, horaires et personnes-ressources.",
   "about": {
     "@type": "Place",
-    "name": "Montérégie-Est",
+    "name": "Montérégie",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "QC",
@@ -58,8 +59,8 @@
   }
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Lato:wght@300;400;700&family=Kaushan+Script&display=swap" rel="stylesheet">
-<link rel="manifest" href="./manifest.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#0f2240">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,12 +69,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
 <link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png">
-<link rel="apple-touch-icon" href="./apple-touch-icon-est.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon-180.png">
 <link rel="stylesheet" href="./leaflet.css">
 <link rel="stylesheet" href="./vendor/maplibre-gl.css">
 <style>
 :root {
-  --header-height: 98px;
   --navy: #0f2240; --navy2: #1a3558; --blue: #0080d7; --blue-lt: #dbeafe;
   --logo-navy: #0f2240; --logo-blue: #0080d7; --logo-mint: #7ee6df; --logo-teal: #17a9a8; --logo-green: #17a9a8;
   --cream: #f8f6f1; --white: #fff; --border: #ddd5c4; --muted: #64748b;
@@ -93,24 +93,12 @@ html, body { height: 100%; overflow: hidden; font-family: 'Lato', sans-serif; }
 
 /* HEADER */
 header {
-  position: fixed; top: 0; left: 0; right: 0; height: var(--header-height);
+  position: fixed; top: 0; left: 0; right: 0; height: 76px;
   background: var(--logo-navy); border-bottom: none;
-  display: flex; align-items: center; padding: 22px 0 0 26px; gap: 16px; z-index: 1000;
+  display: flex; align-items: center; padding: 0 0 0 26px; gap: 16px; z-index: 1000;
 }
 header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
   background: linear-gradient(90deg, var(--logo-blue), var(--logo-teal), var(--logo-mint)); }
-.draft-strip { position:absolute; top:0; left:0; right:0; height:22px; z-index:2;
-  overflow:hidden; background:#e6007e; color:#fff; border-bottom:1px solid rgba(255,255,255,.25);
-  font-family:'Raleway',sans-serif; text-transform:uppercase; white-space:nowrap;
-  box-shadow:0 2px 8px rgba(0,0,0,.2); pointer-events:none; }
-.draft-strip__track { display:flex; align-items:center; width:max-content; height:100%;
-  animation:draftTicker 24s linear infinite; will-change:transform; }
-.draft-strip__group { display:flex; align-items:center; justify-content:space-between; flex-shrink:0;
-  min-width:100vw; padding:0 clamp(9px,1vw,16px); gap:clamp(7px,1vw,14px);
-  color:#fff; font-size:10.5px; font-weight:800; line-height:1; letter-spacing:.08em; }
-.draft-strip__group > span { flex:0 0 auto; }
-.draft-strip__separator { font-size:12px; opacity:.9; }
-@keyframes draftTicker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 .brand { display:flex; align-items:center; gap:14px; cursor:pointer; }
 .brand:hover { opacity:.85; }
 .brand:focus-visible { outline:2px solid var(--orange); outline-offset:3px; border-radius:6px; }
@@ -118,9 +106,6 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .brand.tapped .logo-img { animation: brandTap .4s ease; }
 @media (prefers-reduced-motion: reduce) { .brand.tapped .logo-img { animation: none; }
   .logo-img::after { animation: none; }
-  .draft-strip__track { width:100%; animation:none; transform:none; }
-  .draft-strip__group { min-width:100%; padding:0 8px; justify-content:center; overflow:hidden; }
-  .draft-strip__group[aria-hidden="true"] { display:none; }
   /* !important requis : la règle .sidebar-toggle{animation:sbPeek…} (l. 373,
      même spécificité, mais plus bas dans le fichier) gagnait sinon la cascade
      — l'onglet « Liste » continuait de bouger avec « Réduire les animations »
@@ -155,22 +140,30 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
      le texte, tombait sinon sous la ligne sur les téléphones étroits. Sans effet sur la carte
      complète, où le titre est un seul mot qui n'a jamais eu de raison de se couper. */
   white-space: nowrap; }
-/* « est » manuscrit de l'en-tête — page Montérégie-Est seulement (élément inséré par
-   scripts/publier-monteregie-est.js, absent de la carte complète). Il remplace le « -Est »
-   qui était auparavant écrit en toutes lettres. Taille en « em » : il suit donc
-   automatiquement la réduction de .logo-text strong sur les écrans étroits. */
-/* line-height: 0 — le « est » est 1,45 fois plus grand que le titre. À hauteur de ligne normale,
+/* ── LETTRAGE MANUSCRIT DU TERRITOIRE ───────────────────────────────────────────────────────
+   « est », « centre » ou « ouest » en Kaushan Script, sur les pages régionales seulement (les
+   éléments sont insérés par scripts/publier-regions.js et n'existent pas dans la carte des trois
+   territoires). Une seule paire de règles sert les trois pages : seules ces deux variables
+   changent d'un territoire à l'autre, et c'est le script de publication qui les remplace.
+   Valeur par défaut = le rose de la Montérégie-Est, première page à avoir eu ce lettrage.
+   Les teintes sont les couleurs de territoire (REGION_COLORS) éclaircies pour rester lisibles
+   sur le bleu marine de l'en-tête et de l'écran de chargement — exactement le rapport qu'il y a
+   entre le rose de carte #e6007e et le rose de lettrage #ff3d96. */
+:root { --mot-region: #ff3d96; --mot-halo: rgba(230,0,126,.8); }
+/* Taille en « em » : le lettrage suit donc automatiquement la réduction de .logo-text strong
+   sur les écrans étroits. */
+/* line-height: 0 — le mot est 1,45 fois plus grand que le titre. À hauteur de ligne normale,
    il gonflait la boîte de ligne du titre de 29,4 à 40,6 px; le bloc étant centré verticalement
    dans l'en-tête, « RECRUTEMENT » remontait de 5,6 px par rapport à la carte complète. À zéro,
    le lettrage ne participe plus au calcul de la hauteur de ligne : il se dessine par-dessus,
    sans rien déplacer, et l'en-tête retrouve exactement la même mise en page que l'autre carte. */
-.logo-text .brand-est { font-family: 'Kaushan Script', cursive; font-weight: 400;
+.logo-text .brand-mot { font-family: 'Kaushan Script', cursive; font-weight: 400;
   font-size: 1.45em; line-height: 0; margin-left: 1px;
-  /* Couleur pleine, pas de dégradé : la « brillance » du dégradé blanc→rose ne convenait
-     pas pour la bannière de l'en-tête. Même rose que le
-     trait d'union juste en dessous et que le « est » de l'écran de chargement (.ldr-est) : les
+  /* Couleur pleine, pas de dégradé (retiré le 21 août — la « brillance »
+     du dégradé blanc→rose ne convenait plus pour la bannière de l'en-tête). Même teinte que le
+     trait d'union juste en dessous et que le mot de l'écran de chargement (.ldr-mot) : les
      3 usages du lettrage manuscrit restent visuellement cohérents entre eux. */
-  color: #ff3d96;
+  color: var(--mot-region);
   /* La hampe du « t » de Kaushan Script dépasse d'environ 10 % de sa largeur au-delà de la
      largeur d'avance déclarée par la police (constaté le 20 août, à l'époque où ce padding
      servait aussi de marge intérieure pour le dégradé en background-clip). Sans lien avec le
@@ -178,10 +171,10 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
      haut du « t » ne soit pas tranché net à la verticale; la marge négative annule l'espace
      ajouté pour que rien ne bouge autour. */
   padding: .12em .3em .06em 0; margin-right: -.3em;
-  filter: drop-shadow(0 0 10px rgba(230,0,126,.8)); }
-/* Trait d'union rose entre « Montérégie » et le « est » manuscrit. Il reste dans la graisse du
+  filter: drop-shadow(0 0 10px var(--mot-halo)); }
+/* Trait d'union coloré entre « Montérégie » et le mot manuscrit. Il reste dans la graisse du
    titre (Raleway 700) : c'est le lettrage qui doit attirer l'œil, pas le tiret. */
-.logo-text .brand-tiret { color: #ff3d96; }
+.logo-text .brand-tiret { color: var(--mot-region); }
 .header-right { margin-left: auto; display: flex; gap: 10px; align-items: center; padding-right: 12px; position: relative; }
 .btn-info { display: inline-flex; align-items: center; justify-content: center;
   width: 35px; height: 35px; border-radius: 50%; flex-shrink: 0; padding: 0;
@@ -263,9 +256,9 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .ios-tip b { color: #ffd76b; }
 
 /* LAYOUT */
-.layout { display: flex; height: 100vh; height: 100dvh; padding-top: var(--header-height); }
+.layout { display: flex; height: 100vh; height: 100dvh; padding-top: 76px; }
 
-.annonce-banner { display: none; position: fixed; top: calc(var(--header-height) + 10px); left: 50%; transform: translateX(-50%);
+.annonce-banner { display: none; position: fixed; top: 86px; left: 50%; transform: translateX(-50%);
   z-index: 920; width: min(330px, calc(100% - 104px));
   background: var(--carte); border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
   box-shadow: 0 10px 30px rgba(15,34,64,.22); }
@@ -292,10 +285,22 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .sb-head { position: relative; padding: 14px 16px 10px; border-bottom: 1px solid var(--border); background: var(--cream); flex-shrink: 0; }
 .sb-close { display: none; position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border: none; background: transparent; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer; border-radius: 8px; z-index: 1; }
 .sb-close:hover { background: var(--cream); color: var(--texte); }
-.sb-head h2 { display:inline-block; font-family:'Raleway',sans-serif; font-weight:800; font-size:19px;
-  line-height:1.2; text-transform:uppercase; letter-spacing:.035em; color:var(--navy);
-  border-bottom:3px solid #e6007e; padding-bottom:4px; }
-:root[data-theme="sombre"] .sb-head h2 { color:#dbeafe; }
+/* ── ACCENT DE TERRITOIRE ───────────────────────────────────────────────────────────────────
+   Couleur du trait sous « CLINIQUES EN RECRUTEMENT », en haut de la liste. Sur la carte des
+   trois territoires, c'est EXACTEMENT le dégradé turquoise du filet sous l'en-tête
+   (header::after) : les deux traits se répondent. Sur une carte régionale, c'est la couleur
+   pleine du territoire — rose pour l'Est, vert pour le Centre, bleu pour l'Ouest, soit les
+   mêmes teintes que ses épingles sur la carte générale (REGION_COLORS).
+   Une seule déclaration, remplacée à la publication par scripts/publier-regions.js : rien
+   d'autre dans la feuille de style n'a à connaître le territoire. */
+:root { --sb-accent: linear-gradient(90deg, var(--logo-blue), var(--logo-teal), var(--logo-mint)); }
+.sb-head h2 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 20px;
+  text-transform: uppercase; letter-spacing: .01em; color: var(--texte); line-height: 1.15; }
+/* Trait de couleur sous le titre (26 août 2026 — reprise du brouillon
+   Montérégie-Est). En ::after plutôt qu'en border-bottom : la hauteur, les coins arrondis et
+   le dégradé ne sont pas exprimables sur une bordure. */
+.sb-head h2::after { content: ''; display: block; height: 4px; border-radius: 2px;
+  margin-top: 7px; background: var(--sb-accent); }
 /* Sous 400px, le bouton fermer (32px, absolu à droite) peut passer sous le
    titre en nowrap : on lui réserve sa place et on autorise le titre à passer
    à la ligne plutôt que de disparaître derrière (audit du 18 août). */
@@ -309,7 +314,7 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
      repliables, en-tête qui se réduit au défilement) resterait à envisager
      séparément si ça ne suffit pas. */
   .sb-search { margin-top: 8px; }
-  .sb-view-row { margin-top: 6px; gap:6px; }
+  .sb-view-row { margin-top: 6px; gap: 6px; }
   .reg-filter { margin-top: 8px; }
   .rls-filter { margin-top: 6px; }
   .docs-wrap { margin-top: 6px; }
@@ -325,40 +330,56 @@ header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; h
 .sb-search-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: none; background: transparent; cursor: pointer; color: var(--muted); font-size: 12px; line-height: 1; padding: 5px 7px; border-radius: 6px; display: none; }
 .sb-search-clear:hover { background: var(--cream); color: var(--texte); }
 .sb-search.has-text .sb-search-clear { display: block; }
-.sb-view-row { margin-top:10px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:stretch; gap:8px; }
-.fav-toggle { display: inline-flex; align-items: center; justify-content:center; gap: 5px;
+/* 27 août 2026 : le bouton favoris partage désormais sa ligne avec l'interrupteur « Toutes
+   les cliniques » (voir .sb-view-row ci-dessous), repris du brouillon Montérégie-Est — la
+   fonctionnalité qui affiche aussi les milieux ne recrutant pas actuellement, jusque-là
+   invisibles dans l'application (mais déjà présents dans data.json, `recrutementActif:false`,
+   avec leurs propres pages SEO). */
+.sb-view-row { margin-top: 10px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  align-items: stretch; gap: 8px; }
+.fav-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 5px;
   background: var(--champ); border: 1.5px solid var(--border); color: var(--texte2); cursor: pointer;
   font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .02em;
-  width:100%; padding: 9px 10px; min-height: 38px; border-radius: 20px; transition: all .15s; min-width:0; }
+  width: 100%; padding: 9px 10px; min-height: 38px; border-radius: 20px; transition: all .15s; min-width: 0; }
 .fav-toggle:hover { border-color: #f5b301; }
 .fav-toggle.active { background: var(--jaune-doux); border-color: #f5b301; color: #9a6a00; }
-.all-clinics-wrap { position:relative; width:100%; min-width:0; }
-.all-clinics-toggle { width:100%; min-height:38px; display:flex; align-items:center; justify-content:center; gap:7px;
-  padding:8px 10px; border-radius:20px; border:1.5px solid var(--border); background:var(--champ);
-  color:var(--texte2); cursor:pointer; font-family:'Raleway',sans-serif; font-weight:700;
-  font-size:11.5px; line-height:1.1; transition:background .15s,border-color .15s,color .15s; }
-.all-clinics-toggle:hover { border-color:var(--blue); }
-.all-clinics-toggle[aria-checked="true"] { background:var(--blue-lt); border-color:var(--blue); color:var(--navy); }
-.mini-toggle { width:29px; height:17px; padding:2px; border-radius:999px; background:#c9c1ad;
-  display:inline-flex; align-items:center; flex:0 0 auto; box-sizing:border-box; transition:background .15s; }
-.mini-toggle::after { content:''; width:13px; height:13px; border-radius:50%; background:#fff;
-  box-shadow:0 1px 3px rgba(15,34,64,.28); transform:translateX(0); transition:transform .16s; }
-.all-clinics-toggle[aria-checked="true"] .mini-toggle { background:var(--blue); }
-.all-clinics-toggle[aria-checked="true"] .mini-toggle::after { transform:translateX(12px); }
-.all-clinics-info { position:absolute; top:-6px; right:-4px; width:18px; height:18px; display:flex;
-  align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--muted);
-  background:var(--white); color:var(--muted); font:italic 11px/1 Georgia,serif; cursor:pointer; padding:0;
-  box-shadow:0 1px 4px rgba(15,34,64,.15); z-index:2; }
-.all-clinics-info:hover, .all-clinics-info[aria-expanded="true"] { border-color:var(--orange); color:var(--orange); }
-.all-clinics-tip { position:absolute; top:46px; right:0; width:min(250px,calc(100vw - 48px)); z-index:20;
-  background:var(--navy); color:#fff; border-radius:9px; padding:9px 11px; font-size:12px; line-height:1.4;
-  box-shadow:0 5px 18px rgba(15,34,64,.28); }
-.all-clinics-tip::before { content:''; position:absolute; right:9px; top:-6px; width:12px; height:12px;
-  background:var(--navy); transform:rotate(45deg); }
-:root[data-theme="sombre"] .all-clinics-toggle[aria-checked="true"] { background:#17314a; color:#dbeafe; }
-.sb-item.non-recruiting .sb-num { color:var(--navy); border:1px solid var(--rls-base,var(--navy)); box-sizing:border-box; }
-.sb-status { display:inline-block; margin-top:4px; padding:2px 6px; border-radius:999px; background:var(--cream);
-  border:1px solid var(--border); color:var(--muted); font-size:10.5px; line-height:1.2; }
+.all-clinics-wrap { position: relative; width: 100%; min-width: 0; }
+.all-clinics-toggle { width: 100%; min-height: 38px; display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 8px 10px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--champ);
+  color: var(--texte2); cursor: pointer; font-family: 'Raleway', sans-serif; font-weight: 700;
+  font-size: 11.5px; line-height: 1.1; transition: background .15s, border-color .15s, color .15s; }
+.all-clinics-toggle:hover { border-color: var(--blue); }
+.all-clinics-toggle[aria-checked="true"] { background: var(--blue-lt); border-color: var(--blue); color: var(--navy); }
+.mini-toggle { width: 29px; height: 17px; padding: 2px; border-radius: 999px; background: #c9c1ad;
+  display: inline-flex; align-items: center; flex: 0 0 auto; box-sizing: border-box; transition: background .15s; }
+.mini-toggle::after { content: ''; width: 13px; height: 13px; border-radius: 50%; background: #fff;
+  box-shadow: 0 1px 3px rgba(15,34,64,.28); transform: translateX(0); transition: transform .16s; }
+.all-clinics-toggle[aria-checked="true"] .mini-toggle { background: var(--blue); }
+.all-clinics-toggle[aria-checked="true"] .mini-toggle::after { transform: translateX(12px); }
+.all-clinics-info { position: absolute; top: -6px; right: -4px; width: 18px; height: 18px; display: flex;
+  align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--muted);
+  background: var(--white); color: var(--muted); font: italic 11px/1 Georgia, serif; cursor: pointer; padding: 0;
+  box-shadow: 0 1px 4px rgba(15,34,64,.15); z-index: 2; }
+.all-clinics-info:hover, .all-clinics-info[aria-expanded="true"] { border-color: var(--orange); color: var(--orange); }
+.all-clinics-tip { position: absolute; top: 46px; right: 0; width: min(250px, calc(100vw - 48px)); z-index: 20;
+  background: var(--navy); color: #fff; border-radius: 9px; padding: 9px 11px; font-size: 12px; line-height: 1.4;
+  box-shadow: 0 5px 18px rgba(15,34,64,.28); }
+.all-clinics-tip::before { content: ''; position: absolute; right: 9px; top: -6px; width: 12px; height: 12px;
+  background: var(--navy); transform: rotate(45deg); }
+:root[data-theme="sombre"] .all-clinics-toggle[aria-checked="true"] { background: #17314a; color: #dbeafe; }
+/* Épingle et rond de liste d'un milieu qui ne recrute pas : contour au lieu du remplissage
+   plein, pour rester lisible même dans sa couleur pâlie (voir RLS_COLORS_PALES_PAR_REGION plus
+   bas dans le script). */
+.sb-item.non-recruiting .sb-num { color: var(--navy); border: 1px solid var(--rls-base, var(--navy)); box-sizing: border-box; }
+.sb-status { display: inline-block; margin-top: 4px; padding: 2px 6px; border-radius: 999px; background: var(--cream);
+  border: 1px solid var(--border); color: var(--muted); font-size: 10.5px; line-height: 1.2; }
+.recruit-status { margin: 0; padding: 12px 14px; border-radius: 9px; display: flex;
+  align-items: center; gap: 9px; background: #fff3e8; border: 1px solid #efb27c; color: #8a470c;
+  font-size: 14px; line-height: 1.4; }
+.recruit-status strong { font-family: 'Raleway', sans-serif; font-size: 14.5px; font-weight: 800; }
+.recruit-status .status-i { width: 18px; height: 18px; flex: 0 0 auto; display: inline-flex; align-items: center;
+  justify-content: center; border-radius: 50%; background: #c56613; color: #fff; font: italic 11px/1 Georgia, serif; }
+:root[data-theme="sombre"] .recruit-status { background: #3d2918; border-color: #8f5526; color: #f7c99e; }
 .cmp-export-btn { margin-top: 8px; display: none; align-items: center; justify-content: center; gap: 6px; width: 100%;
   padding: 9px 12px; border-radius: 8px; border: 1.5px solid var(--navy); background: var(--navy); color: #fff;
   font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12.5px; cursor: pointer; }
@@ -438,8 +459,8 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 /* MARQUEUR HÔPITAL — même construction de goutte que les épingles de clinique (carré à
    bord arrondi tourné à -45°), mais plus grande, toujours rouge, avec un rond blanc et un
    « H » rouge au centre — jamais confondue avec une épingle numérotée de clinique : un
-   hôpital n'est pas « en recrutement », c'est un repère de référence. Choix retenu par
-   d'après la référence visuelle retenue. Voir buildHopitalMarkers(). */
+   hôpital n'est pas « en recrutement », c'est un repère de référence. Choix retenu
+   le 21 août (référence visuelle fournie). Voir buildHopitalMarkers(). */
 .hosp-pin-circle { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
   transform: rotate(45deg); }
 .hosp-pin-circle-inner { width: 58%; height: 58%; background: #fff; border-radius: 50%;
@@ -454,7 +475,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   background: var(--navy); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .03em; }
 
 /* DETAIL PANEL (READ-ONLY VIEWER) */
-.detail { position: fixed; top: var(--header-height); right: 0; bottom: 0; width: 480px;
+.detail { position: fixed; top: 76px; right: 0; bottom: 0; width: 480px;
   background: var(--white); border-left: 1px solid var(--border);
   box-shadow: -6px 0 30px rgba(0,0,0,.1); z-index: 960;
   display: flex; flex-direction: column; overflow: hidden;
@@ -469,6 +490,29 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   text-transform:uppercase; color:var(--orange); margin-bottom:4px; }
 .dp-name-display { font-family:'Raleway',sans-serif; font-weight:800; font-size:24px; line-height:1.22; padding-right: 30px; }
 .dp-body { flex:1; overflow-y:auto; padding: 0 0 20px; }
+
+/* Badge « Vérifié » — sceau compact affiché après le nom d'une clinique dont les informations
+   ont été transmises via le formulaire ET validées manuellement (voir estValide() / champ
+   validation.statut === 'valide' dans data.json). Ajouté le 26 août 2026. Icône seule (pas de
+   texte permanent), couleur d'accent existante (--green), explication au survol/focus/toucher
+   via une infobulle maison (le projet n'a pas de composant tooltip commun et --title seul ne
+   se déclenche pas de façon fiable au toucher). */
+.badge-verif { display: inline-flex; align-items: center; justify-content: center; width: 18px;
+  height: 18px; padding: 0; margin-left: 5px; vertical-align: -3px; background: none; border: none;
+  color: var(--green); cursor: pointer; position: relative; flex: none; -webkit-tap-highlight-color: transparent; }
+.badge-verif svg { width: 16px; height: 16px; display: block; }
+.badge-verif-tip { position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%) translateY(4px);
+  background: var(--navy); color: #fff; font-size: 12px; font-weight: 500; line-height: 1.42;
+  padding: 8px 10px; border-radius: 8px; white-space: normal; width: max-content; max-width: 230px;
+  box-shadow: 0 8px 20px rgba(15,34,64,.24); opacity: 0; visibility: hidden;
+  transition: opacity .12s ease, transform .12s ease; pointer-events: none; z-index: 1400; text-align: left; }
+.badge-verif-tip::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: var(--navy); }
+.badge-verif:hover .badge-verif-tip, .badge-verif:focus-visible .badge-verif-tip,
+.badge-verif.show .badge-verif-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+@media (max-width: 480px) { .badge-verif-tip { max-width: 190px; font-size: 11.5px; left: auto; right: -6px;
+    transform: translateY(4px); } .badge-verif.show .badge-verif-tip, .badge-verif:hover .badge-verif-tip,
+    .badge-verif:focus-visible .badge-verif-tip { transform: translateY(0); } .badge-verif-tip::after { left: auto; right: 10px; transform: none; } }
 
 /* DISPLAY SECTIONS */
 .vw-sec { padding: 14px 18px 0; }
@@ -489,13 +533,6 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 .niveau-explain.show { display:block; }
 .niveau-explain a { color:var(--blue); font-weight:600; text-decoration:underline; }
 .vw-divider { height:1px; background:var(--border); margin:14px 18px 0; }
-.recruit-status { margin:0; padding:12px 14px; border-radius:9px; display:flex;
-  align-items:center; gap:9px; background:#fff3e8; border:1px solid #efb27c; color:#8a470c;
-  font-size:14px; line-height:1.4; }
-.recruit-status strong { font-family:'Raleway',sans-serif; font-size:14.5px; font-weight:800; }
-.recruit-status .status-i { width:18px; height:18px; flex:0 0 auto; display:inline-flex; align-items:center;
-  justify-content:center; border-radius:50%; background:#c56613; color:#fff; font:italic 11px/1 Georgia,serif; }
-:root[data-theme="sombre"] .recruit-status { background:#3d2918; border-color:#8f5526; color:#f7c99e; }
 
 /* Horaire grid */
 .hor-grid { display:grid; grid-template-columns:auto 1fr; gap:4px 14px; }
@@ -592,7 +629,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   7%, 100% { transform: translateY(0); }
 }
 .sidebar-overlay {
-  display: none; position: fixed; inset: var(--header-height) 0 0 0;
+  display: none; position: fixed; inset: 76px 0 0 0;
   background: rgba(15,34,64,.4); z-index: 945;
   opacity: 0; pointer-events: none; transition: opacity .3s;
 }
@@ -601,7 +638,7 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 @media (max-width: 860px) {
   .detail { width: 100%; }
   .sidebar {
-    display: flex; position: fixed; top: var(--header-height); left: 0; bottom: 0;
+    display: flex; position: fixed; top: 76px; left: 0; bottom: 0;
     width: 86%; max-width: 360px; z-index: 950;
     transform: translateX(-100%);
     transition: transform .3s cubic-bezier(.4,0,.2,1);
@@ -658,16 +695,18 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   #app-loader .ldr-brand .ldr-region { color: transparent; }
 }
-/* « est » manuscrit — UNIQUEMENT sur la page Montérégie-Est. L'élément .ldr-est n'existe pas
-   dans la carte complète (il est inséré par scripts/publier-monteregie-est.js), donc ces règles
-   n'y ont aucun effet et la police Kaushan Script n'y est même pas téléchargée : un navigateur
-   ne charge une police web que si un élément l'utilise vraiment. Rose #e6007e = la couleur qui
-   désigne déjà la Montérégie-Est partout dans l'app (punaises, pastille de filtre). Choix
-   retenu après essais : un agencement différent (PTEM 2027 en haut, Montérégie blanc + est
-   sur la même ligne) a été écarté au profit de celui-ci. */
-#app-loader .ldr-brand .ldr-est { display: block; font-family: 'Kaushan Script', cursive;
+/* Mot manuscrit du territoire (« est », « centre », « ouest ») — UNIQUEMENT sur les pages
+   régionales. L'élément .ldr-mot n'existe pas dans la carte complète (il est inséré par
+   scripts/publier-regions.js), donc ces règles n'y ont aucun effet et la police Kaushan Script
+   n'y est même pas téléchargée : un navigateur ne charge une police web que si un élément
+   l'utilise vraiment. La couleur est celle qui désigne déjà le territoire partout dans l'app
+   (punaises, pastille de filtre) — voir --mot-region plus haut. Agencement retenu
+   le 20 août pour l'Est (option « G7 ») ; un essai différent (PTEM 2027 en haut, Montérégie
+   blanc + est sur la même ligne) a été testé le 21 août puis écarté au profit de celui-ci.
+   Étendu au Centre (vert) et à l'Ouest (bleu) le 26 août 2026, sans rien changer d'autre. */
+#app-loader .ldr-brand .ldr-mot { display: block; font-family: 'Kaushan Script', cursive;
   font-weight: 400; font-size: 54px; line-height: 1; margin-top: 1px;
-  color: #ff3d96; text-shadow: 0 0 26px rgba(230,0,126,.8); }
+  color: var(--mot-region); text-shadow: 0 0 26px var(--mot-halo); }
 #app-loader .ldr-brand .ldr-ptem { font-size: 18px; font-weight: 600; letter-spacing: .3em;
   text-transform: uppercase; color: #cfe0f2; margin-top: 13px; }
 #app-loader .ldr-map { position: relative; width: 240px; height: 190px; }
@@ -742,17 +781,28 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
   border-radius:9px; font-family:'Lato',sans-serif; font-size:13px; background:var(--champ); color:var(--texte); cursor:pointer; }
 .rls-filter:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,128,215,.16); }
 /* Carte Montérégie-Est SEULEMENT (voir buildFilters/populateRlsButtons) : remplace le menu
-   déroulant #rls-filter par 3 boutons pleine largeur, un par RLS — retenu le
+   déroulant #rls-filter par 3 boutons pleine largeur, un par RLS — choix du
    21 août. Seulement 3 RLS sur cette carte (contre jusqu'à 9 sur la carte des trois
    territoires) : un choix de boutons reste lisible ici, ce qui ne serait pas le cas sur la
    carte des trois territoires — raison pour laquelle #rls-filter, lui, reste un menu
    déroulant partout ailleurs. */
-.rls-btns { margin-top:8px; width:100%; display:flex; gap:7px; }
-/* Les 3 boutons sont foncés (pleins) par défaut, comme si les
+/* Les boutons se répartissent sur une seule ligne tant qu'ils tiennent, et passent à la ligne
+   sinon. flex-wrap ajouté le 26 août 2026 avec l'ouverture de la carte Montérégie-Ouest : ce
+   territoire a QUATRE RLS (contre trois pour l'Est, deux pour le Centre), et à 320 px de large
+   quatre boutons sur une ligne ne laissaient que 48 px chacun — « Jardins-Roussillon » et
+   « Vaudreuil-Soulanges » y étaient tranchés en plein mot. La règle vaut pour tous les
+   territoires : c'est le nombre de boutons et la largeur de l'écran qui décident, pas une
+   exception écrite pour l'Ouest. */
+.rls-btns { margin-top:8px; width:100%; display:flex; flex-wrap:wrap; gap:7px; }
+/* 22 août : les 3 boutons sont foncés (pleins) par défaut, comme si les
    trois RLS étaient actifs (ce qui est le cas tant qu'aucun filtre n'est choisi). Cliquer sur
    l'un d'eux l'ISOLE : lui reste foncé, les 2 autres pâlissent (.dim) — voir populateRlsButtons.
    Un 2e clic sur le même bouton retire le filtre et les 3 redeviennent foncés. */
-.rls-btn { flex:1 1 0; min-width:0; padding:8px 4px; box-sizing:border-box; border-radius:9px;
+/* flex-basis en pourcentage plutôt que 0 : c'est lui qui déclenche le retour à la ligne. À
+   ~86 px de contenu minimum, 2 boutons tiennent côte à côte dès ~190 px de liste — donc une
+   ligne pour l'Est et le Centre partout, et deux lignes de deux pour l'Ouest sur les écrans
+   étroits seulement. */
+.rls-btn { flex:1 1 86px; min-width:0; padding:8px 4px; box-sizing:border-box; border-radius:9px;
   border:1.5px solid var(--c); background:var(--c); color:#fff; cursor:pointer;
   font-family:'Raleway',sans-serif; font-weight:700; font-size:11.5px; line-height:1.18;
   text-align:center; transition:background .15s ease,color .15s ease,opacity .15s ease; }
@@ -761,10 +811,10 @@ body.fiche-open .leaflet-control-zoom, body.fiche-open .locate-ctrl { display: n
 .rls-btn.dim:hover { background:color-mix(in srgb, var(--c) 12%, var(--champ)); filter:none; }
 .rls-btn:focus-visible { outline:2px solid var(--orange); outline-offset:2px; }
 /* PTEM / AMP — accès rapide aux 3 pages du site (icônes rondes), repliées
-   derrière un bouton « 📄 PTEM / AMP » comme avant (on garde ce
-   petit clic pour ne pas tout étaler d'emblée). Les 2 PDF externes (moins
+   derrière un bouton « 📄 PTEM / AMP » comme avant (pour ne pas tout étaler
+   d'emblée dès l'arrivée sur la page). Les 2 PDF externes (moins
    consultés) restent dans le menu du bouton « i » de l'en-tête — voir
-   .info-menu plus bas (option « C3 » retenue). */
+   .info-menu plus bas (choix du 20 août, option « C3 »). */
 .docs-wrap { margin-top:8px; }
 .docs-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px;
   padding:9px 12px; border:1.5px solid var(--navy); border-radius:9px; background:var(--navy); color:#fff;
@@ -957,11 +1007,11 @@ body.cmp-open { overflow:hidden; }
      par les lecteurs d'écran et par les moteurs de recherche, qui n'en trouvaient aucun
      jusqu'ici. Le texte décrit fidèlement ce que la page contient : pas de mots-clés
      ajoutés qui ne correspondraient à rien de visible. -->
-<h1 class="sr-only" id="page-h1">Trouve ta clinique — Cliniques en recrutement en Montérégie-Est</h1>
+<h1 class="sr-only" id="page-h1">Trouve ta clinique — Cliniques en recrutement en Montérégie</h1>
 <p class="sr-only" id="page-desc">
   Carte interactive des cliniques et points de service qui recrutent des médecins de famille
-  en Montérégie-Est, dans les réseaux locaux de services Pierre-Boucher, Pierre-De Saurel et
-  Richelieu-Yamaska. Pour chaque milieu : coordonnées, type de clinique, réseau local de
+  en Montérégie, sur les trois territoires : Montérégie-Est, Montérégie-Centre et
+  Montérégie-Ouest. Pour chaque milieu : coordonnées, type de clinique, réseau local de
   services, pratiques offertes, horaires et personne-ressource pour le recrutement.
 </p>
 
@@ -990,7 +1040,6 @@ body.cmp-open { overflow:hidden; }
     <div class="ldr-brand">
       <span class="ldr-eyebrow">RECRUTEMENT</span>
       <span class="ldr-region">MONTÉRÉGIE</span>
-      <span class="ldr-est">est</span>
       <span class="ldr-ptem">PTEM 2027</span>
     </div>
   </div>
@@ -1006,35 +1055,15 @@ body.cmp-open { overflow:hidden; }
 </div>
 
 <header>
-  <div class="draft-strip" role="note" aria-label="Version brouillon non officielle. Page non destinée au public. Ne pas partager ce lien.">
-    <div class="draft-strip__track">
-      <div class="draft-strip__group">
-        <span>Version brouillon non officielle</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Page non destinée au public</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Ne pas partager ce lien</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Version brouillon non officielle</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Page non destinée au public</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Ne pas partager ce lien</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-      </div>
-      <div class="draft-strip__group" aria-hidden="true">
-        <span>Version brouillon non officielle</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Page non destinée au public</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Ne pas partager ce lien</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Version brouillon non officielle</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Page non destinée au public</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-        <span>Ne pas partager ce lien</span><span class="draft-strip__separator" aria-hidden="true">•</span>
-      </div>
-    </div>
-  </div>
   <div class="brand" id="brand-home" role="button" tabindex="0" title="Revenir à la carte">
   <span class="logo-img" role="img" aria-label="Logo Trouve ta clinique"></span>
   <div class="logo-text">
     <span class="brand-org">TROUVE TA CLINIQUE</span>
-    <strong>Montérégie<span class="brand-tiret">-</span><span class="brand-est">est</span></strong>
+    <strong>Montérégie</strong>
   </div>
   </div>
   <div class="header-right">
-    <button class="btn-install" id="btn-install">⤓ <span class="btn-install-label">Installer la carte Montérégie-Est</span></button>
+    <button class="btn-install" id="btn-install">⤓ <span class="btn-install-label">Installer l'application</span></button>
     <button class="btn-theme" id="btn-theme" title="Basculer le mode sombre"
       aria-label="Basculer le mode sombre" aria-pressed="false">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -1052,29 +1081,36 @@ body.cmp-open { overflow:hidden; }
     <button type="button" class="btn-info" id="btn-info" title="Informations et documents officiels"
       aria-label="Informations et documents officiels" aria-haspopup="true" aria-expanded="false" aria-controls="info-menu">i</button>
     <div class="info-menu" id="info-menu" role="menu" hidden>
-      <a class="info-menu-link" role="menuitem" href="https://www.santemonteregie.qc.ca/est/recrutement-medical-monteregie-est" target="_blank" rel="noopener">
+      <a class="info-menu-link" role="menuitem" href="https://www.santemonteregie.qc.ca/recrutement-dtmf-monteregie" target="_blank" rel="noopener">
         <span class="info-menu-ic">i</span> À propos du recrutement
       </a>
+      <!-- hors-region:debut — Liens vers les trois cartes régionales. Ils n'existent que dans un
+           sens : depuis la carte des trois territoires vers chaque carte régionale. Les pages
+           régionales, elles, ne renvoient jamais vers la carte générale ni vers un autre
+           territoire (marqueurs supprimés à la publication — voir scripts/publier-regions.js).
+           Pastilles aux couleurs de territoire (REGION_COLORS) : le menu, les épingles et la
+           légende de la carte disent la même chose. Ajouté le 26 août 2026, en même temps
+           que l'ouverture des cartes Centre et Ouest. -->
+      <a class="info-menu-link" role="menuitem" href="/monteregie-est/">
+        <span class="info-menu-ic" style="background:#e6007e">📍</span> Carte Montérégie-Est
+      </a>
+      <a class="info-menu-link" role="menuitem" href="/monteregie-centre/">
+        <span class="info-menu-ic" style="background:#43a047">📍</span> Carte Montérégie-Centre
+      </a>
+      <a class="info-menu-link" role="menuitem" href="/monteregie-ouest/">
+        <span class="info-menu-ic" style="background:#0080d7">📍</span> Carte Montérégie-Ouest
+      </a>
+      <!-- hors-region:fin -->
       <hr>
-      <a class="info-menu-link" role="menuitem" href="rls/pierre-boucher/">
-        <span class="info-menu-ic" style="background:#ee2d62">📋</span> Cliniques — RLS Pierre-Boucher
+      <a class="info-menu-link" role="menuitem" href="https://www.santemonteregie.qc.ca/sites/default/files/2025/06/besoins-etablissement_en-bref_2026v2_0.pdf" target="_blank" rel="noopener">
+        <span class="info-menu-ic">⤓</span> Besoins en établissement 2026
       </a>
-      <a class="info-menu-link" role="menuitem" href="rls/richelieu-yamaska/">
-        <span class="info-menu-ic" style="background:#15803d">📋</span> Cliniques — RLS Richelieu-Yamaska
-      </a>
-      <a class="info-menu-link" role="menuitem" href="rls/pierre-de-saurel/">
-        <span class="info-menu-ic" style="background:#2f4a7a">📋</span> Cliniques — RLS Pierre-De Saurel
-      </a>
-      <hr>
-      <a class="info-menu-link" role="menuitem" href="ptem/">
-        <span class="info-menu-ic">📘</span> Guide PTEM 2027
-      </a>
-      <a class="info-menu-link" role="menuitem" href="amp/">
-        <span class="info-menu-ic">📗</span> Guide des AMP
+      <a class="info-menu-link" role="menuitem" href="https://www.santemonteregie.qc.ca/sites/default/files/2025/11/amp-2025_maj-octobre-2025.pdf" target="_blank" rel="noopener">
+        <span class="info-menu-ic">⤓</span> Activités médicales particulières (AMP)
       </a>
       <hr>
       <button type="button" class="info-menu-link" role="menuitem" id="info-menu-install">
-        <span class="info-menu-ic">⤓</span> Installer la carte Montérégie-Est
+        <span class="info-menu-ic">⤓</span> Installer l'application
       </button>
     </div>
   </div>
@@ -1118,6 +1154,38 @@ body.cmp-open { overflow:hidden; }
       <div class="reg-filter" id="reg-filter" role="group" aria-label="Filtrer par région"></div>
       <select class="rls-filter" id="rls-filter" aria-label="Filtrer par RLS"></select>
       <div class="rls-btns" id="rls-btns" role="group" aria-label="Filtrer par RLS" hidden></div>
+      <!-- hors-region:debut — Le bouton « PTEM / AMP » et ses 3 liens (guides PTEM, AMP, et
+           répertoire des cliniques des TROIS territoires) sont retirés en bloc sur les pages
+           régionales : choix explicite du 21 août pour l'Est (les guides PTEM/AMP,
+           neutres avant cette date, sont désormais aussi jugés hors-sujet sur une page dédiée),
+           étendue aux trois territoires le 26 août.
+           scripts/publier-regions.js SUPPRIME tout ce qui est entre ces deux marqueurs lorsqu'il
+           fabrique une page régionale : ce bouton n'existe donc même pas dans le code source de
+           ces pages-là, ni pour un visiteur, ni pour Google, ni si le JavaScript ne s'exécute
+           pas. -->
+      <div class="docs-wrap" id="docs-wrap">
+        <button type="button" class="docs-toggle" id="docs-toggle" aria-expanded="false" aria-controls="docs-panel">
+          <span>📄 PTEM / AMP</span>
+          <span class="docs-chev" aria-hidden="true">▾</span>
+        </button>
+        <div class="docs-panel" id="docs-panel" hidden>
+          <div class="docs-row" id="docs-row">
+            <a class="doc-circ-link" href="/ptem/">
+              <span class="doc-circ" aria-hidden="true">📘</span>
+              <span class="doc-circ-lbl">Guide PTEM 2027</span>
+            </a>
+            <a class="doc-circ-link" href="/amp/">
+              <span class="doc-circ" aria-hidden="true">📗</span>
+              <span class="doc-circ-lbl">Guide des AMP</span>
+            </a>
+            <a class="doc-circ-link" href="/cliniques/">
+              <span class="doc-circ" aria-hidden="true">📋</span>
+              <span class="doc-circ-lbl">Liste des cliniques</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- hors-region:fin -->
     </div>
     <div class="sb-list" id="sb-list"></div>
   </div>
@@ -1140,27 +1208,42 @@ body.cmp-open { overflow:hidden; }
 <script src="./leaflet.js"></script>
 <script src="./vendor/maplibre-gl.js"></script>
 <script src="./vendor/leaflet-maplibre-gl.js"></script>
+<script src="./territoires-monteregie.js"></script>
 <script src="./territoires-rls-est.js"></script>
 <script>
 // ═══════════════════════════════════════════
-//  MODE « MONTÉRÉGIE-EST » (vue dédiée, même app/mêmes données)
+//  MODE « CARTE RÉGIONALE » (vue dédiée, même app/mêmes données)
 // ═══════════════════════════════════════════
-// Ce fichier index.html est servi tel quel à deux endroits : « / » (carte complète) et
-// « /monteregie-est/ » (copie strictement identique, recopiée automatiquement par le workflow
-// GitHub — voir .github/workflows/generer-pages-seo.yml). Une seule ligne de détection au
-// chargement suffit à faire dévier tout le comportement ci-dessous : on ne garde AUCUNE copie
-// séparée de la logique, du CSS ou des données. La page dédiée n'affiche que la
-// Montérégie-Est, à la demande du territoire.
-// Le test porte sur le SEGMENT « monteregie-est » n'importe où dans le chemin, et non sur un
-// début de chemin figé : le site est servi à la racine (trouvetaclinique.ca/monteregie-est/)
+// Ce fichier index.html est servi tel quel à quatre endroits : « / » (carte des trois
+// territoires) et « /monteregie-est/ », « /monteregie-centre/ », « /monteregie-ouest/ »
+// (copies strictement identiques, fabriquées automatiquement par scripts/publier-regions.js —
+// voir .github/workflows/generer-pages-seo.yml). Une seule ligne de détection au chargement
+// suffit à faire dévier tout le comportement ci-dessous : on ne garde AUCUNE copie séparée de
+// la logique, du CSS ou des données. Né le 20 août 2026 pour la seule Montérégie-Est (courriel
+// la page dédiée ne devant afficher que ce territoire, sans pouvoir relayer une carte
+// montrant les trois territoires ; généralisé aux trois territoires le 26 août 2026.
+// Le test porte sur le SEGMENT « monteregie-<territoire> » n'importe où dans le chemin, et non
+// sur un début de chemin figé : le site est servi à la racine (trouvetaclinique.ca/monteregie-est/)
 // mais aussi, historiquement, dans un sous-dossier (dtmf-monteregie.github.io/Map/) — l'ancienne
 // adresse encodée dans le code QR du comparatif PDF. Un test « startsWith('/monteregie-est') »
 // aurait été faux sous /Map/ et aurait affiché les TROIS territoires sur la page dédiée.
-const MODE_EST = true;
-// NOTE : rien n'est retiré ni réécrit ici au chargement. Tout ce qui distingue la page
-// Montérégie-Est — titre de l'en-tête, « est » manuscrit, absence des liens vers les autres
+//
+// REGION_PAGE vaut exactement la valeur du champ « region » de data.json ('Est' | 'Centre' |
+// 'Ouest'), ou null sur la carte générale : tous les filtres ci-dessous comparent donc
+// directement à g.region, sans table de correspondance à tenir à jour.
+const REGION_PAGE = (() => {
+  const m = /(^|\/)monteregie-(est|centre|ouest)(\/|$)/.exec(location.pathname);
+  return m ? { est: 'Est', centre: 'Centre', ouest: 'Ouest' }[m[2]] : null;
+})();
+const MODE_REGION = REGION_PAGE !== null;   // sur une carte régionale, quelle qu'elle soit
+// MODE_EST reste défini à part : quelques éléments demeurent propres à la Montérégie-Est
+// (adresse de la page « À propos du recrutement », bannière de partage). Tout le reste passe
+// désormais par MODE_REGION / REGION_PAGE et vaut pour les trois territoires.
+const MODE_EST = REGION_PAGE === 'Est';
+// NOTE : rien n'est retiré ni réécrit ici au chargement. Tout ce qui distingue une page
+// régionale — titre de l'en-tête, lettrage manuscrit, absence des liens vers les autres
 // territoires — est inscrit directement dans le HTML de cette page par
-// scripts/publier-monteregie-est.js. Faire ce travail en JavaScript aurait eu deux défauts :
+// scripts/publier-regions.js. Faire ce travail en JavaScript aurait eu deux défauts :
 // un clignotement au chargement, et surtout des liens vers les trois territoires toujours
 // présents dans le code source, donc suivis par Google et visibles si le JavaScript échoue.
 
@@ -1179,10 +1262,11 @@ let favOrder = [];
 let dataMeta = {};
 let favoris = new Set();
 let favOnly = false;
-// Par défaut, seules les cliniques qui recrutent sont affichées. Le bouton
-// « Toutes les cliniques » ajoute temporairement les milieux dont visible=false.
-// Cet état n'est volontairement pas sauvegardé : chaque nouvelle visite revient
-// toujours à la vue de recrutement demandée pour le projet Montérégie-Est.
+// 27 août 2026 : « Toutes les cliniques », repris du brouillon Montérégie-Est. Par
+// défaut, seuls les milieux en recrutement (recrutementActif !== false) sont affichés — carte,
+// liste, recherche, favoris, comparatif, tout en découle via statutVisible() plus bas. Ce
+// drapeau réactive les autres, dans une couleur d'épingle pâlie et marqués comme tels partout
+// où ils apparaissent, sans jamais changer leur clas­sement une fois affichés.
 let showAllClinics = false;
 let regionFilter = new Set();
 let rlsFilter = '';
@@ -1205,20 +1289,28 @@ const ANNONCE_KEY = 'dtmf-mtg-annonce-fermee';
 
 const byId = id => gmfs.find(g => g.id === id);
 const normTxt = s => (s == null ? '' : String(s)).toLowerCase().replace(/\u0153/g, 'oe').replace(/\u00e6/g, 'ae').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-const recruteActuellement = g => !!g && g.visible !== false && g.recrutementActif !== false;
+// Un milieu \u00ab en recrutement \u00bb a recrutementActif !== false (absent = recrute, comme avant
+// l'ajout du champ). statutVisible() est LE point d'entr\u00e9e unique : matchesFilters(),
+// currentOrder() et fitToData() y passent tous, de sorte qu'activer \u00ab Toutes les cliniques \u00bb
+// r\u00e9active un milieu partout \u00e0 la fois (carte, liste, recherche, favoris, comparatif),
+// jamais seulement \u00e0 moiti\u00e9.
+const recruteActuellement = g => !!g && g.recrutementActif !== false;
 const statutVisible = g => showAllClinics || recruteActuellement(g);
 function matchesFilters(id) {
-  const g = byId(id);
-  if (!statutVisible(g)) return false;
+  const g0 = byId(id);
+  if (!statutVisible(g0)) return false;
   if (favOnly && !favoris.has(id)) return false;
   if (searchQuery) {
+    const g = byId(id);
     const hay = normTxt([g && g.nom, g && g.alias, g && g.ville, g && g.type, g && g.rls].filter(Boolean).join(' '));
     if (!hay.includes(searchQuery)) return false;
   }
   if (regionFilter.size) {
+    const g = byId(id);
     if (!regionFilter.has(g && g.region)) return false;
   }
   if (rlsFilter) {
+    const g = byId(id);
     if (!g || (g.rls || '') !== rlsFilter) return false;
   }
   return true;
@@ -1229,98 +1321,38 @@ const rankOf = id => currentOrder().indexOf(id) + 1;
 //  CARTE
 // ═══════════════════════════════════════════
 const HOME = { center:[45.45,-73.15], zoom:9 };
-const map = L.map('map', {
-  center:HOME.center,
-  zoom:HOME.zoom,
-  zoomControl:false,
-  preferCanvas:true,
-  minZoom:1,
-  maxZoom:19
-});
+const map = L.map('map', { center:HOME.center, zoom:HOME.zoom, zoomControl:false });
 L.control.zoom({ position:'topright' }).addTo(map);
 
-/* Les limites RLS sont dessinées dans le même canvas WebGL que le fond MapLibre lorsque
-   celui-ci est disponible. Les couches Leaflet/Canvas restent le repli automatique. */
-const couchesRlsEst = new Map();
-let carteMapLibreOverlays = null;
-const OVERLAY_SOURCE_ID = 'ttc-limites-rls-est-source';
-const OVERLAY_FILL_ID = 'ttc-limites-rls-est-remplissage';
-const OVERLAY_LINE_ID = 'ttc-limites-rls-est-contour';
+/* Repères des trois territoires CISSS, repris exactement du brouillon Montérégie-Est.
+   Les surfaces restent sous les épingles et ne captent aucun clic. */
+const couchesTerritoiresCisss = new Map();
+function synchroniserOverlaysTerritoires() {
+  if (MODE_REGION || !couchesTerritoiresCisss.size) return;
 
-function retirerOverlaysLeaflet() {
-  couchesRlsEst.forEach(function (couche) {
-    if (map.hasLayer(couche)) map.removeLayer(couche);
+  // Un RLS sélectionné est plus précis qu'un filtre de région : on conserve seulement
+  // l'overlay de la région à laquelle ce RLS appartient.
+  const ficheDuRls = rlsFilter
+    ? gmfs.find(g => String(g.rls || '').trim() === rlsFilter && g.region)
+    : null;
+  const regionsVisibles = ficheDuRls
+    ? new Set([ficheDuRls.region])
+    : (regionFilter.size ? new Set(regionFilter) : null);
+
+  couchesTerritoiresCisss.forEach(function (couche, region) {
+    const doitEtreVisible = !regionsVisibles || regionsVisibles.has(region);
+    if (doitEtreVisible && !map.hasLayer(couche)) couche.addTo(map);
+    if (!doitEtreVisible && map.hasLayer(couche)) map.removeLayer(couche);
   });
 }
 
-function filtrerOverlaysMapLibre(valeurs) {
-  const gl = carteMapLibreOverlays;
-  if (!gl || !gl.getLayer(OVERLAY_FILL_ID) || !gl.getLayer(OVERLAY_LINE_ID)) return false;
-  const filtre = valeurs && valeurs.length
-    ? ['in', ['get', 'rls'], ['literal', valeurs]]
-    : null;
-  gl.setFilter(OVERLAY_FILL_ID, filtre);
-  gl.setFilter(OVERLAY_LINE_ID, filtre);
-  retirerOverlaysLeaflet();
-  return true;
-}
+if (!MODE_REGION && Array.isArray(window.TERRITOIRES_CISSS_MSSS_2026)) {
+  map.createPane('territoiresCisssFond');
+  map.getPane('territoiresCisssFond').style.zIndex = '260';
+  map.getPane('territoiresCisssFond').style.pointerEvents = 'none';
 
-/* Option 1 — Montérégie-Est seulement.
-   Limites officielles MSSS 2026 : RLS Pierre-Boucher (1621),
-   Richelieu-Yamaska (1622) et Pierre-De Saurel (1623). */
-if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
-  const territoireMonteregieEst = {
-    type: 'Feature',
-    properties: {
-      source: 'MSSS',
-      version: '2026-04-01',
-      rls: ['1621', '1622', '1623']
-    },
-    geometry: {"type":"Polygon","coordinates":[[[-72.99259,46.1119],[-72.99678,46.11263],[-73.00209,46.11324],[-73.00496,46.11347],[-73.008,46.11345],[-73.01164,46.11329],[-73.01456,46.11291],[-73.01784,46.11216],[-73.02007,46.11145],[-73.02194,46.11075],[-73.02518,46.10984],[-73.02823,46.10914],[-73.03128,46.10865],[-73.03419,46.10828],[-73.03683,46.10808],[-73.0392,46.10777],[-73.0407,46.10744],[-73.04275,46.10683],[-73.0443,46.10609],[-73.04636,46.10468],[-73.04837,46.10306],[-73.05277,46.09877],[-73.05819,46.09215],[-73.0603,46.08943],[-73.06516,46.08387],[-73.06606,46.08233],[-73.07079,46.0759],[-73.07316,46.07366],[-73.07582,46.07166],[-73.08466,46.06591],[-73.08799,46.06402],[-73.092,46.06217],[-73.09559,46.06079],[-73.1001,46.05944],[-73.10497,46.05818],[-73.11039,46.05692],[-73.11657,46.05582],[-73.12251,46.05438],[-73.12779,46.05341],[-73.13797,46.05236],[-73.14558,46.05131],[-73.14854,46.05037],[-73.15077,46.04949],[-73.15295,46.04837],[-73.1561,46.0463],[-73.1588,46.04373],[-73.16232,46.03941],[-73.16484,46.03565],[-73.16773,46.03077],[-73.17016,46.02573],[-73.17159,46.02221],[-73.17321,46.01782],[-73.17662,46.00792],[-73.17953,46.00025],[-73.18131,45.9966],[-73.18637,45.98455],[-73.1891,45.97916],[-73.19381,45.97157],[-73.19677,45.96826],[-73.20392,45.9614],[-73.20714,45.95795],[-73.21019,45.9541],[-73.21276,45.95012],[-73.21577,45.94381],[-73.21775,45.94001],[-73.2203,45.93659],[-73.22766,45.92845],[-73.23087,45.92422],[-73.23467,45.91802],[-73.23694,45.91366],[-73.23826,45.91019],[-73.23951,45.90526],[-73.24018,45.90152],[-73.24053,45.89804],[-73.24144,45.89557],[-73.24286,45.8931],[-73.24609,45.88849],[-73.24855,45.88523],[-73.25217,45.88079],[-73.25636,45.87652],[-73.26263,45.8711],[-73.26662,45.86711],[-73.26899,45.86428],[-73.27171,45.86022],[-73.27319,45.85674],[-73.27419,45.8531],[-73.27478,45.84992],[-73.27552,45.8478],[-73.27689,45.84493],[-73.27907,45.84218],[-73.28591,45.83619],[-73.2903,45.83109],[-73.29276,45.82892],[-73.29554,45.82697],[-73.30327,45.82238],[-73.30655,45.82022],[-73.30958,45.8179],[-73.3117,45.81606],[-73.31609,45.81111],[-73.31893,45.80839],[-73.32229,45.80569],[-73.32568,45.80372],[-73.32854,45.80273],[-73.33401,45.80191],[-73.33638,45.80114],[-73.34037,45.7992],[-73.34261,45.79784],[-73.34499,45.79616],[-73.34871,45.79308],[-73.35206,45.79116],[-73.35338,45.79077],[-73.35449,45.79075],[-73.3552,45.79088],[-73.35608,45.79078],[-73.35694,45.79048],[-73.36099,45.78885],[-73.36262,45.7876],[-73.36401,45.78692],[-73.36499,45.7865],[-73.36658,45.78607],[-73.36885,45.78566],[-73.37079,45.78558],[-73.37144,45.7857],[-73.37319,45.78643],[-73.37419,45.78676],[-73.37511,45.78699],[-73.37627,45.78712],[-73.37664,45.78738],[-73.37745,45.78818],[-73.37853,45.78884],[-73.37998,45.78944],[-73.38159,45.7899],[-73.38316,45.78996],[-73.38434,45.78984],[-73.38556,45.78924],[-73.38948,45.78534],[-73.39267,45.78191],[-73.39352,45.78118],[-73.39746,45.77672],[-73.40286,45.77091],[-73.41315,45.76032],[-73.4192,45.75384],[-73.42083,45.75117],[-73.42157,45.74892],[-73.42173,45.74646],[-73.42156,45.74452],[-73.42133,45.74314],[-73.42174,45.74116],[-73.42264,45.73939],[-73.42525,45.73655],[-73.42811,45.73377],[-73.43193,45.73039],[-73.43519,45.72763],[-73.44406,45.71849],[-73.45209,45.71172],[-73.45872,45.70652],[-73.45953,45.70577],[-73.46035,45.70432],[-73.46092,45.70379],[-73.46174,45.70363],[-73.46247,45.7036],[-73.46385,45.70379],[-73.46455,45.70371],[-73.46785,45.70285],[-73.47078,45.70152],[-73.47253,45.70093],[-73.47561,45.70006],[-73.47659,45.6996],[-73.47744,45.69896],[-73.47793,45.69805],[-73.47834,45.69701],[-73.47866,45.69494],[-73.47932,45.69344],[-73.48023,45.69193],[-73.48243,45.68909],[-73.48439,45.68711],[-73.48561,45.68508],[-73.48618,45.68262],[-73.48659,45.67244],[-73.48659,45.66805],[-73.48643,45.66564],[-73.48578,45.66254],[-73.4848,45.65954],[-73.48318,45.65654],[-73.4809,45.65391],[-73.47862,45.65156],[-73.47707,45.64931],[-73.47642,45.64743],[-73.47642,45.64572],[-73.47691,45.64363],[-73.47854,45.64047],[-73.48058,45.63721],[-73.48253,45.63442],[-73.48402,45.63173],[-73.48554,45.62928],[-73.48778,45.62737],[-73.48945,45.62393],[-73.49124,45.62206],[-73.49486,45.61887],[-73.49665,45.61635],[-73.49852,45.61244],[-73.50064,45.60511],[-73.50088,45.60141],[-73.50064,45.59777],[-73.4999,45.59467],[-73.49917,45.59242],[-73.49877,45.58985],[-73.49884,45.5882],[-73.4984,45.58605],[-73.4979,45.58466],[-73.49722,45.58329],[-73.49807,45.5806],[-73.49896,45.57824],[-73.5003,45.57607],[-73.50098,45.5752],[-73.50165,45.57472],[-73.50572,45.5684],[-73.50807,45.56551],[-73.50994,45.56176],[-73.51067,45.55833],[-73.51254,45.55464],[-73.51534,45.55028],[-73.51904,45.54623],[-73.52322,45.54235],[-73.52704,45.53994],[-73.53145,45.53647],[-73.526,45.51896],[-73.51989,45.51734],[-73.51983,45.5171],[-73.51918,45.51707],[-73.51808,45.51679],[-73.50874,45.51358],[-73.50347,45.51153],[-73.50482,45.51412],[-73.49543,45.51113],[-73.49367,45.51032],[-73.49295,45.50987],[-73.49177,45.50884],[-73.49112,45.50805],[-73.48897,45.50446],[-73.48823,45.50457],[-73.48766,45.50476],[-73.48763,45.50456],[-73.48488,45.50483],[-73.47887,45.50524],[-73.48006,45.50453],[-73.46256,45.50571],[-73.46037,45.50594],[-73.46007,45.50636],[-73.44256,45.5075],[-73.44242,45.50771],[-73.44295,45.50886],[-73.44268,45.50891],[-73.44243,45.50905],[-73.44181,45.5096],[-73.44131,45.50993],[-73.44055,45.511],[-73.43772,45.51425],[-73.43102,45.52776],[-73.43677,45.53215],[-73.43756,45.5325],[-73.43919,45.53292],[-73.43838,45.53473],[-73.43821,45.53648],[-73.43803,45.53675],[-73.42406,45.5487],[-73.41961,45.54526],[-73.41477,45.54843],[-73.41256,45.55034],[-73.41134,45.55114],[-73.41067,45.55297],[-73.37701,45.52766],[-73.3778,45.526],[-73.38207,45.52229],[-73.38561,45.51845],[-73.38586,45.51864],[-73.39417,45.50959],[-73.381,45.49907],[-73.38083,45.49941],[-73.37865,45.49889],[-73.37899,45.49818],[-73.37715,45.49728],[-73.37197,45.50784],[-73.3715,45.50747],[-73.37142,45.50753],[-73.36076,45.49931],[-73.3602,45.49896],[-73.33562,45.47977],[-73.33516,45.47952],[-73.33204,45.48901],[-73.32926,45.49707],[-73.32645,45.50434],[-73.33212,45.50855],[-73.32675,45.51178],[-73.32234,45.51363],[-73.29927,45.49741],[-73.30087,45.49638],[-73.30275,45.49529],[-73.28976,45.48491],[-73.28907,45.48568],[-73.28823,45.48615],[-73.28816,45.48637],[-73.28834,45.48658],[-73.28888,45.48681],[-73.28912,45.48701],[-73.28916,45.48734],[-73.28878,45.48794],[-73.28876,45.48825],[-73.28899,45.48858],[-73.28969,45.48913],[-73.29034,45.48981],[-73.29056,45.49021],[-73.29049,45.49046],[-73.27886,45.48109],[-73.27672,45.48172],[-73.27442,45.48204],[-73.27253,45.48242],[-73.27097,45.48285],[-73.26881,45.48371],[-73.26774,45.48385],[-73.26729,45.48558],[-73.26675,45.48679],[-73.26572,45.48844],[-73.26392,45.49063],[-73.26211,45.4926],[-73.26048,45.49407],[-73.25904,45.4955],[-73.25788,45.49711],[-73.254,45.50341],[-73.25145,45.50611],[-73.24989,45.5073],[-73.2485,45.50816],[-73.24601,45.51005],[-73.24485,45.51108],[-73.24408,45.51205],[-73.24339,45.51334],[-73.24191,45.51665],[-73.24048,45.51949],[-73.23904,45.52165],[-73.23619,45.5263],[-73.23498,45.52946],[-73.23359,45.53218],[-73.23175,45.53506],[-73.21402,45.52269],[-73.19735,45.51089],[-73.172,45.49323],[-73.11744,45.45491],[-73.11317,45.45549],[-73.11986,45.46023],[-73.11947,45.4606],[-73.11911,45.46073],[-73.11627,45.46073],[-73.11416,45.46169],[-73.11217,45.46241],[-73.10879,45.46222],[-73.10624,45.46267],[-73.10531,45.46399],[-73.10444,45.46486],[-73.10398,45.46529],[-73.10188,45.46678],[-73.10021,45.46562],[-73.0968,45.47199],[-73.0963,45.47287],[-73.09623,45.47285],[-73.09409,45.47692],[-73.08627,45.47086],[-73.08622,45.47095],[-73.08617,45.4709],[-73.07914,45.46529],[-73.07279,45.47668],[-73.04027,45.47751],[-73.03436,45.49168],[-73.00793,45.4742],[-73.00603,45.47662],[-73.00428,45.47806],[-73.00347,45.47937],[-72.98107,45.47712],[-72.98041,45.47735],[-72.95809,45.47501],[-72.9585,45.47354],[-72.96117,45.47168],[-72.96318,45.46921],[-72.96314,45.46811],[-72.96251,45.46682],[-72.96202,45.46603],[-72.96178,45.46435],[-72.9619,45.46198],[-72.96219,45.46009],[-72.96255,45.45907],[-72.96313,45.45864],[-72.96436,45.45821],[-72.96564,45.45738],[-72.94321,45.45431],[-72.94306,45.45482],[-72.92572,45.45246],[-72.92171,45.46638],[-72.90558,45.46405],[-72.90417,45.46905],[-72.90317,45.4721],[-72.89661,45.4791],[-72.89005,45.47425],[-72.88396,45.46992],[-72.87946,45.46911],[-72.87829,45.47058],[-72.87676,45.47179],[-72.8759,45.47269],[-72.87102,45.47526],[-72.86895,45.47559],[-72.86595,45.47632],[-72.86439,45.47678],[-72.86214,45.4771],[-72.85961,45.47726],[-72.85172,45.47673],[-72.85104,45.47624],[-72.84909,45.47604],[-72.84154,45.47428],[-72.83859,45.47401],[-72.83739,45.47546],[-72.83721,45.47551],[-72.82903,45.47441],[-72.81797,45.47267],[-72.81711,45.47264],[-72.81458,45.48533],[-72.81218,45.49656],[-72.80826,45.50951],[-72.80694,45.51423],[-72.80479,45.52108],[-72.80369,45.52486],[-72.8031,45.52752],[-72.79982,45.53798],[-72.78854,45.53838],[-72.77391,45.53836],[-72.77281,45.5383],[-72.77317,45.52479],[-72.75239,45.52465],[-72.72477,45.52456],[-72.68999,45.5238],[-72.69057,45.53163],[-72.67546,45.53139],[-72.67621,45.53874],[-72.6542,45.53864],[-72.60492,45.53769],[-72.60622,45.52604],[-72.58359,45.52549],[-72.58458,45.51106],[-72.586,45.49829],[-72.50295,45.49515],[-72.48928,45.4947],[-72.44889,45.49359],[-72.45054,45.47853],[-72.45126,45.4666],[-72.4544,45.45138],[-72.43971,45.4504],[-72.42029,45.44963],[-72.40426,45.4492],[-72.40403,45.45177],[-72.40433,45.46986],[-72.40506,45.48053],[-72.40515,45.49431],[-72.40501,45.49567],[-72.40489,45.50383],[-72.40358,45.51808],[-72.40351,45.52069],[-72.40288,45.52848],[-72.37864,45.52971],[-72.37849,45.54801],[-72.37815,45.5613],[-72.37812,45.5665],[-72.36078,45.56732],[-72.36007,45.58362],[-72.35968,45.58939],[-72.35062,45.58896],[-72.35065,45.59402],[-72.34366,45.59385],[-72.34347,45.5991],[-72.31555,45.59922],[-72.33911,45.61183],[-72.34814,45.61696],[-72.37562,45.63295],[-72.39367,45.6437],[-72.39748,45.64606],[-72.44356,45.67296],[-72.45169,45.6778],[-72.47126,45.68967],[-72.48507,45.69785],[-72.48529,45.69785],[-72.49308,45.70255],[-72.4978,45.70525],[-72.50876,45.7118],[-72.53692,45.72835],[-72.55227,45.73749],[-72.56269,45.74351],[-72.57802,45.75254],[-72.56332,45.76593],[-72.56561,45.76766],[-72.57313,45.77213],[-72.57298,45.77226],[-72.57813,45.77531],[-72.57527,45.77769],[-72.60187,45.7926],[-72.6177,45.77927],[-72.63254,45.76715],[-72.64616,45.75579],[-72.68034,45.7758],[-72.70416,45.75884],[-72.70602,45.76007],[-72.71715,45.76797],[-72.76211,45.79935],[-72.76909,45.80436],[-72.7704,45.80571],[-72.77167,45.80638],[-72.77845,45.81134],[-72.7841,45.81562],[-72.79402,45.82281],[-72.8235,45.84349],[-72.83904,45.85422],[-72.85304,45.86401],[-72.84866,45.87475],[-72.85404,45.87849],[-72.85194,45.88083],[-72.85046,45.88358],[-72.8393,45.89114],[-72.8389,45.89056],[-72.83822,45.8901],[-72.83811,45.89016],[-72.83828,45.89054],[-72.8382,45.89071],[-72.83766,45.8911],[-72.83698,45.89115],[-72.83619,45.89091],[-72.83607,45.8904],[-72.8364,45.89011],[-72.83667,45.88965],[-72.83655,45.88937],[-72.83627,45.88926],[-72.83563,45.88923],[-72.83537,45.88915],[-72.83514,45.88866],[-72.83483,45.88855],[-72.8346,45.88854],[-72.83398,45.88883],[-72.83385,45.88882],[-72.83358,45.88832],[-72.83363,45.88802],[-72.83329,45.88749],[-72.83278,45.88747],[-72.83219,45.88763],[-72.8319,45.88753],[-72.83166,45.88734],[-72.8317,45.88718],[-72.83194,45.88676],[-72.83229,45.88651],[-72.83233,45.88633],[-72.82118,45.89387],[-72.8196,45.89273],[-72.80208,45.9046],[-72.80169,45.9047],[-72.80132,45.90512],[-72.80089,45.90527],[-72.80021,45.9049],[-72.79992,45.90495],[-72.79972,45.90515],[-72.79969,45.90541],[-72.80006,45.90609],[-72.80008,45.90645],[-72.79995,45.9066],[-72.79947,45.90669],[-72.79924,45.90662],[-72.79828,45.90569],[-72.79758,45.90539],[-72.79721,45.90536],[-72.79637,45.90556],[-72.79589,45.90615],[-72.79467,45.90691],[-72.7943,45.90685],[-72.79416,45.90672],[-72.79411,45.90646],[-72.79401,45.90644],[-72.78292,45.91638],[-72.75255,45.94301],[-72.7583,45.94695],[-72.79299,45.97121],[-72.7918,45.97209],[-72.80467,45.98095],[-72.8046,45.98189],[-72.78989,45.99207],[-72.80353,45.99743],[-72.80266,46.01121],[-72.8025,46.01155],[-72.80221,46.01187],[-72.79979,46.01354],[-72.7995,46.014],[-72.79935,46.01449],[-72.8061,46.01596],[-72.81,46.01896],[-72.81623,46.02516],[-72.82379,46.02972],[-72.82832,46.032],[-72.82989,46.02112],[-72.83841,46.02701],[-72.8556,46.03942],[-72.85589,46.03942],[-72.86056,46.04275],[-72.86077,46.04273],[-72.86102,46.04259],[-72.86134,46.04186],[-72.86183,46.04003],[-72.86293,46.03861],[-72.86456,46.03685],[-72.86802,46.03338],[-72.87451,46.03799],[-72.88017,46.03417],[-72.88111,46.03483],[-72.88126,46.03477],[-72.89111,46.04168],[-72.90035,46.04803],[-72.94118,46.07669],[-72.94,46.0773],[-72.93986,46.07837],[-72.94006,46.07938],[-72.94036,46.07997],[-72.94206,46.08089],[-72.9416,46.08168],[-72.94154,46.08238],[-72.94204,46.08331],[-72.94236,46.08472],[-72.94276,46.08543],[-72.94285,46.08658],[-72.94232,46.08848],[-72.94218,46.0894],[-72.94407,46.08974],[-72.9444,46.08853],[-72.94485,46.08571],[-72.94457,46.0814],[-72.94482,46.08023],[-72.94481,46.07924],[-72.95371,46.08486],[-72.95373,46.08523],[-72.95363,46.08539],[-72.9528,46.0855],[-72.95234,46.08548],[-72.95243,46.0861],[-72.95262,46.08632],[-72.95324,46.08669],[-72.95459,46.08718],[-72.95535,46.0872],[-72.95644,46.08675],[-72.99259,46.1119]]]}
-  };
-
-  // Le fond rose reste sous les épingles et ne capte aucun clic.
-  map.createPane('territoireEstFond');
-  map.getPane('territoireEstFond').style.zIndex = '260';
-  map.getPane('territoireEstFond').style.pointerEvents = 'none';
-
-  L.geoJSON(territoireMonteregieEst, {
-    pane: 'territoireEstFond',
-    interactive: false,
-    style: {
-      color: '#d73b73',
-      opacity: 0.58,
-      weight: 1.5,
-      fillColor: '#f06f9d',
-      fillOpacity: 0.07,
-      lineJoin: 'round'
-    }
-  }).addTo(map);
-
-}
-/* Repères territoriaux complémentaires du brouillon Montérégie-Est.
-   Les limites proviennent des RLS officiels MSSS 2026 :
-   Centre (1611, 1612) et Ouest (1631 à 1634). */
-if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
-  const territoiresVoisins = [
-    {
-      nom: 'Montérégie-Centre',
-      rls: ['1611', '1612'],
-      contour: '#43a047',
-      remplissage: '#66bb6a',
-      geometry: {"type":"Polygon","coordinates":[[[-73.13988,45.01442],[-73.22632,45.01275],[-73.27238,45.01206],[-73.33503,45.01084],[-73.39113,45.01008],[-73.41067,45.00972],[-73.41114,45.02294],[-73.4117,45.03175],[-73.41182,45.03773],[-73.41175,45.03821],[-73.41179,45.04209],[-73.391,45.04242],[-73.3911,45.04488],[-73.39095,45.04956],[-73.39102,45.06694],[-73.39126,45.09224],[-73.39968,45.09237],[-73.39928,45.10744],[-73.3918,45.1073],[-73.39132,45.122],[-73.38084,45.12176],[-73.37783,45.12176],[-73.37746,45.13265],[-73.36399,45.13243],[-73.36398,45.13251],[-73.35627,45.13238],[-73.35494,45.16701],[-73.35942,45.17224],[-73.36185,45.17552],[-73.36538,45.17976],[-73.35937,45.19771],[-73.3802,45.21162],[-73.36552,45.22268],[-73.36661,45.2234],[-73.35209,45.23433],[-73.36753,45.24447],[-73.36731,45.24463],[-73.38577,45.25711],[-73.38484,45.25848],[-73.38434,45.25888],[-73.38357,45.25916],[-73.41218,45.25397],[-73.40096,45.2661],[-73.38948,45.26808],[-73.37952,45.28074],[-73.37989,45.28377],[-73.37983,45.2842],[-73.37923,45.28584],[-73.38098,45.28868],[-73.38243,45.28844],[-73.3827,45.28856],[-73.38173,45.29023],[-73.38156,45.29032],[-73.38189,45.29167],[-73.382,45.29357],[-73.38254,45.2951],[-73.37923,45.29572],[-73.37965,45.29709],[-73.37951,45.29869],[-73.37982,45.30023],[-73.37548,45.30108],[-73.37591,45.30264],[-73.37351,45.30309],[-73.3741,45.30452],[-73.37101,45.30513],[-73.3714,45.30664],[-73.3711,45.30856],[-73.37079,45.30889],[-73.36945,45.3098],[-73.36955,45.30985],[-73.36974,45.31172],[-73.38084,45.31664],[-73.38097,45.31676],[-73.39101,45.32128],[-73.39117,45.32129],[-73.41124,45.33021],[-73.41079,45.33191],[-73.40961,45.33211],[-73.4092,45.33299],[-73.40726,45.33564],[-73.40683,45.33609],[-73.40612,45.33769],[-73.40455,45.33888],[-73.40785,45.34037],[-73.40801,45.34099],[-73.40589,45.34196],[-73.40555,45.34494],[-73.40585,45.34635],[-73.40516,45.34663],[-73.40281,45.34813],[-73.39327,45.3499],[-73.3892,45.35455],[-73.38941,45.35566],[-73.3877,45.35771],[-73.39364,45.36031],[-73.3938,45.36165],[-73.39334,45.36266],[-73.39259,45.36363],[-73.39368,45.36693],[-73.39471,45.36843],[-73.39542,45.37305],[-73.39786,45.37331],[-73.39696,45.37427],[-73.3964,45.37531],[-73.39571,45.3763],[-73.3937,45.37817],[-73.3919,45.38014],[-73.3884,45.38289],[-73.38744,45.38597],[-73.38706,45.38752],[-73.38629,45.39228],[-73.38589,45.39395],[-73.38556,45.39837],[-73.38582,45.39931],[-73.38611,45.39991],[-73.38507,45.39991],[-73.38315,45.39975],[-73.38043,45.40115],[-73.39107,45.40868],[-73.39373,45.41047],[-73.38519,45.41012],[-73.38682,45.41355],[-73.38799,45.41439],[-73.43833,45.41653],[-73.43799,45.42162],[-73.45485,45.42225],[-73.45556,45.42122],[-73.45588,45.42132],[-73.45579,45.42146],[-73.45639,45.42184],[-73.45645,45.42176],[-73.45785,45.42217],[-73.45859,45.42101],[-73.46015,45.42161],[-73.46062,45.42166],[-73.4613,45.42161],[-73.46213,45.4217],[-73.4628,45.42215],[-73.46317,45.42212],[-73.46375,45.42167],[-73.46402,45.42165],[-73.46438,45.42187],[-73.46449,45.42256],[-73.46423,45.42284],[-73.46422,45.42301],[-73.4644,45.42317],[-73.46465,45.42324],[-73.46521,45.42305],[-73.46653,45.42346],[-73.46704,45.42351],[-73.46748,45.4234],[-73.46806,45.42287],[-73.46847,45.4227],[-73.46895,45.42266],[-73.46956,45.42293],[-73.46965,45.42336],[-73.46935,45.42403],[-73.46939,45.42462],[-73.46954,45.42481],[-73.47009,45.42506],[-73.47092,45.42525],[-73.47122,45.42554],[-73.47136,45.42606],[-73.4721,45.42672],[-73.47278,45.4269],[-73.47358,45.42664],[-73.47447,45.42676],[-73.47479,45.42692],[-73.47515,45.4273],[-73.47567,45.42822],[-73.47595,45.4284],[-73.47623,45.42841],[-73.4768,45.42815],[-73.47768,45.42793],[-73.47807,45.42799],[-73.47841,45.42814],[-73.4787,45.4284],[-73.47882,45.42872],[-73.47833,45.42998],[-73.47863,45.43038],[-73.47975,45.43061],[-73.48125,45.42981],[-73.48181,45.42986],[-73.48254,45.43015],[-73.48289,45.43048],[-73.48373,45.43189],[-73.48424,45.43199],[-73.48451,45.43199],[-73.48631,45.43113],[-73.48699,45.43099],[-73.4893,45.43166],[-73.49129,45.43161],[-73.49124,45.43067],[-73.49143,45.42993],[-73.49191,45.42913],[-73.52601,45.44233],[-73.52417,45.44576],[-73.52322,45.44788],[-73.52225,45.45063],[-73.52172,45.45301],[-73.52114,45.45676],[-73.52084,45.4606],[-73.52084,45.46449],[-73.52109,45.46796],[-73.52161,45.47149],[-73.52239,45.4751],[-73.52336,45.47843],[-73.52475,45.48213],[-73.52793,45.48751],[-73.52973,45.4917],[-73.51923,45.49519],[-73.51968,45.49631],[-73.51958,45.49633],[-73.52047,45.49921],[-73.5199,45.4993],[-73.526,45.51896],[-73.51989,45.51734],[-73.51983,45.5171],[-73.51918,45.51707],[-73.51808,45.51679],[-73.50874,45.51358],[-73.50347,45.51153],[-73.50482,45.51412],[-73.49543,45.51113],[-73.49367,45.51032],[-73.49295,45.50987],[-73.49177,45.50884],[-73.49112,45.50805],[-73.48897,45.50446],[-73.48823,45.50457],[-73.48766,45.50476],[-73.48763,45.50456],[-73.48488,45.50483],[-73.47887,45.50524],[-73.48006,45.50453],[-73.46256,45.50571],[-73.46037,45.50594],[-73.46007,45.50636],[-73.44256,45.5075],[-73.44242,45.50771],[-73.44295,45.50886],[-73.44243,45.50905],[-73.44131,45.50993],[-73.44055,45.511],[-73.43772,45.51425],[-73.43102,45.52776],[-73.43677,45.53215],[-73.43756,45.5325],[-73.43919,45.53292],[-73.43838,45.53473],[-73.43821,45.53648],[-73.43803,45.53675],[-73.42406,45.5487],[-73.41961,45.54526],[-73.41477,45.54843],[-73.41256,45.55034],[-73.41134,45.55114],[-73.41067,45.55297],[-73.37701,45.52766],[-73.3778,45.526],[-73.38207,45.52229],[-73.38561,45.51845],[-73.38586,45.51864],[-73.39417,45.50959],[-73.381,45.49907],[-73.38083,45.49941],[-73.37865,45.49889],[-73.37899,45.49818],[-73.37715,45.49728],[-73.37197,45.50784],[-73.3715,45.50747],[-73.37142,45.50753],[-73.36076,45.49931],[-73.3602,45.49896],[-73.33562,45.47977],[-73.33516,45.47952],[-73.33204,45.48901],[-73.32926,45.49707],[-73.32645,45.50434],[-73.33212,45.50855],[-73.32675,45.51178],[-73.32234,45.51363],[-73.29927,45.49741],[-73.30087,45.49638],[-73.30275,45.49529],[-73.28976,45.48491],[-73.28907,45.48568],[-73.28823,45.48615],[-73.28816,45.48637],[-73.28834,45.48658],[-73.28888,45.48681],[-73.28912,45.48701],[-73.28916,45.48734],[-73.28878,45.48794],[-73.28876,45.48825],[-73.28899,45.48858],[-73.28969,45.48913],[-73.29034,45.48981],[-73.29056,45.49021],[-73.29049,45.49046],[-73.27886,45.48109],[-73.27672,45.48172],[-73.27442,45.48204],[-73.27253,45.48242],[-73.27097,45.48285],[-73.26881,45.48371],[-73.26774,45.48385],[-73.26729,45.48558],[-73.26675,45.48679],[-73.26572,45.48844],[-73.26392,45.49063],[-73.26211,45.4926],[-73.25904,45.4955],[-73.25788,45.49711],[-73.254,45.50341],[-73.25145,45.50611],[-73.24989,45.5073],[-73.2485,45.50816],[-73.24601,45.51005],[-73.24485,45.51108],[-73.24408,45.51205],[-73.24339,45.51334],[-73.24191,45.51665],[-73.24048,45.51949],[-73.23904,45.52165],[-73.23619,45.5263],[-73.23498,45.52946],[-73.23359,45.53218],[-73.23175,45.53506],[-73.21402,45.52269],[-73.19735,45.51089],[-73.172,45.49323],[-73.11744,45.45491],[-73.11317,45.45549],[-73.11986,45.46023],[-73.11947,45.4606],[-73.11911,45.46073],[-73.11627,45.46073],[-73.11416,45.46169],[-73.11217,45.46241],[-73.10879,45.46222],[-73.10624,45.46267],[-73.10531,45.46399],[-73.10444,45.46486],[-73.10398,45.46529],[-73.10188,45.46678],[-73.10021,45.46562],[-73.09409,45.47692],[-73.08627,45.47086],[-73.08622,45.47095],[-73.08617,45.4709],[-73.07914,45.46529],[-73.07279,45.47668],[-73.04027,45.47751],[-73.03436,45.49168],[-73.00793,45.4742],[-73.00603,45.47662],[-73.00428,45.47806],[-73.00347,45.47937],[-72.98107,45.47712],[-72.98041,45.47735],[-72.95809,45.47501],[-72.9585,45.47354],[-72.96117,45.47168],[-72.96318,45.46921],[-72.96314,45.46811],[-72.96202,45.46603],[-72.96178,45.46435],[-72.9619,45.46198],[-72.96219,45.46009],[-72.96255,45.45907],[-72.96313,45.45864],[-72.96436,45.45821],[-72.96648,45.45677],[-72.96646,45.45569],[-72.96522,45.45297],[-72.9645,45.45185],[-72.96421,45.44961],[-72.96453,45.44868],[-72.96446,45.44592],[-72.96457,45.44377],[-72.96486,45.44194],[-72.96358,45.43927],[-72.93075,45.43469],[-72.93601,45.41579],[-72.92704,45.41458],[-72.9283,45.41031],[-72.92614,45.41],[-72.92605,45.41033],[-72.92394,45.41003],[-72.92375,45.41068],[-72.92336,45.41063],[-72.92151,45.41741],[-72.91929,45.41713],[-72.92279,45.40444],[-72.92461,45.39838],[-72.92722,45.38896],[-72.94258,45.39121],[-72.94544,45.38107],[-72.94597,45.38143],[-72.94994,45.36695],[-72.96684,45.37864],[-72.96683,45.37627],[-72.96729,45.3631],[-72.9713,45.3505],[-72.97328,45.3519],[-72.97848,45.33611],[-72.97927,45.3345],[-72.99,45.34193],[-72.99016,45.3404],[-72.99,45.33953],[-72.98966,45.33901],[-72.98941,45.33825],[-72.98981,45.33766],[-72.99014,45.3363],[-72.98935,45.33519],[-72.98923,45.33479],[-72.98951,45.33422],[-73.00867,45.3471],[-73.0082,45.35289],[-73.00627,45.37195],[-73.01163,45.37571],[-73.02627,45.37299],[-73.02806,45.37482],[-73.02764,45.37503],[-73.02795,45.37534],[-73.02838,45.37516],[-73.02917,45.37604],[-73.02975,45.37649],[-73.03022,45.37671],[-73.03084,45.37686],[-73.03272,45.37704],[-73.04522,45.38591],[-73.04632,45.38718],[-73.04647,45.38709],[-73.04638,45.38702],[-73.04756,45.38633],[-73.05157,45.38352],[-73.05901,45.37862],[-73.05977,45.37913],[-73.08746,45.35592],[-73.10358,45.36706],[-73.10402,45.36308],[-73.10411,45.36296],[-73.10454,45.35823],[-73.10716,45.33533],[-73.09123,45.32422],[-73.09413,45.29363],[-73.09444,45.29164],[-73.09672,45.26602],[-73.06683,45.24558],[-73.06826,45.22966],[-73.07002,45.23087],[-73.074,45.22868],[-73.05824,45.21458],[-73.07472,45.20534],[-73.09132,45.19614],[-73.08623,45.19161],[-73.08611,45.18549],[-73.08597,45.18534],[-73.08588,45.17187],[-73.08602,45.14002],[-73.10126,45.13996],[-73.09954,45.12489],[-73.09709,45.10177],[-73.09843,45.10028],[-73.10709,45.10454],[-73.1077,45.09717],[-73.11593,45.09711],[-73.1153,45.08187],[-73.10453,45.082],[-73.10962,45.07569],[-73.11109,45.07364],[-73.11181,45.073],[-73.13988,45.01442]]]}
-    },
-    {
-      nom: 'Montérégie-Ouest',
-      rls: ['1631', '1632', '1633', '1634'],
-      contour: '#0080d7',
-      remplissage: '#42a5f5',
-      geometry: {"type":"Polygon","coordinates":[[[-73.70548,45.00317],[-73.75647,45.00314],[-73.78363,45.00295],[-73.84142,45.00214],[-73.88277,45.00099],[-73.9415,44.99888],[-73.99239,44.99693],[-74.08574,44.99367],[-74.12257,44.99225],[-74.15013,44.99136],[-74.18098,44.99181],[-74.20501,44.99202],[-74.24855,44.99218],[-74.31151,44.99207],[-74.32685,44.99193],[-74.33655,44.99202],[-74.35157,44.99279],[-74.37012,44.99361],[-74.43957,44.99648],[-74.45644,44.99703],[-74.46537,44.99722],[-74.54115,44.9986],[-74.57565,44.99908],[-74.62832,44.99944],[-74.6612,44.99944],[-74.66306,44.99892],[-74.6698,45.00557],[-74.65239,45.03002],[-74.62575,45.03007],[-74.60145,45.03963],[-74.56569,45.0463],[-74.55558,45.05238],[-74.53902,45.05952],[-74.53286,45.06269],[-74.51058,45.07674],[-74.49522,45.06474],[-74.46638,45.10116],[-74.4473,45.1251],[-74.44232,45.13121],[-74.41938,45.14163],[-74.37704,45.15521],[-74.31952,45.18851],[-74.34353,45.20547],[-74.36638,45.22236],[-74.45165,45.28764],[-74.46272,45.29572],[-74.47203,45.30286],[-74.42861,45.42004],[-74.41463,45.45957],[-74.40453,45.48952],[-74.38903,45.53814],[-74.38104,45.56558],[-74.37623,45.56313],[-74.37292,45.56125],[-74.36671,45.55719],[-74.36222,45.55369],[-74.35781,45.54978],[-74.35542,45.5463],[-74.35411,45.54307],[-74.35215,45.5391],[-74.35156,45.53746],[-74.34907,45.53198],[-74.34703,45.52835],[-74.34579,45.52643],[-74.34222,45.52009],[-74.3414,45.51827],[-74.34033,45.51526],[-74.33961,45.51384],[-74.33815,45.51243],[-74.3359,45.51074],[-74.33286,45.5091],[-74.32911,45.50764],[-74.32511,45.50641],[-74.32034,45.50532],[-74.31566,45.50453],[-74.30877,45.50406],[-74.30267,45.5041],[-74.29817,45.50448],[-74.29118,45.50542],[-74.28666,45.5056],[-74.28128,45.50535],[-74.26771,45.50382],[-74.26218,45.50341],[-74.25049,45.50276],[-74.23024,45.5023],[-74.22378,45.50182],[-74.21774,45.50115],[-74.21364,45.50047],[-74.21167,45.50004],[-74.20519,45.49818],[-74.20036,45.49643],[-74.19589,45.4946],[-74.18848,45.4914],[-74.18483,45.48999],[-74.17853,45.48794],[-74.17116,45.48616],[-74.16625,45.48513],[-74.16155,45.4839],[-74.15759,45.48209],[-74.14849,45.47584],[-74.14352,45.47227],[-74.13528,45.46852],[-74.1294,45.46623],[-74.12041,45.46349],[-74.11752,45.46224],[-74.11522,45.4611],[-74.1088,45.45821],[-74.10047,45.45482],[-74.09641,45.45352],[-74.09447,45.45304],[-74.09197,45.4526],[-74.0895,45.45229],[-74.08594,45.45213],[-74.08266,45.45227],[-74.07736,45.45285],[-74.07416,45.45293],[-74.07113,45.45279],[-74.06858,45.45243],[-74.06544,45.45171],[-74.06177,45.4506],[-74.05574,45.44852],[-74.05233,45.44757],[-74.04894,45.44696],[-74.04566,45.44657],[-74.0421,45.44638],[-74.03844,45.44643],[-74.03499,45.44677],[-74.03224,45.44713],[-74.02958,45.44757],[-74.02713,45.44815],[-74.02033,45.44999],[-74.00841,45.45352],[-73.9966,45.45749],[-73.9948,45.45429],[-73.99144,45.44752],[-73.98982,45.44393],[-73.9878,45.43865],[-73.98682,45.43593],[-73.98538,45.43113],[-73.98452,45.42765],[-73.98391,45.42499],[-73.98288,45.41838],[-73.98266,45.41779],[-73.98207,45.41679],[-73.98073,45.41521],[-73.97924,45.41424],[-73.97687,45.4132],[-73.97348,45.41208],[-73.96678,45.41033],[-73.9646,45.40967],[-73.96309,45.40894],[-73.96171,45.40814],[-73.96117,45.40758],[-73.96079,45.40679],[-73.96041,45.40484],[-73.95981,45.40438],[-73.95756,45.40355],[-73.95606,45.40312],[-73.95466,45.40291],[-73.95286,45.40237],[-73.95138,45.40168],[-73.95026,45.40129],[-73.94904,45.40107],[-73.9471,45.40101],[-73.94462,45.40072],[-73.94103,45.3999],[-73.93835,45.39938],[-73.93478,45.39888],[-73.92907,45.3984],[-73.92335,45.39824],[-73.91888,45.39835],[-73.9164,45.3989],[-73.9151,45.3994],[-73.91349,45.40024],[-73.90881,45.40395],[-73.90473,45.40658],[-73.89963,45.40879],[-73.89613,45.40985],[-73.89464,45.41014],[-73.89202,45.41037],[-73.88882,45.41018],[-73.88622,45.40989],[-73.88379,45.40949],[-73.87913,45.40846],[-73.87613,45.40771],[-73.86657,45.40485],[-73.85621,45.40126],[-73.84832,45.39813],[-73.84501,45.39671],[-73.83182,45.39035],[-73.82218,45.3854],[-73.81626,45.39201],[-73.81371,45.39468],[-73.80676,45.40057],[-73.80407,45.40257],[-73.80054,45.40501],[-73.79629,45.40774],[-73.78968,45.41149],[-73.78648,45.41313],[-73.78243,45.41493],[-73.77848,45.41632],[-73.77479,45.4174],[-73.76795,45.41868],[-73.76398,45.41918],[-73.75798,45.41971],[-73.75062,45.42021],[-73.74295,45.42049],[-73.73168,45.4211],[-73.72184,45.42188],[-73.71195,45.42249],[-73.70179,45.42293],[-73.69206,45.42318],[-73.68698,45.42315],[-73.67692,45.42285],[-73.66987,45.42243],[-73.6662,45.42182],[-73.66531,45.42163],[-73.66362,45.4211],[-73.65539,45.41788],[-73.65353,45.4169],[-73.65103,45.41507],[-73.64826,45.41329],[-73.64617,45.41215],[-73.64359,45.41093],[-73.64131,45.41021],[-73.63873,45.40976],[-73.63626,45.40965],[-73.63417,45.40971],[-73.62923,45.41026],[-73.62642,45.4104],[-73.62287,45.41032],[-73.62128,45.41038],[-73.61853,45.4106],[-73.61462,45.4111],[-73.61137,45.41174],[-73.60656,45.41296],[-73.60325,45.41404],[-73.59895,45.41557],[-73.59667,45.41618],[-73.59378,45.41676],[-73.5915,45.41707],[-73.58881,45.41724],[-73.58642,45.41726],[-73.58161,45.4171],[-73.5765,45.4171],[-73.57334,45.41718],[-73.56834,45.41757],[-73.56492,45.41804],[-73.5617,45.4186],[-73.55964,45.41907],[-73.55531,45.42029],[-73.55136,45.42168],[-73.54845,45.42293],[-73.54586,45.42429],[-73.54353,45.42565],[-73.54086,45.42729],[-73.53881,45.42874],[-73.53631,45.43068],[-73.53481,45.43196],[-73.53347,45.43315],[-73.53125,45.43543],[-73.5297,45.43715],[-73.52739,45.44015],[-73.52601,45.44233],[-73.49191,45.42913],[-73.49143,45.42993],[-73.49124,45.43067],[-73.49129,45.43161],[-73.4893,45.43166],[-73.48699,45.43099],[-73.48631,45.43113],[-73.48451,45.43199],[-73.48424,45.43199],[-73.48373,45.43189],[-73.48289,45.43048],[-73.48254,45.43015],[-73.48181,45.42986],[-73.48125,45.42981],[-73.47975,45.43061],[-73.47863,45.43038],[-73.47833,45.42998],[-73.47882,45.42884],[-73.47876,45.4285],[-73.47852,45.42821],[-73.47814,45.42801],[-73.47768,45.42793],[-73.4768,45.42815],[-73.47623,45.42841],[-73.47595,45.4284],[-73.47567,45.42822],[-73.47515,45.4273],[-73.47479,45.42692],[-73.47447,45.42676],[-73.47358,45.42664],[-73.47278,45.4269],[-73.4721,45.42672],[-73.47136,45.42606],[-73.47122,45.42554],[-73.47092,45.42525],[-73.47009,45.42506],[-73.46954,45.42481],[-73.46933,45.4244],[-73.46935,45.42403],[-73.46965,45.42336],[-73.46956,45.42293],[-73.46895,45.42266],[-73.46847,45.4227],[-73.46806,45.42287],[-73.46748,45.4234],[-73.46704,45.42351],[-73.46653,45.42346],[-73.46521,45.42305],[-73.46465,45.42324],[-73.4644,45.42317],[-73.46422,45.42301],[-73.46423,45.42284],[-73.46449,45.42256],[-73.46438,45.42187],[-73.46402,45.42165],[-73.46375,45.42167],[-73.46317,45.42212],[-73.4628,45.42215],[-73.46213,45.4217],[-73.4613,45.42161],[-73.46062,45.42166],[-73.46015,45.42161],[-73.45859,45.42101],[-73.45785,45.42217],[-73.45645,45.42176],[-73.45639,45.42184],[-73.45579,45.42146],[-73.45588,45.42132],[-73.45556,45.42122],[-73.45485,45.42225],[-73.43799,45.42162],[-73.43833,45.41653],[-73.38799,45.41439],[-73.38682,45.41355],[-73.38519,45.41012],[-73.39373,45.41047],[-73.39107,45.40868],[-73.38043,45.40115],[-73.38315,45.39975],[-73.38507,45.39991],[-73.38611,45.39991],[-73.38582,45.39931],[-73.38556,45.39837],[-73.38589,45.39395],[-73.38629,45.39228],[-73.38706,45.38752],[-73.38744,45.38597],[-73.3884,45.38289],[-73.3919,45.38014],[-73.3937,45.37817],[-73.39571,45.3763],[-73.3964,45.37531],[-73.39696,45.37427],[-73.39786,45.37331],[-73.39542,45.37305],[-73.39471,45.36843],[-73.39368,45.36693],[-73.39259,45.36363],[-73.39334,45.36266],[-73.3938,45.36165],[-73.39364,45.36031],[-73.3877,45.35771],[-73.38941,45.35566],[-73.3892,45.35455],[-73.39327,45.3499],[-73.40281,45.34813],[-73.40516,45.34663],[-73.40585,45.34635],[-73.40555,45.34494],[-73.40589,45.34196],[-73.40801,45.34099],[-73.40785,45.34037],[-73.40455,45.33888],[-73.40612,45.33769],[-73.40683,45.33609],[-73.40726,45.33564],[-73.4092,45.33299],[-73.40961,45.33211],[-73.41079,45.33191],[-73.41124,45.33021],[-73.39117,45.32129],[-73.39101,45.32128],[-73.38097,45.31676],[-73.38084,45.31664],[-73.36974,45.31172],[-73.36955,45.30985],[-73.36945,45.3098],[-73.37079,45.30889],[-73.3711,45.30856],[-73.3714,45.30664],[-73.37101,45.30513],[-73.3741,45.30452],[-73.37351,45.30309],[-73.37591,45.30264],[-73.37548,45.30108],[-73.37982,45.30023],[-73.37951,45.29869],[-73.37965,45.29709],[-73.37923,45.29572],[-73.38254,45.2951],[-73.382,45.29357],[-73.38189,45.29167],[-73.38156,45.29032],[-73.38173,45.29023],[-73.3827,45.28856],[-73.38243,45.28844],[-73.38098,45.28868],[-73.37923,45.28584],[-73.37983,45.2842],[-73.37989,45.28377],[-73.37952,45.28074],[-73.38948,45.26808],[-73.40096,45.2661],[-73.41218,45.25397],[-73.38357,45.25916],[-73.38434,45.25888],[-73.38484,45.25848],[-73.38577,45.25711],[-73.36731,45.24463],[-73.36753,45.24447],[-73.35209,45.23433],[-73.36661,45.2234],[-73.36552,45.22268],[-73.3802,45.21162],[-73.35937,45.19771],[-73.36538,45.17976],[-73.36185,45.17552],[-73.35942,45.17224],[-73.35494,45.16701],[-73.35627,45.13238],[-73.36398,45.13251],[-73.36399,45.13243],[-73.37746,45.13265],[-73.37783,45.12176],[-73.38084,45.12176],[-73.39132,45.122],[-73.3918,45.1073],[-73.39928,45.10744],[-73.39968,45.09237],[-73.39126,45.09224],[-73.39102,45.06694],[-73.39095,45.04956],[-73.3911,45.04488],[-73.391,45.04242],[-73.41179,45.04209],[-73.41175,45.03821],[-73.41182,45.03773],[-73.4117,45.03175],[-73.41114,45.02294],[-73.41067,45.00972],[-73.42789,45.00941],[-73.48185,45.00813],[-73.5726,45.00531],[-73.60786,45.00432],[-73.65025,45.003],[-73.66719,45.00287],[-73.67533,45.00288],[-73.70548,45.00317]]]}
-    }
-  ];
-
-  territoiresVoisins.forEach(function (territoire) {
-    L.geoJSON({
+  window.TERRITOIRES_CISSS_MSSS_2026.forEach(function (territoire) {
+    const couche = L.geoJSON({
       type: 'Feature',
       properties: {
         nom: territoire.nom,
@@ -1330,26 +1362,29 @@ if (MODE_EST && !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
       },
       geometry: territoire.geometry
     }, {
-      pane: 'territoireEstFond',
+      pane: 'territoiresCisssFond',
       interactive: false,
       style: {
         color: territoire.contour,
         opacity: 0.58,
         weight: 1.5,
         fillColor: territoire.remplissage,
-        fillOpacity: 0.07,
+        fillOpacity: 0.21,
         lineJoin: 'round'
       }
-    }).addTo(map);
+    });
+    couche.addTo(map);
+    couchesTerritoiresCisss.set(territoire.nom.replace('Montérégie-', ''), couche);
   });
+
 }
 
-/* Brouillon Montérégie-Est : les trois couleurs identifient maintenant les trois RLS.
-   Même transparence que les anciens repères territoriaux, toujours sous les épingles. */
-function synchroniserOverlaysRlsEst() {
-  if (!MODE_EST || !couchesRlsEst.size) return;
-  if (filtrerOverlaysMapLibre(rlsFilter ? [rlsFilter] : null)) return;
-  couchesRlsEst.forEach(function (couche, nomRls) {
+/* Page officielle Montérégie-Est : même découpage et mêmes couleurs RLS que le brouillon.
+   Les deux autres pages régionales ne créent aucune de ces couches. */
+const couchesRlsEstOfficielle = new Map();
+function synchroniserOverlaysRlsEstOfficielle() {
+  if (!MODE_EST || !couchesRlsEstOfficielle.size) return;
+  couchesRlsEstOfficielle.forEach(function (couche, nomRls) {
     const doitEtreVisible = !rlsFilter || rlsFilter === nomRls;
     if (doitEtreVisible && !map.hasLayer(couche)) couche.addTo(map);
     if (!doitEtreVisible && map.hasLayer(couche)) map.removeLayer(couche);
@@ -1357,9 +1392,9 @@ function synchroniserOverlaysRlsEst() {
 }
 
 if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
-  if (!map.getPane('territoireEstFond')) map.createPane('territoireEstFond');
-  map.getPane('territoireEstFond').style.zIndex = '260';
-  map.getPane('territoireEstFond').style.pointerEvents = 'none';
+  map.createPane('territoiresRlsEstFond');
+  map.getPane('territoiresRlsEstFond').style.zIndex = '260';
+  map.getPane('territoiresRlsEstFond').style.pointerEvents = 'none';
 
   window.TERRITOIRES_RLS_EST_MSSS_2026.forEach(function (rls) {
     const couche = L.geoJSON({
@@ -1372,83 +1407,22 @@ if (MODE_EST && Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) {
       },
       geometry: rls.geometry
     }, {
-      pane: 'territoireEstFond',
+      pane: 'territoiresRlsEstFond',
       interactive: false,
       style: {
         color: rls.contour,
         opacity: 0.58,
         weight: 1.5,
         fillColor: rls.remplissage,
-        fillOpacity: 0.07,
+        fillOpacity: 0.21,
         lineJoin: 'round'
       }
     });
     couche.addTo(map);
-    couchesRlsEst.set(rls.nom, couche);
+    couchesRlsEstOfficielle.set(rls.nom, couche);
   });
 
 }
-
-/* Reprend exactement les limites et couleurs ci-dessus, mais les confie au GPU de MapLibre.
-   Ça élimine le calque vectoriel séparé qui ralentissait le glisser et le zoom. */
-function installerOverlaysDansMapLibre(gl) {
-  if (!gl || typeof gl.addSource !== 'function' ||
-      !Array.isArray(window.TERRITOIRES_RLS_EST_MSSS_2026)) return;
-
-  const features = window.TERRITOIRES_RLS_EST_MSSS_2026.map(function (rls) {
-    return {
-      type: 'Feature',
-      properties: {
-        rls: rls.nom,
-        remplissage: rls.remplissage,
-        contour: rls.contour
-      },
-      geometry: rls.geometry
-    };
-  });
-  if (!features.length) return;
-
-  carteMapLibreOverlays = gl;
-  if (!gl.getSource(OVERLAY_SOURCE_ID)) {
-    gl.addSource(OVERLAY_SOURCE_ID, {
-      type: 'geojson',
-      data: { type: 'FeatureCollection', features: features }
-    });
-  }
-  if (!gl.getLayer(OVERLAY_FILL_ID)) {
-    gl.addLayer({
-      id: OVERLAY_FILL_ID,
-      type: 'fill',
-      source: OVERLAY_SOURCE_ID,
-      paint: {
-        'fill-color': ['get', 'remplissage'],
-        /* Opacite relevee de 0,07 a 0,21 le 29 aout 2026 (cible demandee : 0,20-0,22, max
-           0,25) - les routes, noms de villes et epingles restent lisibles par-dessus. */
-        'fill-opacity': 0.21
-      }
-    });
-  }
-  if (!gl.getLayer(OVERLAY_LINE_ID)) {
-    gl.addLayer({
-      id: OVERLAY_LINE_ID,
-      type: 'line',
-      source: OVERLAY_SOURCE_ID,
-      layout: {
-        'line-join': 'round',
-        'line-cap': 'round'
-      },
-      paint: {
-        'line-color': ['get', 'contour'],
-        'line-opacity': 0.58,
-        'line-width': 1.5
-      }
-    });
-  }
-
-  retirerOverlaysLeaflet();
-  synchroniserOverlaysRlsEst();
-}
-
 
 // Bouton « Me localiser » (sous les boutons de zoom)
 let userMarker = null;
@@ -1493,9 +1467,19 @@ map.on('locationerror', function () {
   showToast("Localisation impossible. Vérifiez que l'accès à votre position est autorisé dans votre navigateur.");
 });
 (function () {
-  // Essai vectoriel autonome du brouillon Montérégie-Est : MapLibre dessine le fond CARTO,
-  // tandis que Leaflet continue de gérer les épingles, filtres, popups et contrôles existants.
-  var ATTR = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a><span class="credit-perso"> | © Olivier Laplante</span>';
+  // Fond de carte CARTO, en clair et en sombre. Depuis le 27 août 2026 (2e volet), le fond est
+  // un fond VECTORIEL (tuiles .mvt) dessiné par MapLibre GL JS, plutôt qu'un fond raster (images
+  // PNG) chargé par Leaflet lui-même — reprise EXACTE de l'intégration déjà en place sur le
+  // brouillon Montérégie-Est (OLaplante/Monteregie-Est), MapLibre GL JS 5.24.0 + adaptateur
+  // MapLibre GL Leaflet 0.1.4, fichiers vendor copiés tels quels (voir ./vendor/). MapLibre ne
+  // fait QUE dessiner le fond : Leaflet garde entièrement la main sur les épingles, popups,
+  // filtres, favoris, géolocalisation et contrôles, exactement comme avant ce changement.
+  // Le fond raster avec clé (mis en place plus tôt le même jour, voir gabarit /rastertiles/ de
+  // docs.carto.com/faqs/carto-basemaps) ne sert plus que de solution de secours pour les
+  // navigateurs sans WebGL.
+  var ATTR = '© OpenStreetMap © CartoDB<span class="credit-perso"> | © Olivier Laplante</span>';
+  // Clé API CARTO (exigée depuis le 27 août 2026). Même clé pour les
+  // styles vectoriels et pour le repli raster.
   var CARTO_KEY = 'cb1_29ok_1_b602e4a604176e32ebdf7824';
   var STYLE_CLAIR = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
   var STYLE_SOMBRE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
@@ -1504,15 +1488,17 @@ map.on('locationerror', function () {
     return (sombre ? STYLE_SOMBRE : STYLE_CLAIR) + '?key=' + encodeURIComponent(CARTO_KEY);
   }
 
-  // Le bundle MapLibre local actuel n'expose pas toujours supported(). Dans ce cas,
-  // la présence de maplibregl suffit et une erreur réelle déclenchera le repli raster.
-  var vectorielDisponible = !!(window.maplibregl &&
-    (typeof maplibregl.supported !== 'function' || maplibregl.supported()));
+  // La build 5.24.0 de MapLibre GL JS (celle du brouillon, copiée telle quelle dans ./vendor/)
+  // n'exporte plus de fonction maplibregl.supported() — ce test n'a donc jamais pu passer,
+  // sur AUCUN navigateur, même quand WebGL est disponible. On considère le fond vectoriel
+  // possible dès que le script est chargé, et on continue de s'appuyer sur le bloc try/catch
+  // ci-dessous (déjà présent dans le brouillon) pour retomber sur le raster si la création de
+  // la carte MapLibre échoue réellement (WebGL absent ou désactivé).
+  var vectorielDisponible = !!(window.maplibregl && (typeof maplibregl.supported !== 'function' || maplibregl.supported()));
 
   function coucheRasterRepli(sombre) {
-    return L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (sombre ? 'dark_all' : 'light_all')
-      + '/{z}/{x}/{y}{r}.png?key=' + encodeURIComponent(CARTO_KEY),
-      { attribution: ATTR, maxZoom: 19 });
+    return L.tileLayer('https://basemaps.cartocdn.com/rastertiles/' + (sombre ? 'dark_all' : 'light_all')
+      + '/{z}/{x}/{y}{r}.png?key=' + CARTO_KEY, { attribution: ATTR, maxZoom: 19 });
   }
 
   function coucheVectorielle(sombre) {
@@ -1528,12 +1514,6 @@ map.on('locationerror', function () {
       try {
         var vectorielle = coucheVectorielle(sombre);
         vectorielle.addTo(map);
-        var gl = vectorielle.getMaplibreMap && vectorielle.getMaplibreMap();
-        if (gl) {
-          // Un changement clair/sombre retire les sources ajoutées : style.load les recrée.
-          gl.on('style.load', function () { installerOverlaysDansMapLibre(gl); });
-          if (gl.isStyleLoaded && gl.isStyleLoaded()) installerOverlaysDansMapLibre(gl);
-        }
         return vectorielle;
       } catch (e) {
         vectorielDisponible = false;
@@ -1565,45 +1545,90 @@ map.on('locationerror', function () {
 
 const REGION_COLORS = { 'Est': '#e6007e', 'Centre': '#43a047', 'Ouest': '#0080d7' };
 function regionColor(r) { return REGION_COLORS[r] || '#64748b'; }
-/* Couleurs par RLS — utilisées UNIQUEMENT sur la carte Montérégie-Est. Sur la carte des trois
+/* Couleurs par RLS — utilisées UNIQUEMENT sur les cartes régionales. Sur la carte des trois
    territoires, les épingles restent colorées par territoire (rose/vert/bleu) : y ajouter des
-   couleurs de RLS donnerait huit couleurs concurrentes sans rien clarifier. Sur la carte Est,
-   à l'inverse, tout serait rose : distinguer les trois RLS y redevient utile, comme sur la
-   première carte du CISSS Montérégie-Est.
-   Ce sont les couleurs EXACTES de la toute première carte (cisssme.github.io/Map/), relevées
-   par échantillonnage de sa légende. Elles vivaient déjà dans ce fichier sans plus servir à
-   rien : ce sont celles des trois épingles de l'écran de chargement (.pin-rose, .pin-green,
-   .pin-blue). L'écran de chargement était donc le dernier vestige de ce code de couleurs — il
-   redevient cohérent avec la carte qu'il annonce. */
-const RLS_COLORS_EST = {
-  'Pierre-Boucher':    '#ee2d62',
-  'Richelieu-Yamaska': '#15803d',
-  'Pierre-De Saurel':  '#2f4a7a'
+   couleurs de RLS donnerait neuf couleurs concurrentes sans rien clarifier. Sur une carte
+   régionale, à l'inverse, tout serait de la même couleur : distinguer les RLS y redevient
+   utile, comme sur la première carte du CISSS Montérégie-Est.
+   MONTÉRÉGIE-EST — ce sont les couleurs EXACTES de la toute première carte
+   (cisssme.github.io/Map/), relevées par échantillonnage de sa légende. Elles vivaient déjà
+   dans ce fichier sans plus servir à rien : ce sont celles des trois épingles de l'écran de
+   chargement (.pin-rose, .pin-green, .pin-blue). L'écran de chargement était donc le dernier
+   vestige de ce code de couleurs — il redevient cohérent avec la carte qu'il annonce.
+   CENTRE et OUEST (26 août 2026) — couleurs retenues : bleu et vert pour les deux
+   RLS du Centre ; bleu, vert, rose et violet pour les quatre RLS de l'Ouest. Le bleu et le vert
+   sont les teintes de territoire déjà utilisées partout dans l'app (REGION_COLORS ci-dessus) et
+   le rose celui de Pierre-Boucher — aucun risque de confusion, les cartes étant séparées. Le
+   violet #7c3aed complète la série sans se confondre avec le rouge des hôpitaux ni l'ambre des
+   chantiers. */
+const RLS_COLORS_PAR_REGION = {
+  'Est': {
+    'Pierre-Boucher':    '#ee2d62',
+    'Richelieu-Yamaska': '#15803d',
+    'Pierre-De Saurel':  '#2f4a7a'
+  },
+  'Centre': {
+    'Champlain':               '#0080d7',
+    'Haut-Richelieu–Rouville': '#43a047'
+  },
+  'Ouest': {
+    'Jardins-Roussillon':    '#0080d7',
+    'Vaudreuil-Soulanges':   '#43a047',
+    'du Suroît':             '#ee2d62',
+    'du Haut-Saint-Laurent': '#7c3aed'
+  }
 };
-// Même identité de couleur, mais nettement éclaircie pour les cliniques qui
-// ne recrutent pas actuellement. Des couleurs fixes évitent qu'un navigateur
-// plus ancien interprète différemment un mélange CSS calculé.
-const RLS_COLORS_EST_PALES = {
-  'Pierre-Boucher':    '#f6a8bc',
-  'Richelieu-Yamaska': '#a7cfb2',
-  'Pierre-De Saurel':  '#b5bfd1'
+/* Couleurs de la page courante : le jeu du territoire sur une carte régionale, un objet vide
+   sur la carte générale. Tout le code en aval lit CETTE constante et n'a donc jamais à savoir
+   sur quel territoire il tourne. */
+const RLS_COLORS_REGION = (MODE_REGION && RLS_COLORS_PAR_REGION[REGION_PAGE]) || {};
+/* Versions pâlies des mêmes couleurs, réservées aux épingles des milieux qui ne recrutent pas
+   actuellement (voir showAllClinics/statutVisible plus haut) — reprise du brouillon
+   Montérégie-Est. Des couleurs FIXES plutôt qu'un éclaircissement calculé en CSS : un navigateur
+   plus ancien ne doit pas interpréter différemment un mélange, et les trois valeurs Est sont
+   celles déjà choisies dans le brouillon. Le Centre et l'Ouest n'ont pour l'instant aucun milieu
+   `recrutementActif:false` dans data.json ; ces valeurs n'attendent que le jour où ce sera le cas
+   pour s'appliquer automatiquement, sans code à ajouter. */
+const RLS_COLORS_PALES_PAR_REGION = {
+  'Est': {
+    'Pierre-Boucher':    '#f6a8bc',
+    'Richelieu-Yamaska': '#a7cfb2',
+    'Pierre-De Saurel':  '#b5bfd1'
+  },
+  'Centre': {
+    'Champlain':               '#8cc6ed',
+    'Haut-Richelieu–Rouville': '#aad4ac'
+  },
+  'Ouest': {
+    'Jardins-Roussillon':    '#8cc6ed',
+    'Vaudreuil-Soulanges':   '#aad4ac',
+    'du Suroît':             '#f7a0b8',
+    'du Haut-Saint-Laurent': '#c4a6f7'
+  }
 };
-/* Couleur d'un milieu : par RLS sur la carte Est, par territoire partout ailleurs. Tout passe
-   par cette seule fonction, de sorte que la carte des trois territoires garde exactement le
-   comportement qu'elle avait avant (regionColor, inchangé). */
+const REGION_COLORS_PALES = { 'Est': '#f48cc5', 'Centre': '#aad4ac', 'Ouest': '#8cc6ed' };
+const RLS_COLORS_PALES_REGION = (MODE_REGION && RLS_COLORS_PALES_PAR_REGION[REGION_PAGE]) || {};
+/* Couleur d'un milieu : par RLS sur une carte régionale, par territoire partout ailleurs. Tout
+   passe par cette seule fonction, de sorte que la carte des trois territoires garde exactement
+   le comportement qu'elle avait avant (regionColor, inchangé). C'est aussi la couleur « de
+   référence » (identité RLS/territoire) utilisée par la légende, le comparatif et le contour des
+   ronds de la liste — jamais pâlie, contrairement à couleurEpingle() ci-dessous. */
 function couleurMilieu(g) {
-  if (MODE_EST && g && RLS_COLORS_EST[g.rls]) return RLS_COLORS_EST[g.rls];
+  if (MODE_REGION && g && RLS_COLORS_REGION[g.rls]) return RLS_COLORS_REGION[g.rls];
   return regionColor(g && g.region);
 }
+/* Couleur RÉELLEMENT peinte sur l'épingle et le rond de la liste : identique à couleurMilieu()
+   pour un milieu en recrutement, pâlie pour un milieu affiché seulement via « Toutes les
+   cliniques ». Toute la légende, le comparatif et les bordures de contour continuent de lire
+   couleurMilieu() (la couleur « pleine », jamais pâlie) pour rester une référence stable. */
 function couleurEpingle(g) {
-  if (MODE_EST && g && !recruteActuellement(g) && RLS_COLORS_EST_PALES[g.rls]) {
-    return RLS_COLORS_EST_PALES[g.rls];
-  }
-  return couleurMilieu(g);
+  if (!g || recruteActuellement(g)) return couleurMilieu(g);
+  if (MODE_REGION && RLS_COLORS_PALES_REGION[g.rls]) return RLS_COLORS_PALES_REGION[g.rls];
+  return REGION_COLORS_PALES[g.region] || couleurMilieu(g);
 }
 
 // Légende des couleurs. Carte des trois territoires : une ligne par territoire. Carte
-// Montérégie-Est : une ligne par RLS, puisque c'est ce que les épingles distinguent là-bas.
+// régionale : une ligne par RLS, puisque c'est ce que les épingles y distinguent.
 let legendEl = null;
 (function(){
   const legend = L.control({ position:'bottomleft' });
@@ -1611,9 +1636,9 @@ let legendEl = null;
     const d = L.DomUtil.create('div', 'rls-legend');
     const ligne = (couleur, texte) =>
       `<div class="rls-legend-row"><span class="rls-dot" style="background:${couleur}"></span>${texte}</div>`;
-    d.innerHTML = MODE_EST
+    d.innerHTML = MODE_REGION
       ? '<div class="rls-legend-title">Réseau local (RLS)</div>' +
-        Object.keys(RLS_COLORS_EST).map(r => ligne(RLS_COLORS_EST[r], r)).join('')
+        Object.keys(RLS_COLORS_REGION).map(r => ligne(RLS_COLORS_REGION[r], r)).join('')
       : '<div class="rls-legend-title">Région</div>' +
         ligne('#e6007e', 'Montérégie-Est') +
         ligne('#43a047', 'Montérégie-Centre') +
@@ -1627,6 +1652,45 @@ let legendEl = null;
 
 let activeId = null;
 const markers = {};
+/* Plusieurs milieux peuvent légitimement partager une adresse et donc les mêmes coordonnées
+   (par exemple les cliniques A, B et C). Sans décalage visuel, leurs épingles sont exactement
+   superposées et seule la dernière demeure cliquable. On conserve les coordonnées officielles
+   dans data.json et on décale uniquement le dessin des épingles, en pixels. */
+const markerOffsets = new Map();
+
+function calculerDecalagesMarqueurs() {
+  markerOffsets.clear();
+  const groupes = new Map();
+  gmfs.forEach(g => {
+    const cle = `${Number(g.lat).toFixed(6)},${Number(g.lng).toFixed(6)}`;
+    if (!groupes.has(cle)) groupes.set(cle, []);
+    groupes.get(cle).push(g);
+  });
+  groupes.forEach(groupe => {
+    groupe.sort((a, b) => Number(a.id) - Number(b.id));
+    const n = groupe.length;
+    if (n === 1) {
+      markerOffsets.set(groupe[0].id, [0, 0]);
+      return;
+    }
+    if (n === 2) {
+      markerOffsets.set(groupe[0].id, [-18, 0]);
+      markerOffsets.set(groupe[1].id, [18, 0]);
+      return;
+    }
+    if (n === 3) {
+      markerOffsets.set(groupe[0].id, [-28, -4]);
+      markerOffsets.set(groupe[1].id, [0, 5]);
+      markerOffsets.set(groupe[2].id, [28, -4]);
+      return;
+    }
+    const rayon = 30;
+    groupe.forEach((g, i) => {
+      const angle = -Math.PI / 2 + (2 * Math.PI * i / n);
+      markerOffsets.set(g.id, [Math.round(Math.cos(angle) * rayon), Math.round(Math.sin(angle) * rayon)]);
+    });
+  });
+}
 
 const TYPE_COLORS = {
   'GMF': '#2563eb',
@@ -1656,17 +1720,52 @@ const TYPE_LABELS = {
 };
 function typeLabel(t) { return TYPE_LABELS[t] || t || ''; }
 
-function makeIcon(active, rank, couleur) {
+/* Badge « Vérifié » — voir aussi le bloc CSS .badge-verif (recherche « Ajouté le 26 août 2026 »).
+   Le badge ne s'affiche QUE si validation.statut === 'valide' : une simple réponse reçue au
+   formulaire (statut vide, « recu », « en_revision », etc.) ne l'active jamais — seule une
+   validation manuelle explicite le fait. */
+function estValide(g) { return !!(g && g.validation && g.validation.statut === 'valide'); }
+
+// Réutilise MOIS_FR déjà défini plus bas (voir dateDuTexte) — un seul tableau des mois pour
+// tout le fichier, pas de doublon.
+function dateLisibleFr(iso) {
+  if (typeof iso !== 'string') return '';
+  const m = iso.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return '';
+  const mois = MOIS_FR[parseInt(m[2], 10) - 1];
+  if (!mois) return '';
+  return `${parseInt(m[3], 10)} ${mois} ${m[1]}`;
+}
+
+const SVG_BADGE_VERIF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>';
+
+function badgeVerifHtml(g) {
+  if (!estValide(g)) return '';
+  const date = dateLisibleFr(g.validation.date);
+  const msg = 'Informations confirmées par la clinique via le formulaire.'
+    + (date ? ' Dernière validation : ' + date + '.' : '');
+  return `<button type="button" class="badge-verif" title="${esc(msg)}" aria-label="${esc(msg)}"><span class="badge-verif-tip" aria-hidden="true">${esc(msg)}</span>${SVG_BADGE_VERIF}</button>`;
+}
+// Un seul écouteur délégué : bascule l'infobulle au toucher/clic (le survol et le focus clavier
+// sont déjà gérés en CSS pur). Ferme toute infobulle ouverte au clic ailleurs ou sur Échap.
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest && e.target.closest('.badge-verif');
+  document.querySelectorAll('.badge-verif.show').forEach(b => { if (b !== btn) b.classList.remove('show'); });
+  if (btn) { e.stopPropagation(); btn.classList.toggle('show'); }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelectorAll('.badge-verif.show').forEach(b => b.classList.remove('show'));
+});
+
+function makeIcon(active, rank, couleur, id) {
   const c = couleur;
   const size = active ? 26 : 20;
   const border = active ? '#0f2240' : '#fff';
   const bw = active ? 3 : 2.5;
+  const [dx, dy] = markerOffsets.get(id) || [0, 0];
   return L.divIcon({ className:'',
     html:`<div style="position:relative;width:${size}px;height:${size}px;background:${c};border:${bw}px solid ${border};border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 8px rgba(0,0,0,.35)"><span class="pin-num">${rank}</span></div>`,
-    iconSize:[size,size], iconAnchor:[size/2,size], popupAnchor:[0,-size-2] });
-}
-function makeClinicIcon(g, active, rank) {
-  return makeIcon(active, rank, couleurEpingle(g));
+    iconSize:[size,size], iconAnchor:[size/2-dx,size-dy], popupAnchor:[dx,dy-size-2] });
 }
 
 // Ne touche qu'aux marqueurs actuellement affichés (matchesFilters) : en vue
@@ -1676,7 +1775,7 @@ function makeClinicIcon(g, active, rank) {
 // touche pas plutôt que de leur écrire une icône fausse qui resterait figée
 // (bug du 18 août : jusqu'à « 0 » sur 58 épingles après un glisser-déposer).
 function refreshMarkerIcons() {
-  gmfs.forEach(g => { if (markers[g.id] && matchesFilters(g.id)) markers[g.id].setIcon(makeClinicIcon(g, g.id === activeId, rankOf(g.id))); });
+  gmfs.forEach(g => { if (markers[g.id] && matchesFilters(g.id)) markers[g.id].setIcon(makeIcon(g.id === activeId, rankOf(g.id), couleurEpingle(g), g.id)); });
 }
 
 function buildMarkers() {
@@ -1686,9 +1785,13 @@ function buildMarkers() {
   // et fitToData() ne s'exécutent jamais et la page reste vide.
   gmfs.forEach(g => {
     try {
-      const m = L.marker([g.lat, g.lng], { icon:makeClinicIcon(g, false, rankOf(g.id)), draggable:false });
+      const m = L.marker([g.lat, g.lng], { icon:makeIcon(false, rankOf(g.id), couleurEpingle(g), g.id), draggable:false });
+      // 27 août 2026 : n'ajouter à la carte que si le milieu satisfait déjà les filtres (donc
+      // statutVisible) — sinon les milieux ne recrutant pas s'afficheraient un instant au
+      // chargement, avant que quoi que ce soit ne les masque.
       if (matchesFilters(g.id)) m.addTo(map);
-      m.bindTooltip(`<b>${esc(g.nom.trim())}</b><br><small>${esc(g.ville)}${recruteActuellement(g) ? '' : ' · Ne recrute pas actuellement'}</small>`, { direction:'top', offset:[0,-20] });
+      const [dx, dy] = markerOffsets.get(g.id) || [0, 0];
+      m.bindTooltip(`<b>${esc(g.nom.trim())}</b><br><small>${esc(g.ville)}${recruteActuellement(g) ? '' : ' · Ne recrute pas actuellement'}</small>`, { direction:'top', offset:[dx,dy-20] });
       m.on('click', (e) => { L.DomEvent.stopPropagation(e); toggleDetail(g.id); });
       markers[g.id] = m;
     } catch (e) {
@@ -1698,11 +1801,11 @@ function buildMarkers() {
 }
 
 // Icône « H » — même goutte que les épingles de clinique (makeIcon), à peine plus grande
-// (28px contre 20-26px pour les cliniques ; un premier essai à 34px était trop gros)
-// et toujours rouge, avec un rond blanc et un « H » rouge au centre. Pas de variante
+// (28px contre 20-26px, ajusté le 21 août — d'abord 34px, jugé trop
+// gros) et toujours rouge, avec un rond blanc et un « H » rouge au centre. Pas de variante
 // « active » : un hôpital ne s'ouvre jamais dans le panneau de détail des cliniques, un
 // simple popup Leaflet suffit (buildHopitalMarkers()).
-/* Icône d'hôpital (délai porté de 5 à 10 secondes ;
+/* Icône d'hôpital (21 août — délai porté de 5 à 10 secondes le même soir ;
    22 août : la taille ne change plus du tout, seul le plan change — voir plus bas).
    À l'ouverture de la carte, le repère « H » est AU PREMIER PLAN (zIndexOffset positif, voir
    buildHopitalMarkers) : c'est le moment où l'usager balaie la carte et où il a besoin de situer
@@ -1715,17 +1818,39 @@ function buildMarkers() {
 const HOPITAL_TAILLE = 32;
 const HOPITAL_ZINDEX_GRAND = 1000;   // premier plan pendant HOPITAL_DELAI_REDUCTION
 const HOPITAL_ZINDEX_NORMAL = -1000; // arrière-plan ensuite — voir buildHopitalMarkers
-const HOPITAL_DELAI_REDUCTION = 10000;
+// 26 août 2026 : délai ramené de 10 à 5 secondes. La première lecture
+// de la carte (« où sont les hôpitaux ? ») se fait plus vite qu'on ne l'avait estimé ; passé
+// ce temps, le repère « H » n'a plus de raison d'intercepter les clics avant les cliniques.
+const HOPITAL_DELAI_REDUCTION = 5000;
 
-function makeHopitalIcon() {
+// 26 août 2026 : hôpitaux « en chantier » (h.statut === 'construction') — cas de l'Hôpital de
+// Vaudreuil-Soulanges, pas encore ouvert (ouverture prévue à l'été 2028). Couleur ambre distincte
+// du rouge des hôpitaux en fonction, pour qu'on ne les confonde jamais au premier coup d'œil sur
+// la carte (un usager ne doit pas croire qu'il peut s'y présenter aux urgences).
+function estHopitalEnChantier(h) { return h && h.statut === 'construction'; }
+
+function makeHopitalIcon(h) {
   const size = HOPITAL_TAILLE;
+  const enChantier = estHopitalEnChantier(h);
+  const couleur = enChantier ? '#b8770f' : '#c0182c';
+  const bordure = enChantier ? '3px dashed #fff' : '3px solid #fff';
   return L.divIcon({ className:'',
-    html:`<div style="position:relative;width:${size}px;height:${size}px;background:#c0182c;border:3px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 6px rgba(0,0,0,.4)"><div class="hosp-pin-circle"><div class="hosp-pin-circle-inner"><span style="font-size:13px">H</span></div></div></div>`,
+    html:`<div style="position:relative;width:${size}px;height:${size}px;background:${couleur};border:${bordure};border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 6px rgba(0,0,0,.4)"><div class="hosp-pin-circle"><div class="hosp-pin-circle-inner"><span style="font-size:13px">${enChantier ? '🚧' : 'H'}</span></div></div></div>`,
     iconSize:[size,size], iconAnchor:[size/2,size], popupAnchor:[0,-size-2] });
 }
 
 function hopitalPopupHtml(h) {
   const tel = String(h.telephone || '').replace(/[^\d+]/g, '');
+  const enChantier = estHopitalEnChantier(h);
+  if (enChantier) {
+    return `<div class="hosp-popup">
+      <span class="hosp-tag" style="background:#b8770f">Chantier en cours</span>
+      <h4>${esc(h.nom)}</h4>
+      <p>${esc(h.adresse)}${h.ville ? ', ' + esc(h.ville) : ''}</p>
+      <p><em>Pas encore ouvert${h.ouverturePrevue ? ' — ouverture prévue ' + esc(h.ouverturePrevue) : ''}. Ne pas s'y présenter en attendant.</em></p>
+      ${h.site ? `<p><a href="${esc(h.site)}" target="_blank" rel="noopener">Suivre le projet ↗</a></p>` : ''}
+    </div>`;
+  }
   return `<div class="hosp-popup">
     <span class="hosp-tag">Hôpital</span>
     <h4>${esc(h.nom)}</h4>
@@ -1746,9 +1871,13 @@ function buildHopitalMarkers() {
       // d'être à moitié masquée par elle. Repasse à l'arrière-plan plus bas — la taille, elle,
       // ne change jamais (demande du 22 août).
       const m = L.marker([h.lat, h.lng], {
-        icon: makeHopitalIcon(), draggable:false, zIndexOffset: HOPITAL_ZINDEX_GRAND
-      }).addTo(map);
-      m.bindTooltip(`<b>${esc(h.nom)}</b>`, { direction:'top', offset:[0,-14] });
+        icon: makeHopitalIcon(h), draggable:false, zIndexOffset: HOPITAL_ZINDEX_GRAND
+      });
+      // Même précaution que pour les cliniques (27 août) : n'ajouter à la carte que si les
+      // filtres de territoire actifs le permettent, sinon un hôpital hors filtre apparaîtrait
+      // un instant au chargement avant d'être masqué.
+      if (hopitalMatchesFilters(h)) m.addTo(map);
+      m.bindTooltip(`<b>${esc(h.nom)}</b>${estHopitalEnChantier(h) ? ' <small>(en chantier)</small>' : ''}`, { direction:'top', offset:[0,-14] });
       m.bindPopup(hopitalPopupHtml(h));
       hospitalMarkers[h.id] = m;
     } catch (e) {
@@ -1812,9 +1941,8 @@ function favListOrder() {
 }
 function currentOrder() {
   const base = favOnly ? favListOrder() : order;
-  // Les 26 cliniques recruteuses conservent leur numérotation continue dans la
-  // vue par défaut. Les 43 autres ne participent au classement que si le toggle
-  // « Toutes les cliniques » est activé.
+  // Un milieu qui ne recrute pas ne participe au classement (numérotation continue) que si
+  // « Toutes les cliniques » est actif — sinon il resterait numéroté tout en étant invisible.
   return base.filter(id => statutVisible(byId(id)));
 }
 
@@ -1827,8 +1955,17 @@ function renderSidebar() {
     const g = byId(id);
     if (!matchesFilters(id)) return;
     shown++;
+    /* La parenthèse finale est normalement un complément décoratif — « GMF Petit-Bois »,
+       « clinique Dre X » — qu'on retire du titre de la liste pour rester lisible.
+       29 août 2026 : EXCEPTION pour les suffixes qui DISTINGUENT deux fiches d'une même
+       enseigne (Sorel-Tracy clinique A / B / C). Les retirer affichait trois lignes portant
+       exactement le même nom, sans moyen de les différencier. */
     const parenMatch = g.nom.trim().match(/^(.*?)\s*(\(.*\))\s*$/);
-    const nomMain = parenMatch ? parenMatch[1] : g.nom.trim();
+    // Un suffixe distinctif est court et codé : « (clinique A) », « (unité 2) ». On exige donc
+    // 1 ou 2 caractères après le mot-clé, sinon « (clinique Dre Sophie Lavallée) » — un simple
+    // complément décoratif — serait conservé lui aussi.
+    const suffixeDistinctif = parenMatch && /^\((clinique|unit[ée]|site)\s+[A-Z0-9]{1,2}\b/i.test(parenMatch[2]);
+    const nomMain = (parenMatch && !suffixeDistinctif) ? parenMatch[1] : g.nom.trim();
     const el = document.createElement('div');
     const nonRecruiting = !recruteActuellement(g);
     el.className = 'sb-item' + (nonRecruiting ? ' non-recruiting' : '') + (id === activeId ? ' active' : '');
@@ -1837,7 +1974,7 @@ function renderSidebar() {
     el.innerHTML = `${dragEnabled ? '<span class="sb-grip" title="Glisser pour reclasser">⠿</span>' : ''}
       <div class="sb-num" style="--rls:${couleurEpingle(g)};--rls-base:${couleurMilieu(g)}">${i+1}</div>
       <div class="sb-info">
-        <div class="sb-name">${esc(nomMain)}</div>
+        <div class="sb-name">${esc(nomMain)}${badgeVerifHtml(g)}</div>
         <div class="sb-city">📍 ${esc(g.ville)}</div>
         ${nonRecruiting ? '<span class="sb-status">Ne recrute pas actuellement</span>' : ''}
       </div>
@@ -2024,11 +2161,30 @@ function toggleFav(id) {
   if (favOnly) { renderSidebar(); updateMarkerVisibility(); refreshMarkerIcons(); }
 }
 
+// Un hôpital suit les filtres de TERRITOIRE seulement (région et RLS) — pas la recherche, pas
+// les favoris, pas « Toutes les cliniques » : ce n'est pas une clinique, il n'a ni statut de
+// recrutement, ni fiche, ni favori. 29 août 2026 : isoler un RLS depuis la légende doit faire
+// disparaître les hôpitaux des autres RLS, comme leurs cliniques — sinon un « H » d'un
+// territoire voisin reste seul sur la carte alors que tout le reste a été filtré.
+function hopitalMatchesFilters(h) {
+  if (!h) return false;
+  if (regionFilter.size && !regionFilter.has(h.region)) return false;
+  if (rlsFilter && (h.rls || '') !== rlsFilter) return false;
+  return true;
+}
+
 function updateMarkerVisibility() {
   gmfs.forEach(g => {
     const m = markers[g.id];
     if (!m) return;
     const show = matchesFilters(g.id);
+    if (show && !map.hasLayer(m)) m.addTo(map);
+    else if (!show && map.hasLayer(m)) map.removeLayer(m);
+  });
+  hopitaux.forEach(h => {
+    const m = hospitalMarkers[h.id];
+    if (!m) return;
+    const show = hopitalMatchesFilters(h);
     if (show && !map.hasLayer(m)) m.addTo(map);
     else if (!show && map.hasLayer(m)) map.removeLayer(m);
   });
@@ -2038,7 +2194,7 @@ function toggleFavView() {
   favOnly = !favOnly;
   const b = document.getElementById('fav-toggle');
   if (b) {
-    b.textContent = favOnly ? '↩ Quitter les favoris' : '★ Voir mes favoris';
+    b.textContent = favOnly ? '↩ Voir toutes les cliniques' : '★ Voir mes favoris';
     b.classList.toggle('active', favOnly);
   }
   renderSidebar();
@@ -2048,6 +2204,8 @@ function toggleFavView() {
   refreshMarkerIcons();
 }
 
+// 27 août 2026 : interrupteur « Toutes les cliniques », repris du brouillon Montérégie-Est
+// — affiche aussi les milieux ne recrutant pas actuellement (voir statutVisible()).
 function syncAllClinicsToggle() {
   const b = document.getElementById('all-clinics-toggle');
   if (b) b.setAttribute('aria-checked', showAllClinics ? 'true' : 'false');
@@ -2058,6 +2216,9 @@ function syncAllClinicsToggle() {
 function toggleAllClinics() {
   const prochainEtat = !showAllClinics;
   const active = activeId !== null ? byId(activeId) : null;
+  // Si on désactive la vue complète alors qu'une fiche ne recrutant pas est ouverte, cette
+  // fiche va disparaître de la liste et de la carte : on la referme d'abord, avec la même
+  // protection des notes non sauvegardées qu'ailleurs dans l'application.
   if (!prochainEtat && active && !recruteActuellement(active)) {
     if (notesDirty && !confirm("Vos notes ne sont pas sauvegardées. Masquer cette clinique sans les sauvegarder ?")) return;
     notesDirty = false;
@@ -2077,10 +2238,7 @@ function toggleAllClinics() {
 }
 
 // ===== Export du comparatif des favoris (PDF via impression) =====
-// Code QR du comparatif et des fiches PDF. Il doit encoder l'adresse PUBLIQUE du site,
-// la même que celle imprimée juste à côté dans le PDF (trouvetaclinique.ca).
-// Régénéré le 29 août 2026 : l'ancien encodait encore une adresse de dépôt GitHub.
-const QR_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAGiklEQVR42u3dS27cUAxFwSjQ/rfszDJUHD/Tl6Sq5v1Ttw+eAIK+Pj4+fgF8n98uASArgKwAsgIgK4CsALICICuArACyAiArgKwAsgLICoCsALICyAqArACyAuxznzz4uq5ll+N5s+/J5z155tS+4bp3VffLSV3nt/0tOK0AboIAWQGQFUBWAFkBZAVAVgBZAda76546NRv6LDXfefLYk9nQ1Fzp8zP3/G34W3BaAdwEAbICICuArACyAiArgKwAsgLw15164Z7TrifPXLfptu51665k3dVI/Sbr3tXEvwWnFUBWAFkBkBVAVgBZAWQFQFYAWQHWu12Cz6ubhjx53bftha3boZv6fp1WAGQFkBVAVgBkBZAVQFYAWQGQFaAhU7b/oedO2boZ3J47Vk3KOq0AsgIgK4CsALICICuArACyAiArwA+ITdnu28Ca+kQ9Z397fgs9twLv+1twWgFkBZAVQFYAZAWQFUBWAGQFkBVggcIp231bRU9mNFOPfVY3oTvxWk3cCuy0AsgKgKwAsgLICoCsALICyAqArABFrn17NAsvVmhWsu476jn9WTfPOnHTrdMKgKwAsgLICiArALICyAogKwCyAkQc7bKtm2h8VvfMJ697cq3qmKP9mauR2oOb+itzWgHcBAGyAiArgKwAsgLICoCsALICrNd0l21qOrDnttqJV2PijPW+a1X3m3RaAdwEAbICICuArACyAsgKgKwAsgKsd/Xcstlz3rHudU/e1cQtqj3nSlPfUc/XNWULuAkCZAVAVgBZAWQFQFYAWQFkBXi5O/XCdTOaddt53zYZnJrunfirS72rut+G0wrgJgiQFQBZAWQFkBUAWQFkBZAV4OUKp2zrJmUn7knt+boT9w2nTLwaqblhpxVAVgBZAWQFQFYAWQFkBUBWAFkBFiicsk3NHabmSvfNpKb2DaeuZGpbbc9v32kFkBVAVgBkBZAVQFYAZAWQFUBWgJe7Uv9T/mR28G0zixPnSuuuc+o9p3YkpyaSnVYAN0GArADICiArgKwAyAogK4CsAC93pSY4e+5nPfm8KRNncI9+si13Fff81ZmyBdwEAcgKICuArACy4hIAsgLICiArAF921z11z22mqbnS1PTn82P37YWdOPk9cb+y0wogK4CsAMgKICuArACyAiArgKwA6x1N2U7cC7tvjvZE3Z7Unte57vP2/D2n9uA6rQBuggBZAWQFQFYAWQFkBUBWAFkBFrhTL9xzQnfiltye6q5G6jqn5qR7ztE6rQBuggBZAZAVQFYAWQFkBUBWAFkB1juasu25n7XnPOvE2dCTZ67Tc2dwzxnc1G/DaQVwEwTICiArALICyAogKwCyAsgKsMCVmrNMzZWevKu3TVJO3M7b8zf5tk/ktALICiArgKwAyAogK4CsAMgKICvAAnfqhXtuQk1J7f1NfQs935X9yt/1np1WADdBgKwAsgIgK4CsALICICuArAALXD3n//7xplvuZ01tuq3T8z3v+44m7nV2WgHcBAGyAiArgKwAsgLICoCsALICrHelJvwmvm7PWdhn+2aO982k9vw9m7IF3AQBsgIgK4CsALICICuArACyArzcffLgnvOsPTeS9tyEmvqOJk6O1l2Nuu/IaQVwEwQgK4CsALICyIpLAMgKICuArAB82dGUbd38X89nnrjLtuf0Z2pCd+K22olbgZ1WAFkBZAWQFQBZAWQFkBUAWQFkBVigcJftRD1ncHtOju779uv+FlL7hlN7cJ1WAFkBZAWQFQBZAWQFkBUAWQFkBVjgrnvqnv/pfuIsbGojaeq3MfHzpjbd9rzOTiuAmyBAVgBZAZAVQFYAWQGQFUBWgAXu1Aunpl0nPnNqQrfuO6qb70y95zon31FqXtlpBZAVQFYAWQGQFUBWAFkBkBVAVoAFbpfg81Izi2/bVtvzXdXN/ta9q9QMrtMK4CYIkBVAVgBkBZAVQFYAZAWQFWABU7bfJjVJWfee69RdjX3Xqu46O60AboIAWQGQFUBWAFkBkBVAVgBZAXgQm7J9237W1J7Uum+h59Rp3XWu287bc8baLlvATRAgKwCyAsgKICsAsgLICiArwMsVTtlO3P158ol6TkPWTX/WPbZu023qG+w5oVv3eZ1WAFkBZAWQFQBZAWQFkBUAWQFkBVjgmrhTFnBaAWQFQFYAWQFkBUBWAFkBZAVAVgBZAWQFkBUAWQFkBZAVAFkBZAWQFQBZAX7UH/mCDwS+uE3XAAAAAElFTkSuQmCC";
+const QR_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCAIAAAD0S4FSAAAGNElEQVR4nO3d0Y3jNhRA0UyQAraHVJLKt5L0sB04DSyIGBziUdfn/A5GlmRf8OeB/Hq9Xn8ARX9O3wBwirwhS96QJW/IkjdkyRuy5A1Z8oYseUOWvCFL3pAlb8iSN2TJG7LkDVnyhix5Q5a8IUvekPXXzj//+Puf77qPS/z69+fir0983vUT7dh5G3fe1Z123pXVG7LkDVnyhix5Q5a8IUvekCVvyJI3ZMkbsram1tbOTSbtODfVdOfE2/pzd+555/s9d+W1T/tNWr0hS96QJW/IkjdkyRuy5A1Z8oYseUOWvCHr4NTa2tT02DlTk1jn5tI+Te83afWGLHlDlrwhS96QJW/IkjdkyRuy5A1Z8oassam1J9qZAJs6T/PcTNu5Ga+p+b8eqzdkyRuy5A1Z8oYseUOWvCFL3pAlb8iSN2SZWnvDnad8Tjm3i5u5tO9i9YYseUOWvCFL3pAlb8iSN2TJG7LkDVnyhqyxqbUnTiad2/PsTjvPO7U/3I4n/ibXrN6QJW/IkjdkyRuy5A1Z8oYseUOWvCFL3pB1cGrtiXNaa+emqXb2LTu359m5z52aD+v9Jtes3pAlb8iSN2TJG7LkDVnyhix5Q5a8IUvekLU1tdbbm2ptarbsifNhO6b2eOuxekOWvCFL3pAlb8iSN2TJG7LkDVnyhix5Q9bW1Nq5eanenli92bLelN7UnnZrO09k9YYseUOWvCFL3pAlb8iSN2TJG7LkDVnyhqxLTwi9c3exc0907nN33tWdc4dPnPBbO/dEVm/IkjdkyRuy5A1Z8oYseUOWvCFL3pAlb8g6OLU2tTfV2tQs3Z0zfOfuamq2bGqycOrKa1ZvyJI3ZMkbsuQNWfKGLHlDlrwhS96QJW/IOji1tnZummpqJ7ZzO5NNTfjdeVLnjqkZvrVzb9LqDVnyhix5Q5a8IUvekCVvyJI3ZMkbsuQNWVtTa3fuprY2NdO2Y2rW6s65tHM73t357e+wekOWvCFL3pAlb8iSN2TJG7LkDVnyhix5Q9bX6/Wavoff6O16teOJe63tXHnHnbOSO+y1BvyGvCFL3pAlb8iSN2TJG7LkDVnyhix5Q9bW1NrUjNfUCZJrO2/jzjMx79xNbced+9I5IRR4m7whS96QJW/IkjdkyRuy5A1Z8oYseUPWwRNC7zQ1P7T2xDe5du4cz3N634LVG7LkDVnyhix5Q5a8IUvekCVvyJI3ZMkbssb2WnvizmTnTO151pvTWrtzR7RzrN6QJW/IkjdkyRuy5A1Z8oYseUOWvCFL3pB16QmhU+dL9ubwdtz5vFPnhz7xiazekCVvyJI3ZMkbsuQNWfKGLHlDlrwhS96QtXVC6Nqdczw7d3Xuf6d2+XritNyOqW9w6spWb8iSN2TJG7LkDVnyhix5Q5a8IUvekCVvyDo4tXan3k5da+cmou58oik779lea8Db5A1Z8oYseUOWvCFL3pAlb8iSN2TJG7IOnhD6RJ820zZ16mXvl7PD1BrwNnlDlrwhS96QJW/IkjdkyRuy5A1Z8oasram1T3Pn9NgTJ8+mTkRdu/NM2x1Wb8iSN2TJG7LkDVnyhix5Q5a8IUvekCVvyNo6IbS3Y9bU7NHUnNaUJ56I+kRWb8iSN2TJG7LkDVnyhix5Q5a8IUvekCVvyNqaWlu7c0Loiful8f+de5NP/I6s3pAlb8iSN2TJG7LkDVnyhix5Q5a8IUvekHVwam1tanrsTlO71k1N2u0879S7mnobO1e2ekOWvCFL3pAlb8iSN2TJG7LkDVnyhix5Q9bY1FrPzuzRE//3Tp/2vGtWb8iSN2TJG7LkDVnyhix5Q5a8IUvekCVvyDK19oadiahzu4vt3NW5z12b2qdt58rn3vM5Vm/IkjdkyRuy5A1Z8oYseUOWvCFL3pAlb8gam1rr7Wt17onunIjaMbXn2dTc4dTEm9UbsuQNWfKGLHlDlrwhS96QJW/IkjdkyRuyDk6tmbX6rv9du/OudvT2h5u6stUbsuQNWfKGLHlDlrwhS96QJW/IkjdkyRuyvl6v1/Q9AEdYvSFL3pAlb8iSN2TJG7LkDVnyhix5Q5a8IUvekCVvyJI3ZMkbsuQNWfKGLHlDlrwhS96QJW/I+g9JmxhNOd8HwAAAAABJRU5ErkJggg==";
 
 function updateCmpButton() {
   const b = document.getElementById('cmp-export-btn');
@@ -2143,7 +2301,7 @@ function buildComparatif(favs) {
         <td class="cmp-headmain">
           <div class="cmp-eyebrow">COMPARATIF</div>
           <div class="cmp-title">FAVORIS</div>
-          <div class="cmp-subtitle">Trouve ta clinique · Recrutement médical — ${MODE_EST ? 'Montérégie-Est' : 'Montérégie'}</div>
+          <div class="cmp-subtitle">Trouve ta clinique · Recrutement médical — ${MODE_REGION ? 'Montérégie-' + REGION_PAGE : 'Montérégie'}</div>
           <div class="cmp-exp">Exporté le ${date}</div>
         </td>
         <td class="cmp-headqr">
@@ -2161,7 +2319,7 @@ function buildComparatif(favs) {
         <div class="cmp-qrurl">trouvetaclinique.ca</div>
       </td>
     </tr></table>
-    <div class="cmp-note">Trouve ta clinique — Cliniques en recrutement · ${MODE_EST ? 'Montérégie-Est' : 'Montérégie'}</div>`;
+    <div class="cmp-note">Trouve ta clinique — Cliniques en recrutement · ${MODE_REGION ? 'Montérégie-' + REGION_PAGE : 'Montérégie'}</div>`;
   document.getElementById('cmp-print').innerHTML =
     '<div class="cmp-bar">' +
       '<span class="cmp-bar-t">Comparatif des favoris</span>' +
@@ -2310,13 +2468,15 @@ function populateRlsSelect() {
   if (prev && opts.indexOf(prev) !== -1) { sel.value = prev; }
   else { rlsFilter = ''; sel.value = ''; }
 }
-/* Carte Montérégie-Est SEULEMENT : 3 boutons pleine largeur (un par RLS) à la place du menu
-   déroulant #rls-filter, qui reste utilisé partout ailleurs (voir buildFilters). Un clic sur
-   le bouton déjà actif désélectionne, comme choisir « Tous les RLS » dans le menu déroulant. */
+/* Cartes RÉGIONALES seulement : un bouton pleine largeur par RLS du territoire, à la place du
+   menu déroulant #rls-filter, qui reste utilisé sur la carte générale (voir buildFilters). Un
+   clic sur le bouton déjà actif désélectionne, comme choisir « Tous les RLS » dans le menu
+   déroulant. Le nombre de boutons suit simplement le territoire : 3 pour l'Est, 2 pour le
+   Centre, 4 pour l'Ouest — rien à ajuster ici quand on ajoute un territoire. */
 function populateRlsButtons() {
   const wrap = document.getElementById('rls-btns');
   if (!wrap) return;
-  const opts = Object.keys(RLS_COLORS_EST).filter(r => rlsForRegions().includes(r));
+  const opts = Object.keys(RLS_COLORS_REGION).filter(r => rlsForRegions().includes(r));
   wrap.innerHTML = '';
   opts.forEach(r => {
     const b = document.createElement('button');
@@ -2326,7 +2486,7 @@ function populateRlsButtons() {
     const ligne1 = coupure > 0 ? r.slice(0, coupure) : r;
     const ligne2 = coupure > 0 ? r.slice(coupure) : '';
     b.innerHTML = ligne2 ? `${esc(ligne1)}<br>${esc(ligne2)}` : esc(ligne1);
-    b.style.setProperty('--c', RLS_COLORS_EST[r]);
+    b.style.setProperty('--c', RLS_COLORS_REGION[r]);
     b.setAttribute('aria-label', 'Filtrer : ' + r);
     // Pâle seulement si UN AUTRE bouton est le filtre actif ; foncé sinon (par défaut, ou si
     // c'est lui le filtre actif).
@@ -2341,7 +2501,7 @@ function populateRlsButtons() {
         btn.classList.toggle('dim', paleBtn);
         btn.setAttribute('aria-pressed', rlsFilter === nomBtn ? 'true' : 'false');
       });
-      synchroniserOverlaysRlsEst();
+      synchroniserOverlaysRlsEstOfficielle();
       renderSidebar(); updateMarkerVisibility(); fitToVisible();
     });
     wrap.appendChild(b);
@@ -2360,10 +2520,10 @@ function syncRegChips() {
 }
 function buildFilters() {
   const wrap = document.getElementById('reg-filter');
-  // Vue Montérégie-Est : gmfs ne contient déjà que la Montérégie-Est (voir initData), donc les
-  // trois pastilles de région n'ont plus rien à filtrer — on les masque plutôt que d'afficher un
+  // Vue régionale : gmfs ne contient déjà que ce territoire (voir initData), donc les trois
+  // pastilles de région n'ont plus rien à filtrer — on les masque plutôt que d'afficher un
   // filtre à une seule option, toujours cochée, qui ne fait rien.
-  if (wrap && MODE_EST) { wrap.style.display = 'none'; }
+  if (wrap && MODE_REGION) { wrap.style.display = 'none'; }
   else if (wrap) {
     wrap.innerHTML = '';
     ['Est', 'Centre', 'Ouest'].forEach(key => {
@@ -2379,6 +2539,7 @@ function buildFilters() {
         if (regionFilter.has(key)) regionFilter.delete(key); else regionFilter.add(key);
         syncRegChips();
         populateRlsSelect();
+        synchroniserOverlaysTerritoires();
         renderSidebar(); updateMarkerVisibility(); fitToVisible();
       });
       wrap.appendChild(b);
@@ -2387,14 +2548,14 @@ function buildFilters() {
   }
   const sel = document.getElementById('rls-filter');
   const btnWrap = document.getElementById('rls-btns');
-  if (MODE_EST) {
+  if (MODE_REGION) {
     if (sel) sel.hidden = true;
     if (btnWrap) { btnWrap.hidden = false; populateRlsButtons(); }
   } else if (sel) {
     populateRlsSelect();
     sel.addEventListener('change', () => {
       rlsFilter = sel.value;
-      synchroniserOverlaysRlsEst();
+      synchroniserOverlaysTerritoires();
       renderSidebar(); updateMarkerVisibility(); fitToVisible();
     });
   }
@@ -2411,18 +2572,20 @@ function openDetail(id) {
   if (activeId !== null && activeId !== id && notesDirty &&
       !confirm("Vos notes ne sont pas sauvegardées. Changer de clinique sans les sauvegarder ?")) return;
   notesDirty = false;
-  if (activeId !== null && markers[activeId]) {
-    const precedente = byId(activeId);
-    if (precedente) markers[activeId].setIcon(makeClinicIcon(precedente, false, rankOf(activeId)));
-  }
+  if (activeId !== null && markers[activeId]) markers[activeId].setIcon(makeIcon(false, rankOf(activeId), couleurMilieu(byId(activeId)), activeId));
   document.querySelectorAll('.sb-item').forEach(e => e.classList.remove('active'));
   activeId = id;
   // Garde : buildMarkers() peut avoir sauté ce marqueur (fiche invalide,
   // filet de sécurité du 17 août) sans que la fiche elle-même soit exclue.
-  if (markers[id]) markers[id].setIcon(makeClinicIcon(g, true, rankOf(id)));
+  if (markers[id]) markers[id].setIcon(makeIcon(true, rankOf(id), couleurMilieu(g), id));
   updateLegendVisibility();
   document.getElementById('si-'+id)?.classList.add('active');
-  map.flyTo([g.lat, g.lng], 14, { duration:1 });
+  // 29 août 2026 : le flyTo() était ICI, AVANT la construction de la fiche. Si la couche
+  // vectorielle levait une erreur pendant le déplacement (voir correctif « jumpTo » dans
+  // vendor/leaflet-maplibre-gl.js), l'exception remontait et interrompait cette fonction :
+  // #dp-body restait vide et la fiche ne s'ouvrait jamais. Il est désormais déplacé tout à la
+  // fin, après l'ouverture du panneau, et isolé dans un try/catch — la fiche s'affiche même si
+  // le déplacement de carte échoue.
 
   // Historique : le bouton "retour" du téléphone revient à la carte sans quitter l'app
   // L'identifiant passe dans l'URL : la fiche devient partageable par lien.
@@ -2436,13 +2599,13 @@ function openDetail(id) {
   if (typeof peekOff === 'function') peekOff();
 
   document.getElementById('dp-tag').textContent = typeLabel(g.type);
-  document.getElementById('dp-name-disp').textContent = g.nom.trim();
+  document.getElementById('dp-name-disp').innerHTML = esc(g.nom.trim()) + badgeVerifHtml(g);
   (function(){ var c = couleurMilieu(g); var dh = document.querySelector('#detail .dp-head'); if (dh) { dh.style.background = ''; dh.style.borderBottomColor = c; } var tg = document.getElementById('dp-tag'); if (tg) tg.style.color = c; })();
 
   // Horaire (lecture seule)
   let horRows = '';
   for (const [jour, heure] of Object.entries(g.horaire || {})) {
-    const ferme = /ferm|non disponible/i.test(heure);
+    const ferme = /ferm/i.test(heure);
     horRows += `<span class="hor-day">${jour}</span><span class="hor-val${ferme?' ferme':''}">${heure && String(heure).trim() ? esc(heure) : 'À venir'}</span>`;
   }
   if (!horRows) horRows = '<span class="hor-day" style="grid-column:1 / -1; color:#b8b1a0;">À venir</span>';
@@ -2512,18 +2675,11 @@ function openDetail(id) {
     : 'À venir';
   const pratRow = `<div class="vw-row"><span class="vw-label">Pratique</span><span class="vw-value">${pratChips}</span></div>`;
   const recruitRows = assembler([
-    d_('Postes disponibles', g.medecinsRecherches
-      ? g.medecinsRecherches + (Number(g.medecinsRecherches) > 1 ? ' médecins de famille' : ' médecin de famille')
-      : ''),
+    d_('Postes disponibles', g.medecinsRecherches ? g.medecinsRecherches + (Number(g.medecinsRecherches) > 1 ? ' médecins de famille' : ' médecin de famille') : ''),
     {label:'Pratique', html: pratRow},
     d_('Bureau', g.bureau),
     d_('Frais de bureau', g.frais)
   ]);
-  const recrutementContenu = recruteActuellement(g)
-    ? `${recruitRows}
-      ${poRaw ? `<div class="vw-row"><span class="vw-label">Portes ouvertes</span><span class="vw-value">${poDisp}</span></div>` : ''}
-      <div class="vw-row"><span class="vw-label">Contact</span><span class="vw-value">${contactLink(g.personneRessource)}</span></div>`
-    : `<div class="recruit-status"><span class="status-i" aria-hidden="true">i</span><span><strong>Cette clinique ne recrute pas actuellement.</strong></span></div>`;
   // Section « Gardes et disponibilités » : remplace l'ancien code de pratique SRV
   // (sans-rendez-vous), qui n'était pas assez précis. Elle n'apparaît que si au
   // moins une valeur a été saisie — sinon chaque fiche encore vierge afficherait
@@ -2564,7 +2720,17 @@ function openDetail(id) {
     <div class="vw-divider"></div>
     <div class="vw-sec">
       <div class="vw-sec-title">Recrutement</div>
-      ${recrutementContenu}
+      ${recruteActuellement(g) ? `
+      ${recruitRows}
+      ${poRaw ? `<div class="vw-row"><span class="vw-label">Portes ouvertes</span><span class="vw-value">${poDisp}</span></div>` : ''}
+      ${/* 29 août 2026 : la fiche affichait « Contact » + personneRessource, donc un COURRIEL en
+            clair, alors que la décision du 19 août est de ne pas publier les courriels et que
+            responsableNom existe pour ça. On publie le NOM seulement ; aucune ligne si le nom
+            est absent (pas de faux « À venir »). */''}
+      ${String(g.responsableNom || '').trim()
+        ? `<div class="vw-row"><span class="vw-label">Responsable du recrutement</span><span class="vw-value">${esc(String(g.responsableNom).trim())}</span></div>`
+        : ''}
+      ` : `<div class="recruit-status"><span class="status-i" aria-hidden="true">i</span><span><strong>Cette clinique ne recrute pas actuellement.</strong></span></div>`}
     </div>
     <div class="vw-divider"></div>
     ${gardeHasData ? `<div class="vw-sec">
@@ -2603,6 +2769,14 @@ function openDetail(id) {
   document.getElementById('detail').classList.add('open');
   document.body.classList.add('fiche-open');
 
+  // Déplacement de la carte APRÈS l'affichage de la fiche (voir note plus haut). Le try/catch
+  // est une ceinture de sécurité : même si une couche de fond échoue, la fiche reste ouverte.
+  try {
+    map.flyTo([g.lat, g.lng], 14, { duration:1 });
+  } catch (err) {
+    console.warn('Déplacement de la carte impossible, la fiche reste ouverte :', err);
+  }
+
   // Détecte une modification non sauvegardée du champ notes
   const notesTa = document.getElementById('notes-input');
   if (notesTa) notesTa.addEventListener('input', () => { notesDirty = true; });
@@ -2627,10 +2801,7 @@ function saveNotes(flash = true) {
 function closeDetailUI() {
   // On retire le paramètre ?c= pour que l'URL reflète l'état réel de l'app.
   if (location.search) { try { history.replaceState({}, '', location.pathname); } catch (e) {} }
-  if (activeId !== null && markers[activeId]) {
-    const precedente = byId(activeId);
-    if (precedente) markers[activeId].setIcon(makeClinicIcon(precedente, false, rankOf(activeId)));
-  }
+  if (activeId !== null && markers[activeId]) markers[activeId].setIcon(makeIcon(false, rankOf(activeId), couleurMilieu(byId(activeId)), activeId));
   activeId = null;
   document.querySelectorAll('.sb-item').forEach(e => e.classList.remove('active'));
   document.getElementById('detail').classList.remove('open');
@@ -2754,10 +2925,10 @@ function goHome() {
     setTimeout(function () { b.classList.remove('tapped'); }, 450); }
   if (typeof closeDrawer === 'function') closeDrawer();
   if (activeId !== null) closeDetail();
-  // Vue Montérégie-Est : HOME (centre/zoom de toute la Montérégie) montrerait surtout de
-  // l'eau et des cliniques absentes de cette page. On recadre plutôt sur les données
-  // réellement chargées (déjà limitées à l'Est — voir initData), comme au chargement initial.
-  if (MODE_EST) { fitToData(); return; }
+  // Vue régionale : HOME (centre/zoom de toute la Montérégie) montrerait surtout de l'eau et
+  // des cliniques absentes de cette page. On recadre plutôt sur les données réellement
+  // chargées (déjà limitées au territoire — voir initData), comme au chargement initial.
+  if (MODE_REGION) { fitToData(); return; }
   map.flyTo(HOME.center, HOME.zoom, { duration: 0.8 });
 }
 const brandHome = document.getElementById('brand-home');
@@ -2803,14 +2974,15 @@ function annonceContenu() {
   const a = dataMeta.annonce;
   if (!a) return { texte:'', lien:'', lienCarte:'', titre:'', dateFin:'' };
   if (typeof a === 'string') return { texte:a, lien:'', lienCarte:'', titre:'', dateFin:'' };
-  // Vue Montérégie-Est : l'annonce de data.json est UNE seule annonce pour tout le site. Sans ce
-  // garde-fou, la page dédiée afficherait en gros une activité d'un autre territoire (au moment
+  // Vue régionale : l'annonce de data.json est UNE seule annonce pour tout le site. Sans ce
+  // garde-fou, une page dédiée afficherait en gros une activité d'un autre territoire (au moment
   // d'écrire ceci, data.json annonce « JR Express — RLS Jardins-Roussillon », en Montérégie-
-  // OUEST) — exactement ce que la page dédiée doit éviter. On n'affiche donc l'annonce sur cette
-  // page QUE si elle est explicitement marquée comme étant de l'Est, via un champ facultatif
-  // "region": "Est" dans l'objet "annonce" de data.json. Une annonce sans ce champ reste
-  // affichée normalement sur la carte complète, et reste masquée sur la page Montérégie-Est.
-  if (MODE_EST && String(a.region || '').trim() !== 'Est') {
+  // OUEST) — exactement ce que ces pages doivent éviter. On n'affiche donc l'annonce sur une
+  // page régionale QUE si elle est explicitement marquée comme étant de ce territoire, via un
+  // champ facultatif "region": "Est" | "Centre" | "Ouest" dans l'objet "annonce" de data.json.
+  // Une annonce sans ce champ reste affichée normalement sur la carte des trois territoires, et
+  // reste masquée sur les trois pages régionales.
+  if (MODE_REGION && String(a.region || '').trim() !== REGION_PAGE) {
     return { texte:'', lien:'', lienCarte:'', titre:'', dateFin:'' };
   }
   return { texte: a.texte || '', lien: a.lien || '', lienCarte: a.lienCarte || '',
@@ -2866,15 +3038,16 @@ function showUpdateDate() {
 
 function initData(data) {
   const brut = Array.isArray(data) ? data : (data.cliniques || []);
-  // visible=false signifie maintenant « ne recrute pas actuellement ». La fiche
-  // reste chargée afin que le bouton « Toutes les cliniques » puisse l'afficher,
-  // mais matchesFilters() la masque dans la vue initiale. Une fiche dont les
-  // coordonnées ou le nom sont absents ou invalides est toutefois écartée ici :
-  // sans ce filtre, une seule fiche mal formée fait
+  // Une fiche dont « visible » vaut false est conservée dans data.json mais
+  // n'apparaît nulle part dans l'application : c'est le cas d'un milieu qui ne
+  // recrute pas cette année. Elle revient dès que le drapeau repasse à true.
+  // Une fiche dont les coordonnées ou le nom sont absents ou invalides est
+  // aussi écartée ici : sans ce filtre, une seule fiche mal formée fait
   // planter buildMarkers() en cours de route et vide toute la carte pour tout
   // le monde (constat d'audit du 17 août). On garde une trace dans la
   // console pour la retrouver facilement.
   gmfs = brut.filter(g => {
+    if (g.visible === false || g.categorie === 'etablissement') return false;
     // Nombre OU texte numérique ("45.45", accident plausible venant d'un
     // tableur) sont acceptés ; null/undefined/booléen/objet sont rejetés
     // comme avant (Number(null) vaudrait 0, un faux positif au golfe de
@@ -2891,29 +3064,32 @@ function initData(data) {
     g.lat = lat; g.lng = lng;
     return true;
   });
-  // Vue Montérégie-Est : on retire les cliniques des deux autres territoires ICI, à la source,
-  // pas seulement via un filtre visuel. gmfs ne contient alors jamais autre chose que la
-  // Montérégie-Est — carte, liste, recherche, favoris, comparatif PDF, menu RLS en découlent
-  // tous automatiquement, sans rien pouvoir « réactiver » depuis l'interface.
-  if (MODE_EST) gmfs = gmfs.filter(g => g.region === 'Est');
+  // Vue régionale : on retire les cliniques des deux autres territoires ICI, à la source, pas
+  // seulement via un filtre visuel. gmfs ne contient alors jamais autre chose que le territoire
+  // de la page — carte, liste, recherche, favoris, comparatif PDF, menu RLS en découlent tous
+  // automatiquement, sans rien pouvoir « réactiver » depuis l'interface.
+  if (MODE_REGION) gmfs = gmfs.filter(g => g.region === REGION_PAGE);
+  calculerDecalagesMarqueurs();
+  // 27 août 2026 : (ré)initialise la vue « Toutes les cliniques » à chaque chargement des
+  // données — un rechargement de page ne doit jamais garder une vue élargie ouverte par accident.
   showAllClinics = false;
   dataMeta = Array.isArray(data) ? {} : (data || {});
 
   // Hôpitaux : mêmes garde-fous de validité que les cliniques (lat/lng/nom), mais aucun
-  // autre traitement — pas de tri, pas de favoris, pas de recherche. Pour l'instant, comme
-  // pour les cliniques, on ne garde que la Montérégie-Est (seule version où des hôpitaux ont
-  // été ajoutés à ce jour) ; hors de MODE_EST, hopitaux reste vide et rien ne s'affiche —
-  // ajouter d'autres territoires plus tard n'exigera qu'un ajout de données, pas de code.
+  // autre traitement — pas de tri, pas de favoris, pas de recherche.
+  // 26 août 2026 : les 9 hôpitaux de la Montérégie s'affichent sur la carte générale des 3
+  // territoires. Sur une page régionale, on les filtre par territoire pour la même raison que
+  // les cliniques — ces pages ne doivent jamais laisser voir un établissement d'ailleurs.
   const hopBrut = Array.isArray(data) ? [] : (data.hopitaux || []);
-  hopitaux = MODE_EST ? hopBrut.filter(h => {
-    if (h.region !== 'Est') return false;
+  hopitaux = hopBrut.filter(h => {
+    if (MODE_REGION && h.region !== REGION_PAGE) return false;
     const lat = (typeof h.lat === 'number' || typeof h.lat === 'string') ? Number(h.lat) : NaN;
     const lng = (typeof h.lng === 'number' || typeof h.lng === 'string') ? Number(h.lng) : NaN;
     const ok = isFinite(lat) && isFinite(lng) && typeof h.nom === 'string' && h.nom.trim();
     if (!ok) { console.warn('Hôpital ignoré (données invalides) :', h && h.id, h && h.nom, h); return false; }
     h.lat = lat; h.lng = lng;
     return true;
-  }) : [];
+  });
 
   // Notes personnelles sauvegardées
   gmfs.forEach(g => { const n = SAFE.get(NOTE_KEY(g.id)); if (n !== null) g.notes = n; });
@@ -2922,14 +3098,14 @@ function initData(data) {
   const typeRank = { 'GMF-U': 0, 'GMF-R': 1, 'GMF': 2, 'GMF satellite': 3, 'CH': 4 };
   const regRank = { 'Ouest': 0, 'Centre': 1, 'Est': 2 };
   /* Sur la carte des trois territoires, le premier critère de tri est le TERRITOIRE : la liste
-     est donc déjà regroupée par couleur d'épingle. Sur la carte Montérégie-Est, ce critère
-     devient inopérant puisque tout est « Est » — la liste retombait sur le type de milieu et
-     les trois couleurs de RLS s'alternaient au fil de la liste et de la numérotation.
-     On remplace donc ce premier palier par le RLS sur cette page. L'ordre des RLS est celui de
-     RLS_COLORS_EST, donc exactement celui de la légende : la liste, la numérotation des
+     est donc déjà regroupée par couleur d'épingle. Sur une carte régionale, ce critère devient
+     inopérant puisque tout appartient au même territoire — la liste retombait sur le type de
+     milieu et les couleurs de RLS s'alternaient au fil de la liste et de la numérotation.
+     On remplace donc ce premier palier par le RLS sur ces pages. L'ordre des RLS est celui de
+     RLS_COLORS_REGION, donc exactement celui de la légende : la liste, la numérotation des
      épingles et la légende racontent la même histoire. */
-  const rlsRank = MODE_EST
-    ? Object.keys(RLS_COLORS_EST).reduce((o, r, i) => (o[r] = i, o), {})
+  const rlsRank = MODE_REGION
+    ? Object.keys(RLS_COLORS_REGION).reduce((o, r, i) => (o[r] = i, o), {})
     : null;
   order = gmfs.slice().sort((a, b) => {
     if (rlsRank) {
@@ -2977,8 +3153,8 @@ function initData(data) {
   const cible = Number(cibleBrute);
   if (cible && byId(cible)) {
     const cliniqueCible = byId(cible);
-    // Un lien partagé vers une clinique non recruteuse doit rester fonctionnel.
-    // On active automatiquement la vue complète avant d'ouvrir sa fiche.
+    // Un lien partagé (dont ceux des pages SEO /cliniques/<slug>/) vers une clinique qui ne
+    // recrute pas doit rester fonctionnel : on active la vue complète avant d'ouvrir sa fiche.
     if (!recruteActuellement(cliniqueCible)) {
       showAllClinics = true;
       syncAllClinicsToggle();
@@ -3028,13 +3204,16 @@ fetch('./data.json', { cache: 'no-cache' })
 (function () {
   var btn = document.getElementById('btn-share');
   if (!btn) return;
-  // Vue Montérégie-Est : partager doit renvoyer vers /monteregie-est/, pas vers la carte
-  // complète, pour rester cohérent avec le périmètre de la page.
-  var estMode = typeof MODE_EST !== 'undefined' && MODE_EST;
-  var URL_APP = estMode ? 'https://trouvetaclinique.ca/monteregie-est/' : 'https://trouvetaclinique.ca/';
-  var TITRE = estMode ? 'Trouve ta clinique — Montérégie-Est' : 'Trouve ta clinique — Montérégie';
-  var TEXTE = estMode
-    ? 'Carte interactive des cliniques en recrutement en Montérégie-Est. Installable sur téléphone.'
+  // Vue régionale : partager doit renvoyer vers la page du territoire, pas vers la carte
+  // complète — sinon le bouton « Partager » de cette page ferait précisément ce qu'une page
+  // dédiée à un territoire doit éviter : promouvoir les autres territoires.
+  var regMode = typeof MODE_REGION !== 'undefined' && MODE_REGION;
+  var regNom = regMode ? 'Montérégie-' + REGION_PAGE : 'Montérégie';
+  var regChemin = regMode ? 'monteregie-' + REGION_PAGE.toLowerCase().replace('é','e') + '/' : '';
+  var URL_APP = 'https://trouvetaclinique.ca/' + regChemin;
+  var TITRE = 'Trouve ta clinique — ' + regNom;
+  var TEXTE = regMode
+    ? 'Carte interactive des cliniques en recrutement en ' + regNom + '. Installable sur téléphone.'
     : 'Carte interactive des cliniques en recrutement dans la Montérégie. Installable sur téléphone.';
 
   btn.addEventListener('click', function () {
@@ -3070,7 +3249,7 @@ fetch('./data.json', { cache: 'no-cache' })
 // Bouton d'installation visible (PWA). Visible EN PERMANENCE dans l'en-tête (tant que l'appli
 // n'est pas déjà installée) — plus seulement quand le navigateur déclenche son invite native
 // (Chrome/Edge attend parfois plusieurs visites avant de le faire, et Safari ne le fait jamais) :
-// « comme avant ». Un second accès identique vit dans le menu
+// choix du 22 août, « comme avant ». Un second accès identique vit dans le menu
 // « i » (#info-menu-install), pour qui ne remarque pas le bouton de l'en-tête.
 (function () {
   var btn = document.getElementById('btn-install');
@@ -3079,6 +3258,13 @@ fetch('./data.json', { cache: 'no-cache' })
   var tipMsg = document.getElementById('ios-tip-msg');
   var tipClose = document.getElementById('ios-tip-close');
   var deferred = null;
+
+  // Cartes Montérégie-Centre et Montérégie-Ouest : ce sont des CARTES, pas des applications
+  // (décision du 26 août 2026). scripts/publier-regions.js retire les deux boutons
+  // d'installation du code source de ces pages ; sans ce garde-fou, la ligne
+  // « btn.classList.add('show') » plus bas lèverait une TypeError sur un bouton absent.
+  // Rien à installer, rien à faire : on sort avant tout le reste.
+  if (!btn) { if (menuBtn) menuBtn.style.display = 'none'; return; }
 
   var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
   var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -3153,7 +3339,7 @@ if ('serviceWorker' in navigator) {
         });
       })
       .catch(() => {});
-    console.log('Trouve ta clinique — Montérégie-Est Brouillon — build 2026-08-28-v2');
+    console.log('Trouve ta clinique — Montérégie — build 2026-08-29');
   });
 }
 </script>
@@ -3164,8 +3350,8 @@ if ('serviceWorker' in navigator) {
     if (done) return; done = true;
     var el = document.getElementById('app-loader');
     if (!el) return;
-    // Délai de 2,75 s conservé volontairement : l'écran de chargement doit rester lisible
-    // (un essai à 600 ms a été écarté).
+    // Remis à 2,75 s le 19 août — l'essai à 600 ms
+    // (18 août, audit) a été annulé : le temps précédent a été conservé.
     var wait = Math.max(0, 2750 - (Date.now() - start));
     setTimeout(function () {
       el.classList.add('hide');
@@ -3201,4 +3387,7 @@ if ('serviceWorker' in navigator) {
   refleter();
 })();
 </script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"ceb6d077f71c46ffa566fe67de3eb336"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body></html>
